@@ -7,9 +7,9 @@ Feature: List the menu with prices
 Background: Food outlet has been selected
 
   Given the following outlet exists :
-  | Food Courts                      
-  | Marketplace                   
-  | Hinman                        
+  | Food Courts         |             
+  | Marketplace         |         
+  | Hinman              |          
 
 
   And  I am on the food court listing page
