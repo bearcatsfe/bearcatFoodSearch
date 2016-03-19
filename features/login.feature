@@ -14,7 +14,7 @@ Feature: signing in to Bearcat food search
  And I am the Login page
  
  Scenario: create a login profile
-  When I click on the "Login" button
+  When I click on the "Sign In" button
   Then I should see login page
   And  I should enter the "Username"
   And  I should enter the "Password"
@@ -29,5 +29,10 @@ Feature: signing in to Bearcat food search
    And  I should create a "Username"
    And  i should create a "password"
    And then click on the "Create Profile" to login
+   
+ Scenario: Invalid username/password
+   When I click on "Login" button
+   Then I should get a message saying "Invalid username/password" on the entry of an invalid username or password
+   And  I should see the "Sign In" page again
 
 
