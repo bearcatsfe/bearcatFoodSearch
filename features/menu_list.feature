@@ -17,8 +17,8 @@ Background: Food outlet has been selected
 
 Scenario:  List the menu of the selected outlet
   When I select a food outlet
-  Then I should see "A list of menu items for that outlet "
-  And  I should see " a max of 10 menu items listed in one page with price and rating for each of the menu item"
+  Then I should be able to see "A list of menu items for that outlet "
+  And  I should be able to see " a max of 10 menu items listed in one page with price and rating for each of the menu item"
 
 Scenario:  Search for the food item in the menu
   When I name of the food item
