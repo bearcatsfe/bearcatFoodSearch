@@ -11,7 +11,7 @@ When(/^I select a food outlet$/) do
   pending # Write code here that turns the phrase above into concrete actions
 end
 
-Then(/^I should see "([^"]*)"$/) do |arg1|
+Then(/^I should be able to see "([^"]*)"$/) do |arg1|
   pending # Write code here that turns the phrase above into concrete actions
 end
 
