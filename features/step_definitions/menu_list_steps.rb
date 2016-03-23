@@ -1,5 +1,4 @@
 Given(/^the following outlet exists :$/) do |table|
-  # table is a Cucumber::Core::Ast::DataTable
   pending 
 end
 
