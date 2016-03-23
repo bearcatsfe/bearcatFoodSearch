@@ -12,9 +12,14 @@ When(/^I select a food outlet$/) do
   
 end
 
+<<<<<<< HEAD
 Then(/^I should see "([^"]*)"$/) do |arg1|
   pending 
   
+=======
+Then(/^I should be able to see "([^"]*)"$/) do |arg1|
+  pending # Write code here that turns the phrase above into concrete actions
+>>>>>>> 82868e6d655f2bbd57169cf6dae5f78cedc17631
 end
 
 When(/^I name of the food item$/) do
