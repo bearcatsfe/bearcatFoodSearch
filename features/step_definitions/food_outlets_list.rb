@@ -24,17 +24,17 @@ When(/^There is a list of food outlets listed$/) do
 end
 
 When(/^The search keyword matches any of the list item$/) do
-  
+  pending
 end
 
 Then(/^The matched food outlet should be shortlisted\.$/) do
-  
+  pending
 end
 
 When(/^The search keyword does not match any of the list item$/) do
-  
+  pending
 end
 
 Then(/^A message should be shown "([^"]*)"$/) do |arg1|
-  
+  pending
 end
