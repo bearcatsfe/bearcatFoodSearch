@@ -45,3 +45,15 @@ group :development do
   gem 'spring'
 end
 
+group :test do
+  gem 'rspec-rails'
+  gem 'cucumber-rails'
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'sinatra'  
+  gem 'cucumber'  
+  gem 'cucumber-sinatra'  
+  gem 'rspec'  
+  gem 'rack'  
+end
+
