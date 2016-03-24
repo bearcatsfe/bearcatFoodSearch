@@ -1,56 +1,16 @@
-Given(/^the following login details exist in database:$/) do |table|
-  # table is a Cucumber::Ast::Table
-  pending 
+Given /^a valid user$/ do
+  @user = User.create!({
+             :email => "minikermit@hotmail.com",
+             :password => "12345678",
+             :password_confirmation => "12345678"
+           })
 end
 
-Given(/^I am the Login page$/) do
-  pending 
-end
-
-When(/^I click on the "(.*?)" button$/) do |arg1|
-  pending 
-end
-
-Then(/^I should see login page$/) do
-  pending 
-end
-
-Then(/^I should enter the "(.*?)"$/) do |arg1|
-  pending 
-end
-
-Then(/^I should press "(.*?)" to login to the Bearcat Food Search account$/) do |arg1|
-  pending 
-end
-
-Then(/^I should see the signup page$/) do
-  pending 
-end
-
-Then(/^I should enter "(.*?)"$/) do |arg1|
-  pending 
-end
-
-Then(/^I should create a "(.*?)"$/) do |arg1|
-  pending 
-end
-
-Then(/^i should create a "(.*?)"$/) do |arg1|
-  pending 
-end
-
-Then(/^then click on the "(.*?)" to login$/) do |arg1|
-  pending 
-end
-
-When(/^I click on "(.*?)" button$/) do |arg1|
-  pending 
-end
-
-Then(/^I should get a message saying "(.*?)" on the entry of an invalid username or password$/) do |arg1|
-  pending 
-end
-
-Then(/^I should see the "(.*?)" page again$/) do |arg1|
-  pending 
+Given /^a logged in user$/ do(
+  Given "a valid user"
+  visit signin_url
+  fill_in "Email", :with => "minikermit@hotmail.com"
+  fill_in "Password", :with => "12345678"
+  click_button "Sign in"
+  )
 end
