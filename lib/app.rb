@@ -1,3 +1,0 @@
-class BearcatFoodSearch
-    
-end

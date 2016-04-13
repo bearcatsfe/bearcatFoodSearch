@@ -182,3 +182,138 @@ ActionController::RoutingError (No route matches [POST] "/"):
   Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (20.0ms)
   Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
   Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (115.6ms)
+  [1m[36m (16.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (13.5ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateUsers (20160329171948)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160329171948"]]
+  [1m[35m (10.5ms)[0m  commit transaction
+Migrating to AddPasswordDigestToUsers (20160404130516)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "users" ADD "password_digest" varchar
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160404130516"]]
+  [1m[35m (12.4ms)[0m  commit transaction
+Migrating to AddIndexToUsersEmail (20160404132723)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160404132723"]]
+  [1m[35m (17.4ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+
+
+Started GET "/" for 149.125.40.243 at 2016-04-07 23:49:25 +0000
+Cannot render console from 149.125.40.243! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 1084ms (Views: 999.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/login" for 149.125.40.243 at 2016-04-07 23:49:32 +0000
+Cannot render console from 149.125.40.243! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (127.4ms)
+Completed 200 OK in 181ms (Views: 179.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 149.125.40.243 at 2016-04-07 23:49:35 +0000
+Cannot render console from 149.125.40.243! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (165.3ms)
+  Rendered users/new.html.erb within layouts/application (177.7ms)
+Completed 200 OK in 224ms (Views: 214.6ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/users" for 149.125.40.243 at 2016-04-07 23:49:50 +0000
+Cannot render console from 149.125.40.243! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Mq4Wm3kiLp6kP/K1uu3gZzp1ihqEAIwetU9KeMx5vzQ96w3h5cvfYtpJZuvHPy1iAQ2s1LA6MQYCW0hsF4eCSg==", "user"=>{"name"=>"Sunil", "email"=>"ssahu1@bing.com", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('ssahu1@bing.com') LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Sunil"], ["email", "ssahu1@bing.com"], ["password_digest", "$2a$10$/pNqxCiTPJONyv.KqUXudOBIkyXZEk0NynhIrmkYrUQ0zYvgF.3Ya"], ["created_at", "2016-04-07 23:49:50.528951"], ["updated_at", "2016-04-07 23:49:50.528951"]]
+  [1m[35m (29.8ms)[0m  commit transaction
+Redirected to https://ruby-demo-hw0-sunilbinghamton.c9users.io/users
+Completed 302 Found in 426ms (ActiveRecord: 31.1ms)
+
+
+Started GET "/users" for 149.125.40.243 at 2016-04-07 23:49:50 +0000
+Cannot render console from 149.125.40.243! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (5.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 82ms (Views: 75.9ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/login" for 149.125.40.243 at 2016-04-07 23:49:57 +0000
+Cannot render console from 149.125.40.243! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 40ms (Views: 39.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 149.125.40.243 at 2016-04-07 23:50:02 +0000
+Cannot render console from 149.125.40.243! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2qmGLdwS/QfIiojkawo3AAeJKkNFO19xJ41mi3v/MYLV7J1XQPsM+7b8HLoW2PoFPPEMjXEB4mmQmWSfoAEM/A==", "session"=>{"email"=>"ssahu1@bing.com", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "ssahu1@bing.com"]]
+Redirected to https://ruby-demo-hw0-sunilbinghamton.c9users.io/
+Completed 302 Found in 108ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 149.125.40.243 at 2016-04-07 23:50:02 +0000
+Cannot render console from 149.125.40.243! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 36ms (Views: 34.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/login" for 149.125.40.243 at 2016-04-07 23:50:04 +0000
+Cannot render console from 149.125.40.243! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 187ms (Views: 185.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 149.125.40.243 at 2016-04-07 23:50:08 +0000
+Cannot render console from 149.125.40.243! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"asysa6eUscvCWZ3+LrqR7QB1TKorG9qGVSK17zT/hTBlibcRO31AN7wvCaBTaFzoOw1qZB8hZ57iNrf77wG4Tg==", "session"=>{"email"=>"ssahu1@bing.com", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "ssahu1@bing.com"]]
+Redirected to https://ruby-demo-hw0-sunilbinghamton.c9users.io/login
+Completed 302 Found in 83ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for 149.125.40.243 at 2016-04-07 23:50:08 +0000
+Cannot render console from 149.125.40.243! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 30ms (Views: 28.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 149.125.40.243 at 2016-04-07 23:50:15 +0000
+Cannot render console from 149.125.40.243! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TNu+VRtF41KNwwBnm1MEGDxAUyLen8N5lnRxein/VdxDnqUvh6wSrvO1lDnmgckdBzh17OqlfmEhYHNu8gFoog==", "session"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", ""]]
+Redirected to https://ruby-demo-hw0-sunilbinghamton.c9users.io/login
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for 149.125.40.243 at 2016-04-07 23:50:16 +0000
+Cannot render console from 149.125.40.243! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 41ms (Views: 40.7ms | ActiveRecord: 0.0ms)
