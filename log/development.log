@@ -317,3 +317,27 @@ Cannot render console from 149.125.40.243! Allowed networks: 127.0.0.1, ::1, 127
 Processing by SessionsController#new as HTML
   Rendered sessions/new.html.erb within layouts/application (1.4ms)
 Completed 200 OK in 41ms (Views: 40.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 67.255.109.126 at 2016-04-13 05:56:56 +0000
+Cannot render console from 67.255.109.126! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 407ms (Views: 324.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/custom.self-0a0f3618bffda2d5b2653e81511009cb10e51960feab15aa10ac2045e6be95c9.css?body=1" for 67.255.109.126 at 2016-04-13 05:56:57 +0000
+Cannot render console from 67.255.109.126! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/scaffolds.self-a8199c7a0d79425ced25d9d4d313254b17d9c6ada4b22f82d7b850f80313f0f3.css?body=1" for 67.255.109.126 at 2016-04-13 05:56:57 +0000
+Cannot render console from 67.255.109.126! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/login" for 67.255.109.126 at 2016-04-13 05:59:04 +0000
+Cannot render console from 67.255.109.126! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (61.4ms)
+Completed 200 OK in 82ms (Views: 81.3ms | ActiveRecord: 0.0ms)

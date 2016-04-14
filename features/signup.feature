@@ -3,12 +3,11 @@ Feature: Sign up to Bearcat food search
   As a user 
   So that I can rate the food in the variety of outlets
   I would want to create a profile by signing up 
-
-  Scenario: Go to sign up page
+  
+  Background: Bearcat home page
    When I am on the Bearcat home page
    And I click on the "Sign Up" link
-   Then I should see the "Sign Up" page
-   
+
   Scenario: create a new account with valid format
    When I am on the Sign Up page
    And  I fill in "Name" with "Sunil"

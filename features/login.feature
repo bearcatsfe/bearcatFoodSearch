@@ -11,13 +11,11 @@ Feature: Login to Bearcat food search
     |Matt              |matt@binghamton.edu     | mattyu89     |
     |Neil              |neil@binghamton.edu     | patrickk983   |
 
-Scenario: Go to Login page
-    When I am on the Bearcat home page
-    And I click on the "Login" link
-    Then I should see the "Login" page
+   Given I am on the Bearcat home page
+   And I click on the "Login" link
+   Then I should see the "Login" page
 
 Scenario: Login with valid credentials
-   When I am on the Login page
    And  I fill in "Email" with "matt@binghamton.edu"
    And  I fill in "Password" with "mattyu89"
    When I click on the "Submit" button to Login
