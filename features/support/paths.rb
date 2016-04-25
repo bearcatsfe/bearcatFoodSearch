@@ -20,7 +20,10 @@ module NavigationHelpers
       new_user_path           
 
     when /^the Login\s?page$/
-      login_path        
+      login_path      
+      
+    when /^Menu List\s?page$/
+      menu_lists_path  
       
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

@@ -7,7 +7,7 @@ Feature: Login to Bearcat food search
  Background: Sign up details have been added to the database
    
    Given the following signup details exist in database:
-    |name              |email                   |password  |    
+    |menu_list              |email                   |password  |    
     |Matt              |matt@binghamton.edu     | mattyu89     |
     |Neil              |neil@binghamton.edu     | patrickk983   |
 

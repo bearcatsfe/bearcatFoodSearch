@@ -1,16 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Menu Lists</h1>
+<h1>Menu Lists</h1>
 
-<table>
+<table id="menulist">
   <thead>
     <tr>
-      <th colspan="3"></th>
+      <th>Menu Item</th>
+      <th>Price</th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @menu_lists.each do |menu_list| %>
+    <% @menu_list.each do |menu_list| %>
       <tr>
         <td><%= link_to 'Show', menu_list %></td>
         <td><%= link_to 'Edit', edit_menu_list_path(menu_list) %></td>

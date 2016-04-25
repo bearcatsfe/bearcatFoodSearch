@@ -63,3 +63,8 @@ end
 Then(/^I should see the "([^"]*)" flash message$/) do |flash_msg|
   page.should have_css('.flashnotice', text: flash_msg)
 end
+
+Then /I should see all the menu items/ do
+  # Make sure that all the menu itemms in the app are visible in the table
+  page.assert_selector('#menulist tbody tr', count: MenuList.count)
+end 
