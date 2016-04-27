@@ -11,9 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160418161023) do
 
   create_table "menu_lists", force: :cascade do |t|
+=======
+ActiveRecord::Schema.define(version: 20160425004539) do
+
+  create_table "menu_lists", force: :cascade do |t|
+    t.string "menu_item"
+    t.string "price"
+>>>>>>> 4c54c94a5fc17b2d5edaf38524cca7879d558a99
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

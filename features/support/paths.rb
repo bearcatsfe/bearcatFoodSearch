@@ -20,10 +20,17 @@ module NavigationHelpers
       new_user_path           
 
     when /^the Login\s?page$/
+<<<<<<< HEAD
       login_path        
     
     when /^Food Outlet\s?page$/
       food_outlet_path
+=======
+      login_path      
+      
+    when /^Menu List\s?page$/
+      menu_lists_path  
+>>>>>>> 4c54c94a5fc17b2d5edaf38524cca7879d558a99
       
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

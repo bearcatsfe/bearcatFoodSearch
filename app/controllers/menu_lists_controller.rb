@@ -4,7 +4,7 @@ class MenuListsController < ApplicationController
   # GET /menu_lists
   # GET /menu_lists.json
   def index
-    @menu_lists = MenuList.all
+    @menu_list = MenuList.all
   end
 
   # GET /menu_lists/1
