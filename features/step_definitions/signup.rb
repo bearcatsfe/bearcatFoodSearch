@@ -18,19 +18,18 @@ end
 
 Then(/^I should enter "(.*?)"$/) do |arg1|
   #pending # express the regexp above with the code you wish you had
-
 end
 
-#Then(/^I should create a "(.*?)"$/) do |arg1|
+Then(/^I should create a "(.*?)"$/) do |arg1|
   #pending # express the regexp above with the code you wish you had
-#end
+end
 
-Then(/^I should click on the "(.*?)" to login$/) do |arg1|
+Then(/^then click on the "(.*?)" to login$/) do |arg1|
   #pending # express the regexp above with the code you wish you had
 end
 
 When(/^I click on the "([^"]*)" button$/) do |button|
-#  within(scope_selector) do   
+#  within(scope_selector) do      
     click_button(button)
  # end
   #pending # Write code here that turns the phrase above into concrete actions

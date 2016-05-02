@@ -20,8 +20,9 @@ Feature: Sign up to Bearcat food search
    And  I should enter "First Name"
    And  I should enter "Last Name"
    And  I should enter "Email Id"
-   And  I should enter "Password"
-   Then I should click on the "Create Profile" to login
+   And  I should create a "Username"
+   And  I should create a "Password"
+   And then click on the "Create Profile" to login
    
 #  Scenario: Invalid username/password
 #   When I click on "Login" button
