@@ -182,3 +182,413 @@ ActionController::RoutingError (No route matches [POST] "/"):
   Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (20.0ms)
   Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
   Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (115.6ms)
+  [1m[36m (16.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (13.5ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateUsers (20160329171948)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160329171948"]]
+  [1m[35m (10.5ms)[0m  commit transaction
+Migrating to AddPasswordDigestToUsers (20160404130516)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "users" ADD "password_digest" varchar
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160404130516"]]
+  [1m[35m (12.4ms)[0m  commit transaction
+Migrating to AddIndexToUsersEmail (20160404132723)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160404132723"]]
+  [1m[35m (17.4ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+
+
+Started GET "/" for 149.125.40.243 at 2016-04-07 23:49:25 +0000
+Cannot render console from 149.125.40.243! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 1084ms (Views: 999.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/login" for 149.125.40.243 at 2016-04-07 23:49:32 +0000
+Cannot render console from 149.125.40.243! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (127.4ms)
+Completed 200 OK in 181ms (Views: 179.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 149.125.40.243 at 2016-04-07 23:49:35 +0000
+Cannot render console from 149.125.40.243! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (165.3ms)
+  Rendered users/new.html.erb within layouts/application (177.7ms)
+Completed 200 OK in 224ms (Views: 214.6ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/users" for 149.125.40.243 at 2016-04-07 23:49:50 +0000
+Cannot render console from 149.125.40.243! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Mq4Wm3kiLp6kP/K1uu3gZzp1ihqEAIwetU9KeMx5vzQ96w3h5cvfYtpJZuvHPy1iAQ2s1LA6MQYCW0hsF4eCSg==", "user"=>{"name"=>"Sunil", "email"=>"ssahu1@bing.com", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('ssahu1@bing.com') LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Sunil"], ["email", "ssahu1@bing.com"], ["password_digest", "$2a$10$/pNqxCiTPJONyv.KqUXudOBIkyXZEk0NynhIrmkYrUQ0zYvgF.3Ya"], ["created_at", "2016-04-07 23:49:50.528951"], ["updated_at", "2016-04-07 23:49:50.528951"]]
+  [1m[35m (29.8ms)[0m  commit transaction
+Redirected to https://ruby-demo-hw0-sunilbinghamton.c9users.io/users
+Completed 302 Found in 426ms (ActiveRecord: 31.1ms)
+
+
+Started GET "/users" for 149.125.40.243 at 2016-04-07 23:49:50 +0000
+Cannot render console from 149.125.40.243! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (5.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 82ms (Views: 75.9ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/login" for 149.125.40.243 at 2016-04-07 23:49:57 +0000
+Cannot render console from 149.125.40.243! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 40ms (Views: 39.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 149.125.40.243 at 2016-04-07 23:50:02 +0000
+Cannot render console from 149.125.40.243! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2qmGLdwS/QfIiojkawo3AAeJKkNFO19xJ41mi3v/MYLV7J1XQPsM+7b8HLoW2PoFPPEMjXEB4mmQmWSfoAEM/A==", "session"=>{"email"=>"ssahu1@bing.com", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "ssahu1@bing.com"]]
+Redirected to https://ruby-demo-hw0-sunilbinghamton.c9users.io/
+Completed 302 Found in 108ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 149.125.40.243 at 2016-04-07 23:50:02 +0000
+Cannot render console from 149.125.40.243! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 36ms (Views: 34.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/login" for 149.125.40.243 at 2016-04-07 23:50:04 +0000
+Cannot render console from 149.125.40.243! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 187ms (Views: 185.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 149.125.40.243 at 2016-04-07 23:50:08 +0000
+Cannot render console from 149.125.40.243! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"asysa6eUscvCWZ3+LrqR7QB1TKorG9qGVSK17zT/hTBlibcRO31AN7wvCaBTaFzoOw1qZB8hZ57iNrf77wG4Tg==", "session"=>{"email"=>"ssahu1@bing.com", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "ssahu1@bing.com"]]
+Redirected to https://ruby-demo-hw0-sunilbinghamton.c9users.io/login
+Completed 302 Found in 83ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for 149.125.40.243 at 2016-04-07 23:50:08 +0000
+Cannot render console from 149.125.40.243! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 30ms (Views: 28.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 149.125.40.243 at 2016-04-07 23:50:15 +0000
+Cannot render console from 149.125.40.243! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TNu+VRtF41KNwwBnm1MEGDxAUyLen8N5lnRxein/VdxDnqUvh6wSrvO1lDnmgckdBzh17OqlfmEhYHNu8gFoog==", "session"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", ""]]
+Redirected to https://ruby-demo-hw0-sunilbinghamton.c9users.io/login
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for 149.125.40.243 at 2016-04-07 23:50:16 +0000
+Cannot render console from 149.125.40.243! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 41ms (Views: 40.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 67.255.109.126 at 2016-04-13 05:56:56 +0000
+Cannot render console from 67.255.109.126! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 407ms (Views: 324.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/custom.self-0a0f3618bffda2d5b2653e81511009cb10e51960feab15aa10ac2045e6be95c9.css?body=1" for 67.255.109.126 at 2016-04-13 05:56:57 +0000
+Cannot render console from 67.255.109.126! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/scaffolds.self-a8199c7a0d79425ced25d9d4d313254b17d9c6ada4b22f82d7b850f80313f0f3.css?body=1" for 67.255.109.126 at 2016-04-13 05:56:57 +0000
+Cannot render console from 67.255.109.126! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/login" for 67.255.109.126 at 2016-04-13 05:59:04 +0000
+Cannot render console from 67.255.109.126! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (61.4ms)
+Completed 200 OK in 82ms (Views: 81.3ms | ActiveRecord: 0.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateReviewsAndRatings (20160409220521)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "reviews_and_ratings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "foodcourts" varchar, "foodoutlets" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160409220521"]]
+  [1m[36m (25.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateMenuLists (20160418161023)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "menu_lists" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160418161023"]]
+  [1m[36m (12.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to MenuLists (20160425004520)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160425004520"]]
+  [1m[35m (27.0ms)[0m  commit transaction
+Migrating to MenuList (20160425004539)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160425004539"]]
+  [1m[36m (22.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+
+
+Started GET "/" for 149.125.48.160 at 2016-04-25 15:21:07 +0000
+Cannot render console from 149.125.48.160! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (27.4ms)
+Completed 200 OK in 752ms (Views: 700.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/custom.self-0a0f3618bffda2d5b2653e81511009cb10e51960feab15aa10ac2045e6be95c9.css?body=1" for 149.125.48.160 at 2016-04-25 15:21:09 +0000
+Cannot render console from 149.125.48.160! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/menu_lists.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 149.125.48.160 at 2016-04-25 15:21:09 +0000
+Cannot render console from 149.125.48.160! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/reviews_and_ratings.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 149.125.48.160 at 2016-04-25 15:21:09 +0000
+Cannot render console from 149.125.48.160! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/scaffolds.self-a8199c7a0d79425ced25d9d4d313254b17d9c6ada4b22f82d7b850f80313f0f3.css?body=1" for 149.125.48.160 at 2016-04-25 15:21:09 +0000
+Cannot render console from 149.125.48.160! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 149.125.48.160 at 2016-04-25 15:21:09 +0000
+Cannot render console from 149.125.48.160! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/menu_lists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.48.160 at 2016-04-25 15:21:09 +0000
+Cannot render console from 149.125.48.160! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/reviews_and_ratings.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.48.160 at 2016-04-25 15:21:09 +0000
+Cannot render console from 149.125.48.160! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.48.160 at 2016-04-25 15:21:09 +0000
+Cannot render console from 149.125.48.160! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.48.160 at 2016-04-25 15:21:09 +0000
+Cannot render console from 149.125.48.160! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/menu_lists" for 149.125.48.160 at 2016-04-25 15:21:36 +0000
+Cannot render console from 149.125.48.160! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#index as HTML
+  [1m[36mMenuList Load (0.2ms)[0m  [1mSELECT "menu_lists".* FROM "menu_lists"[0m
+  Rendered menu_lists/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 40ms (Views: 37.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/menu_lists" for 149.125.48.160 at 2016-04-25 15:21:57 +0000
+Cannot render console from 149.125.48.160! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#index as HTML
+  [1m[35mMenuList Load (0.2ms)[0m  SELECT "menu_lists".* FROM "menu_lists"
+  Rendered menu_lists/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 33ms (Views: 32.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/menu_lists/new" for 149.125.48.160 at 2016-04-25 15:22:01 +0000
+Cannot render console from 149.125.48.160! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#new as HTML
+  Rendered menu_lists/_form.html.erb (30.7ms)
+  Rendered menu_lists/new.html.erb within layouts/application (50.4ms)
+Completed 200 OK in 178ms (Views: 174.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/menu_lists" for 149.125.48.160 at 2016-04-25 15:22:06 +0000
+Cannot render console from 149.125.48.160! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RPQ9qm3XimCf29vnmyDvUalw70M+GlPAYGB/15/aE8QymjMJZ1EBL3Ilj7eCP00a7QZ2hlE4TNCpzs+8WhgO1g==", "commit"=>"Create Menu list"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "menu_lists" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2016-04-25 15:22:06.304591"], ["updated_at", "2016-04-25 15:22:06.304591"]]
+  [1m[36m (10.0ms)[0m  [1mcommit transaction[0m
+Redirected to https://private-ws-ashah38.c9users.io/menu_lists/1
+Completed 302 Found in 113ms (ActiveRecord: 10.8ms)
+
+
+Started GET "/menu_lists/1" for 149.125.48.160 at 2016-04-25 15:22:06 +0000
+Cannot render console from 149.125.48.160! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMenuList Load (0.4ms)[0m  SELECT  "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered menu_lists/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 73ms (Views: 42.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/menu_lists" for 149.125.48.160 at 2016-04-25 15:22:23 +0000
+Cannot render console from 149.125.48.160! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#index as HTML
+  [1m[36mMenuList Load (0.2ms)[0m  [1mSELECT "menu_lists".* FROM "menu_lists"[0m
+  Rendered menu_lists/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 31ms (Views: 30.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 149.125.48.160 at 2016-04-25 15:22:23 +0000
+Cannot render console from 149.125.48.160! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 32ms (Views: 30.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/menu_lists" for 149.125.48.160 at 2016-04-25 15:25:41 +0000
+Cannot render console from 149.125.48.160! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#index as HTML
+  [1m[36mMenuList Load (0.5ms)[0m  [1mSELECT "menu_lists".* FROM "menu_lists"[0m
+  Rendered menu_lists/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 58ms (Views: 56.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/menu_lists" for 149.125.48.160 at 2016-04-25 16:34:28 +0000
+Cannot render console from 149.125.48.160! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#index as HTML
+  [1m[35mMenuList Load (0.4ms)[0m  SELECT "menu_lists".* FROM "menu_lists"
+  Rendered menu_lists/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 129ms (Views: 127.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/menu_lists.self-7091722d712ea6d651da66616f144b1d5d9980f9bd028ae3ca87b472de77a9ff.css?body=1" for 149.125.48.160 at 2016-04-25 16:34:28 +0000
+Cannot render console from 149.125.48.160! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/menu_lists" for 149.125.48.160 at 2016-04-25 16:37:30 +0000
+Cannot render console from 149.125.48.160! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#index as HTML
+  [1m[36mMenuList Load (0.2ms)[0m  [1mSELECT "menu_lists".* FROM "menu_lists"[0m
+  Rendered menu_lists/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 80ms (Views: 78.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/custom.self-0a0f3618bffda2d5b2653e81511009cb10e51960feab15aa10ac2045e6be95c9.css?body=1" for 149.125.48.160 at 2016-04-25 16:37:30 +0000
+Cannot render console from 149.125.48.160! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/menu_lists.self-e2cacc3c2ab89c7676d0410b3f98267be5d4661e6f8d47dcf5a2bd3aa7b478a1.css?body=1" for 149.125.48.160 at 2016-04-25 16:37:30 +0000
+Cannot render console from 149.125.48.160! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 149.125.48.160 at 2016-04-25 16:37:30 +0000
+Cannot render console from 149.125.48.160! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/reviews_and_ratings.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 149.125.48.160 at 2016-04-25 16:37:30 +0000
+Cannot render console from 149.125.48.160! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 149.125.48.160 at 2016-04-25 16:37:30 +0000
+Cannot render console from 149.125.48.160! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/scaffolds.self-a8199c7a0d79425ced25d9d4d313254b17d9c6ada4b22f82d7b850f80313f0f3.css?body=1" for 149.125.48.160 at 2016-04-25 16:37:30 +0000
+Cannot render console from 149.125.48.160! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 149.125.48.160 at 2016-04-25 16:37:30 +0000
+Cannot render console from 149.125.48.160! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 149.125.48.160 at 2016-04-25 16:37:30 +0000
+Cannot render console from 149.125.48.160! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 149.125.48.160 at 2016-04-25 16:37:30 +0000
+Cannot render console from 149.125.48.160! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/menu_lists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.48.160 at 2016-04-25 16:37:30 +0000
+Cannot render console from 149.125.48.160! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 149.125.48.160 at 2016-04-25 16:37:30 +0000
+Cannot render console from 149.125.48.160! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/reviews_and_ratings.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.48.160 at 2016-04-25 16:37:30 +0000
+Cannot render console from 149.125.48.160! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 149.125.48.160 at 2016-04-25 16:37:30 +0000
+Cannot render console from 149.125.48.160! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.48.160 at 2016-04-25 16:37:30 +0000
+Cannot render console from 149.125.48.160! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.48.160 at 2016-04-25 16:37:30 +0000
+Cannot render console from 149.125.48.160! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/menu_lists" for 149.125.48.160 at 2016-04-25 16:41:45 +0000
+Cannot render console from 149.125.48.160! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#index as HTML
+  [1m[35mMenuList Load (0.3ms)[0m  SELECT "menu_lists".* FROM "menu_lists"
+  Rendered menu_lists/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 44ms (Views: 42.5ms | ActiveRecord: 0.3ms)

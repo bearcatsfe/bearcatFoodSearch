@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Menu Lists</h1>
+
+<table id="menulist">
+  <thead>
+    <tr>
+      <th>Menu Item</th>
+      <th>Price</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @menu_list.each do |menu_list| %>
+      <tr>
+        <td><%= link_to 'Show', menu_list %></td>
+        <td><%= link_to 'Edit', edit_menu_list_path(menu_list) %></td>
+        <td><%= link_to 'Destroy', menu_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Menu list', new_menu_list_path %>

@@ -10,15 +10,25 @@ module NavigationHelpers
   def path_to(page_name)
     case page_name
     
-    when /the login page/
-      user_session_path
+    when /^the home\s?page$/
+      users_path
+      
+    when /^the Bearcat home\s?page$/
+      users_path      
+      
+    when /^the Sign Up\s?page$/
+      new_user_path           
+
+    when /^the Login\s?page$/
+      login_path        
     
-    when /signup/
-        new_user_registration_path
-
-    when /the home\s?page/
-      '/'
-
+    when /^Food Outlet\s?page$/
+      food_outlet_path
+          
+      
+    when /^Menu List\s?page$/
+      menu_lists_path  
+      
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
