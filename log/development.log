@@ -592,3 +592,179 @@ Processing by MenuListsController#index as HTML
   [1m[35mMenuList Load (0.3ms)[0m  SELECT "menu_lists".* FROM "menu_lists"
   Rendered menu_lists/index.html.erb within layouts/application (2.3ms)
 Completed 200 OK in 44ms (Views: 42.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 149.125.92.53 at 2016-05-06 21:21:23 +0000
+Cannot render console from 149.125.92.53! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (22.4ms)
+Completed 200 OK in 788ms (Views: 719.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/custom.self-0a0f3618bffda2d5b2653e81511009cb10e51960feab15aa10ac2045e6be95c9.css?body=1" for 149.125.92.53 at 2016-05-06 21:21:25 +0000
+Cannot render console from 149.125.92.53! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/menu_lists.self-e2cacc3c2ab89c7676d0410b3f98267be5d4661e6f8d47dcf5a2bd3aa7b478a1.css?body=1" for 149.125.92.53 at 2016-05-06 21:21:25 +0000
+Cannot render console from 149.125.92.53! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 149.125.92.53 at 2016-05-06 21:21:26 +0000
+Cannot render console from 149.125.92.53! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/reviews_and_ratings.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 149.125.92.53 at 2016-05-06 21:21:26 +0000
+Cannot render console from 149.125.92.53! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/scaffolds.self-a8199c7a0d79425ced25d9d4d313254b17d9c6ada4b22f82d7b850f80313f0f3.css?body=1" for 149.125.92.53 at 2016-05-06 21:21:26 +0000
+Cannot render console from 149.125.92.53! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 149.125.92.53 at 2016-05-06 21:21:26 +0000
+Cannot render console from 149.125.92.53! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 149.125.92.53 at 2016-05-06 21:21:26 +0000
+Cannot render console from 149.125.92.53! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 149.125.92.53 at 2016-05-06 21:21:26 +0000
+Cannot render console from 149.125.92.53! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 149.125.92.53 at 2016-05-06 21:21:26 +0000
+Cannot render console from 149.125.92.53! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 149.125.92.53 at 2016-05-06 21:21:26 +0000
+Cannot render console from 149.125.92.53! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/menu_lists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.92.53 at 2016-05-06 21:21:26 +0000
+Cannot render console from 149.125.92.53! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.92.53 at 2016-05-06 21:21:26 +0000
+Cannot render console from 149.125.92.53! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/reviews_and_ratings.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.92.53 at 2016-05-06 21:21:26 +0000
+Cannot render console from 149.125.92.53! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.92.53 at 2016-05-06 21:21:26 +0000
+Cannot render console from 149.125.92.53! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 149.125.92.53 at 2016-05-06 21:21:26 +0000
+Cannot render console from 149.125.92.53! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/new_reviews_and_rating" for 149.125.92.53 at 2016-05-06 21:22:33 +0000
+Cannot render console from 149.125.92.53! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [GET] "/new_reviews_and_rating"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:20:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (11.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (9.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (29.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (8.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (202.7ms)
+
+
+Started GET "/reviews_and_ratings/new" for 149.125.92.53 at 2016-05-06 21:23:07 +0000
+Cannot render console from 149.125.92.53! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#new as HTML
+  Rendered reviews_and_ratings/_form.html.erb (12.8ms)
+  Rendered reviews_and_ratings/new.html.erb within layouts/application (16.7ms)
+Completed 200 OK in 161ms (Views: 150.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/reviews_and_ratings" for 149.125.92.53 at 2016-05-06 21:23:19 +0000
+Cannot render console from 149.125.92.53! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"trMcfLyX92AZLTY05LBL2gKcUY4uRvblDOEm47qeM+ptSBS1NWMZ/eJD6l3uivtG1y+pSnY1RnlTdee0zOE73Q==", "commit"=>"Rate"}
+  [1m[36m (0.9ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "reviews_and_ratings" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2016-05-06 21:23:19.681162"], ["updated_at", "2016-05-06 21:23:19.681162"]]
+  [1m[36m (15.7ms)[0m  [1mcommit transaction[0m
+Redirected to https://demo-hw0-practice-kushalshinde.c9users.io/reviews_and_ratings/1
+Completed 302 Found in 48ms (ActiveRecord: 17.5ms)
+
+
+Started GET "/reviews_and_ratings/1" for 149.125.92.53 at 2016-05-06 21:23:19 +0000
+Cannot render console from 149.125.92.53! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mReviewsAndRating Load (0.4ms)[0m  SELECT  "reviews_and_ratings".* FROM "reviews_and_ratings" WHERE "reviews_and_ratings"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered reviews_and_ratings/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 93ms (Views: 68.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/reviews_and_ratings" for 149.125.92.53 at 2016-05-06 21:23:34 +0000
+Cannot render console from 149.125.92.53! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"trMcfLyX92AZLTY05LBL2gKcUY4uRvblDOEm47qeM+ptSBS1NWMZ/eJD6l3uivtG1y+pSnY1RnlTdee0zOE73Q==", "commit"=>"Stars"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "reviews_and_ratings" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2016-05-06 21:23:34.874388"], ["updated_at", "2016-05-06 21:23:34.874388"]]
+  [1m[36m (12.4ms)[0m  [1mcommit transaction[0m
+Redirected to https://demo-hw0-practice-kushalshinde.c9users.io/reviews_and_ratings/2
+Completed 302 Found in 21ms (ActiveRecord: 13.7ms)
+
+
+Started GET "/reviews_and_ratings/2" for 149.125.92.53 at 2016-05-06 21:23:34 +0000
+Cannot render console from 149.125.92.53! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mReviewsAndRating Load (0.3ms)[0m  SELECT  "reviews_and_ratings".* FROM "reviews_and_ratings" WHERE "reviews_and_ratings"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered reviews_and_ratings/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 78ms (Views: 75.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/reviews_and_ratings" for 149.125.92.53 at 2016-05-06 21:31:42 +0000
+Cannot render console from 149.125.92.53! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"trMcfLyX92AZLTY05LBL2gKcUY4uRvblDOEm47qeM+ptSBS1NWMZ/eJD6l3uivtG1y+pSnY1RnlTdee0zOE73Q==", "commit"=>"Rate"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "reviews_and_ratings" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2016-05-06 21:31:42.185140"], ["updated_at", "2016-05-06 21:31:42.185140"]]
+  [1m[36m (12.6ms)[0m  [1mcommit transaction[0m
+Redirected to https://demo-hw0-practice-kushalshinde.c9users.io/reviews_and_ratings/3
+Completed 302 Found in 21ms (ActiveRecord: 13.3ms)
+
+
+Started GET "/reviews_and_ratings/3" for 149.125.92.53 at 2016-05-06 21:31:42 +0000
+Cannot render console from 149.125.92.53! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mReviewsAndRating Load (0.2ms)[0m  SELECT  "reviews_and_ratings".* FROM "reviews_and_ratings" WHERE "reviews_and_ratings"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered reviews_and_ratings/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 40ms (Views: 38.2ms | ActiveRecord: 0.2ms)
