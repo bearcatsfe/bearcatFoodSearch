@@ -28,8 +28,14 @@ When /^(?:|I )click on the "(.*?)" link$/ do |link|
    click_link(link)
 end
 
+
 When /^(?:|I )fill in "([^\"]*)" with "([^\"]*)"?$/ do |field, value|
   fill_in(field, :with => value)
+end
+
+When(/^I follow "([^"]*)"$/) do |link|
+ # pending # Write code here that turns the phrase above into concrete actions
+   click_link(link)
 end
 
 When(/^I click on the "([^"]*)" button to sign up$/) do |button|
