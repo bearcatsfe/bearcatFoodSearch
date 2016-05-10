@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+menu_lists = [  {:menu_item => 'Aladdin', :price => 'G'},
+    	        {:menu_item => 'The Terminator', :price => 'R'},
+             ]
+    
+menu_lists.each do |list_menu|
+  MenuList.create!(list_menu)
+end
