@@ -7,22 +7,26 @@ Feature: List food courts around me
 Background: Food courts have been added to database
 
   Given the following Food courts exist in database:
-  | Food Courts                   | Distance  |    
-  | marketplace                   | 0.1 miles |
-  | Hinman                        | 0.2 miles |
+  | foodCourt                    | distance  |    
+  | Marketplace                   | 0.4  |
+  | Hinman                        | 0.2  |
+  | Chenango                      | 0.5  |
+  | Einstien Bros                 | 0.5  |
+  | C4                            | 0.3  |
+  | CIW                           | 0.1  |
+  | Jazzman                       | 0.3  |
 
 
-  And  I am on the Bearcats Food Search home page
+  #And  I am on the Bearcats Food Search home page
+  Given I am on the Bearcat home page
+  And I click on the "Food Court Listing" link
 
+Scenario: sort food courts alphabetically
+  When I follow "foodCourt"
+  Then I should see "Hinman" before "Marketplace"
+  
 
-Scenario:  List Food courts around me
-  When I enter any food item like Pizza,  burger, coffee in the search box
-  And  I press "Search"
-  Then I should see "A list of Food Courts around me"
-  And  I should see "A max of 10 food outlets listed in one page"
-
-Scenario:  List Food courts in an increasing order of distance
-  When I enter any food item like Pizza,  burger, coffee in the search box
-  And  I press "Search"
-  And  I press "Arrange"
-  Then I should see "The list of Food Courts arranged in an increasing order of distance from my current location"
+Scenario: sort food courts in increasing order of distance
+  When I follow "distance"
+  Then I should see "CIW" before "Jazzman"  
+  
