@@ -12,9 +12,9 @@ end
   #click_link(link)
 #end
 
-Then(/^I should see "([^"]*)" before "([^"]*)"$/) do |e1, e2|
+#Then(/^I should see "([^"]*)" before "([^"]*)"$/) do |e1, e2|
  # pending # Write code here that turns the phrase above into concrete actions
-  rgx = /#{e1}.*#{e2}/m
-  page.body.should =~ rgx
-end
+ # rgx = /#{e1}.*#{e2}/m
+ # page.body.should =~ rgx
+#end
 

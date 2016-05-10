@@ -4,7 +4,11 @@ class FoodCourtsController < ApplicationController
   # GET /food_courts
   # GET /food_courts.json
   def index
-    @food_courts = FoodCourt.all
+    #@food_courts = FoodCourt.all
+    @sort = params[:sort]
+    @food_court = FoodCourt.order(@sort)
+    puts "printing food courts",@food_court
+
     #sort = params[:sort] || session[:sort]
     #case sort
     #when 'foodCourt'

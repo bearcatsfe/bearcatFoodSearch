@@ -7,21 +7,16 @@
     <tr>
       <th>Food Courts</th>
       <th>Distance from Union</th>
-      <th colspan="2"></th>
+      
     </tr>
   </thead>
-
-  <tbody>
-    <% @food_courts.each do |food_court| %>
+   <tbody>
+    <% @food_court.each do |food_court| %>
       <tr>
-        <td><%= link_to 'Show', food_court %></td>
-        <td><%= link_to 'Edit', edit_food_court_path(food_court) %></td>
-        <td><%= link_to 'Destroy', food_court, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to "#{food_court.foodCourt}", menu_lists_path(food_court)%></td>
+        <td><%= food_court.distance %></td>
+        
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Food court', new_food_court_path %>
