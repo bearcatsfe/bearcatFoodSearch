@@ -4,7 +4,12 @@ class MenuListsController < ApplicationController
   # GET /menu_lists
   # GET /menu_lists.json
   def index
-    @menu_list = MenuList.all
+    @sort = params[:sort]
+    @menu_list = MenuList.order(@sort)
+    puts "printing menus",@menu_list
+    
+    #@menu_list = MenuList.all
+    #@menu_lists = MenuList.where(rating: @selected_ratings.keys).order(ordering)
   end
 
   # GET /menu_lists/1
@@ -14,7 +19,7 @@ class MenuListsController < ApplicationController
 
   # GET /menu_lists/new
   def new
-    @menu_list = MenuList.new
+    @menu_lists = MenuList.new
   end
 
   # GET /menu_lists/1/edit
@@ -24,15 +29,15 @@ class MenuListsController < ApplicationController
   # POST /menu_lists
   # POST /menu_lists.json
   def create
-    @menu_list = MenuList.new(menu_list_params)
-
+    #@menu_lists = MenuList.new(menu_list_params)
+    @menu_lists = MenuList.create!(menu_list_params)
     respond_to do |format|
-      if @menu_list.save
-        format.html { redirect_to @menu_list, notice: 'Menu list was successfully created.' }
-        format.json { render :show, status: :created, location: @menu_list }
+      if @menu_lists.save
+        format.html { redirect_to @menu_lists, notice: 'Menu list was successfully created.' }
+        format.json { render :show, status: :created, location: @menu_lists }
       else
         format.html { render :new }
-        format.json { render json: @menu_list.errors, status: :unprocessable_entity }
+        format.json { render json: @menu_lists.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -41,12 +46,12 @@ class MenuListsController < ApplicationController
   # PATCH/PUT /menu_lists/1.json
   def update
     respond_to do |format|
-      if @menu_list.update(menu_list_params)
-        format.html { redirect_to @menu_list, notice: 'Menu list was successfully updated.' }
-        format.json { render :show, status: :ok, location: @menu_list }
+      if @menu_lists.update(menu_list_params)
+        format.html { redirect_to @menu_lists, notice: 'Menu list was successfully updated.' }
+        format.json { render :show, status: :ok, location: @menu_lists }
       else
         format.html { render :edit }
-        format.json { render json: @menu_list.errors, status: :unprocessable_entity }
+        format.json { render json: @menu_lists.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -54,7 +59,7 @@ class MenuListsController < ApplicationController
   # DELETE /menu_lists/1
   # DELETE /menu_lists/1.json
   def destroy
-    @menu_list.destroy
+    @menu_lists.destroy
     respond_to do |format|
       format.html { redirect_to menu_lists_url, notice: 'Menu list was successfully destroyed.' }
       format.json { head :no_content }
@@ -64,11 +69,11 @@ class MenuListsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_menu_list
-      @menu_list = MenuList.find(params[:id])
+      @menu_lists = MenuList.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def menu_list_params
-      params.fetch(:menu_list, {})
+      params.require(:menu_lists).permit(:menu_item, :price)
     end
 end
