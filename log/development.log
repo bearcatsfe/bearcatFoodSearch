@@ -1180,3 +1180,80 @@ Migrating to CreateFoodOutlets (20160510011614)
             FROM sqlite_temp_master
             WHERE name='index_users_on_email' AND type='index'
 
+
+
+Started GET "/" for 149.125.106.55 at 2016-05-11 23:16:31 +0000
+Cannot render console from 149.125.106.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (2.0ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 1806ms (Views: 1734.2ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/assets/custom.self-0a0f3618bffda2d5b2653e81511009cb10e51960feab15aa10ac2045e6be95c9.css?body=1" for 149.125.106.55 at 2016-05-11 23:16:33 +0000
+Cannot render console from 149.125.106.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 149.125.106.55 at 2016-05-11 23:16:34 +0000
+Cannot render console from 149.125.106.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 149.125.106.55 at 2016-05-11 23:16:34 +0000
+Cannot render console from 149.125.106.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/menu_lists.self-e2cacc3c2ab89c7676d0410b3f98267be5d4661e6f8d47dcf5a2bd3aa7b478a1.css?body=1" for 149.125.106.55 at 2016-05-11 23:16:34 +0000
+Cannot render console from 149.125.106.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/food_outlets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 149.125.106.55 at 2016-05-11 23:16:34 +0000
+Cannot render console from 149.125.106.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/scaffolds.self-a8199c7a0d79425ced25d9d4d313254b17d9c6ada4b22f82d7b850f80313f0f3.css?body=1" for 149.125.106.55 at 2016-05-11 23:16:34 +0000
+Cannot render console from 149.125.106.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/reviews_and_ratings.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 149.125.106.55 at 2016-05-11 23:16:34 +0000
+Cannot render console from 149.125.106.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 149.125.106.55 at 2016-05-11 23:16:34 +0000
+Cannot render console from 149.125.106.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 149.125.106.55 at 2016-05-11 23:16:34 +0000
+Cannot render console from 149.125.106.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 149.125.106.55 at 2016-05-11 23:16:34 +0000
+Cannot render console from 149.125.106.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 149.125.106.55 at 2016-05-11 23:16:34 +0000
+Cannot render console from 149.125.106.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/menu_lists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.106.55 at 2016-05-11 23:16:34 +0000
+Cannot render console from 149.125.106.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/reviews_and_ratings.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.106.55 at 2016-05-11 23:16:34 +0000
+Cannot render console from 149.125.106.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.106.55 at 2016-05-11 23:16:34 +0000
+Cannot render console from 149.125.106.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 149.125.106.55 at 2016-05-11 23:16:34 +0000
+Cannot render console from 149.125.106.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/food_outlets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.106.55 at 2016-05-11 23:16:35 +0000
+Cannot render console from 149.125.106.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.106.55 at 2016-05-11 23:16:35 +0000
+Cannot render console from 149.125.106.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255

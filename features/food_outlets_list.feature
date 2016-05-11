@@ -12,6 +12,8 @@ Background: Food courts has been selected
   | Moghul              |
   | Tully               |
   
+  Given I am on Court List Page
+  And I click on the "Food list" link
 
 Scenario: List the food outlets
   When I select a particular food court
