@@ -6,8 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-menu_lists = [  {:menu_item => 'Aladdin', :price => '2$'},
-    	        {:menu_item => 'The Terminator', :price => '3$'},
+menu_lists = [  {:menu_item => 'Coffee', :price => '2'},
+    	        {:menu_item => 'Burger', :price => '3'},
              ]
     
 menu_lists.each do |list_menu|
