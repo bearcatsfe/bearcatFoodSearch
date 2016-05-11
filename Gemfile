@@ -55,6 +55,7 @@ group :test do
   gem 'rspec'  
   gem 'rack'  
   gem 'bcrypt'
+  gem 'bootstrap-sass',       '3.2.0.0'
+  gem 'cucumber-rails', '~> 1.4.2', :require => false
 end
 
-gem 'cucumber-rails', '~> 1.4.2', :require => false
