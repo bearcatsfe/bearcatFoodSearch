@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  resources :menu_lists
-  resources :reviews_and_ratings
+  resources :food_courts
   root 'users#index'
   get 'sessions/new'
 
@@ -10,10 +9,10 @@ Rails.application.routes.draw do
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
   
-  #root :to => "users#index"
   resources :users
-  #resources :sessions  
-  
+  resources :menu_lists
+  resources :reviews_and_ratings
+  resources :food_courts
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

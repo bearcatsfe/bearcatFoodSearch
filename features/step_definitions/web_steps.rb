@@ -28,8 +28,14 @@ When /^(?:|I )click on the "(.*?)" link$/ do |link|
    click_link(link)
 end
 
+
 When /^(?:|I )fill in "([^\"]*)" with "([^\"]*)"?$/ do |field, value|
   fill_in(field, :with => value)
+end
+
+When(/^I follow "([^"]*)"$/) do |link|
+ # pending # Write code here that turns the phrase above into concrete actions
+   click_link(link)
 end
 
 When(/^I click on the "([^"]*)" button to sign up$/) do |button|
@@ -62,4 +68,14 @@ end
 
 Then(/^I should see the "([^"]*)" flash message$/) do |flash_msg|
   page.should have_css('.flashnotice', text: flash_msg)
+end
+
+Then /I should see all the menu items/ do
+  # Make sure that all the menu itemms in the app are visible in the table
+  page.assert_selector('#menulist tbody tr', count: MenuList.count)
+end 
+
+Then /I should see all the food courts/ do
+  # Shows all the food courts
+  page.assert_selector('#foodCourtList tbody tr', count:FoodCourt.count)
 end

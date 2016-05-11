@@ -1,25 +1,36 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Menu Lists</h1>
+<h1>Menu Lists</h1>
 
-<table>
+<table id="menulist">
   <thead>
     <tr>
-      <th colspan="3"></th>
+      <th>Menu Item</th>
+<<<<<<< HEAD
+      <th>Price</th>
+      <th>Review and Ratings</th>
+=======
+      <th>Price in $</th>
+>>>>>>> e897a92606afec54147c17d524cb601bc07f4670
     </tr>
   </thead>
 
   <tbody>
-    <% @menu_lists.each do |menu_list| %>
+    <% @menu_list.each do |menu_list| %>
       <tr>
-        <td><%= link_to 'Show', menu_list %></td>
-        <td><%= link_to 'Edit', edit_menu_list_path(menu_list) %></td>
-        <td><%= link_to 'Destroy', menu_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= menu_list.menu_item %></td>
+        <td><%= menu_list.price %></td>
+          <td>
+            "<form method="post" action="/reviews_and_ratings/new">
+              <div>
+                <input value="Rate" type="submit" />
+              </div>
+            </form>"
+          </td>
       </tr>
     <% end %>
   </tbody>
+  
+  
 </table>
 
-<br>
-
-<%= link_to 'New Menu list', new_menu_list_path %>

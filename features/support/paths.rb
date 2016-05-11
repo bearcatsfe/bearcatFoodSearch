@@ -21,6 +21,16 @@ module NavigationHelpers
 
     when /^the Login\s?page$/
       login_path        
+    
+    when /^Food Outlet\s?page$/
+      food_outlet_path
+          
+      
+    when /^Menu List\s?page$/
+      menu_lists_path  
+      
+    when /^Food Court\s?page$/
+      food_courts_path
       
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
