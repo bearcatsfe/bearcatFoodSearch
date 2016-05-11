@@ -21,8 +21,6 @@ ActiveRecord::Schema.define(version: 20160504132919) do
   end
 
   create_table "menu_lists", force: :cascade do |t|
-    t.string   "menu_item"
-    t.string   "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

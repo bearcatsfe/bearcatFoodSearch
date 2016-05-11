@@ -7,6 +7,7 @@
     <tr>
       <th>Menu Item</th>
       <th>Price</th>
+      <th>Review and Ratings</th>
     </tr>
   </thead>
 
@@ -15,8 +16,17 @@
       <tr>
         <td><%= menu_list.menu_item %></td>
         <td><%= menu_list.price %></td>
+          <td>
+            "<form method="post" action="/reviews_and_ratings/new">
+              <div>
+                <input value="Rate" type="submit" />
+              </div>
+            </form>"
+          </td>
       </tr>
     <% end %>
   </tbody>
+  
+  
 </table>
 
