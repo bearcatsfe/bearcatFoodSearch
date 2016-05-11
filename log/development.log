@@ -4768,3 +4768,865 @@ Migrating to CreateFoodCourts (20160504132919)
   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
   [1m[35mSQL (0.5ms)[0m  INSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["foodCourt", "Chenango"], ["distance", "0.6 mile"], ["created_at", "2016-05-11 19:07:20.816731"], ["updated_at", "2016-05-11 19:07:20.816731"]]
   [1m[36m (20.3ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/" for 149.125.95.186 at 2016-05-11 19:47:21 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 442ms (Views: 364.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/reviews_and_ratings/new" for 149.125.95.186 at 2016-05-11 19:47:34 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#new as HTML
+  Rendered reviews_and_ratings/_form.html.erb (7.3ms)
+  Rendered reviews_and_ratings/new.html.erb within layouts/application (18.1ms)
+Completed 200 OK in 81ms (Views: 70.3ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/reviews_and_ratings" for 149.125.95.186 at 2016-05-11 19:50:21 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aJp7TXabiy7On8OHKV80ZIjsI5dgX3DJr31xQN9qzkt15YCvmSVhCVvmBjlHhNMKeHCegr75WBjBESyZ4XxMlQ==", "commit"=>"Rate"}
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "reviews_and_ratings" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2016-05-11 19:50:21.156835"], ["updated_at", "2016-05-11 19:50:21.156835"]]
+  [1m[36m (14.7ms)[0m  [1mcommit transaction[0m
+Redirected to https://demo-hw0-practice-kushalshinde.c9users.io/reviews_and_ratings/3
+Completed 302 Found in 38ms (ActiveRecord: 16.2ms)
+
+
+Started GET "/reviews_and_ratings/3" for 149.125.95.186 at 2016-05-11 19:50:21 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mReviewsAndRating Load (0.5ms)[0m  SELECT  "reviews_and_ratings".* FROM "reviews_and_ratings" WHERE "reviews_and_ratings"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered reviews_and_ratings/show.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 172ms (Views: 145.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 149.125.95.186 at 2016-05-11 19:53:13 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 446ms (Views: 393.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/menu_lists" for 149.125.95.186 at 2016-05-11 19:53:18 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#index as HTML
+  [1m[36mMenuList Load (0.3ms)[0m  [1mSELECT "menu_lists".* FROM "menu_lists"[0m
+  Rendered menu_lists/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 205ms (Views: 200.2ms | ActiveRecord: 0.5ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (23.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (11.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateUsers (20160329171948)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160329171948"]]
+  [1m[35m (12.3ms)[0m  commit transaction
+Migrating to AddPasswordDigestToUsers (20160404130516)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "users" ADD "password_digest" varchar
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160404130516"]]
+  [1m[35m (13.4ms)[0m  commit transaction
+Migrating to AddIndexToUsersEmail (20160404132723)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160404132723"]]
+  [1m[35m (11.6ms)[0m  commit transaction
+Migrating to CreateReviewsAndRatings (20160409220521)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "reviews_and_ratings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "foodcourts" varchar, "foodoutlets" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160409220521"]]
+  [1m[35m (10.3ms)[0m  commit transaction
+Migrating to MenuLists (20160425004520)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "menu_lists" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "menu_item" varchar, "price" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160425004520"]]
+  [1m[35m (9.6ms)[0m  commit transaction
+Migrating to CreateFoodCourts (20160504132919)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "food_courts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "foodCourt" varchar, "distance" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160504132919"]]
+  [1m[35m (10.0ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "menu_lists" ("menu_item", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["menu_item", "Coffee"], ["price", "2"], ["created_at", "2016-05-11 19:58:55.956224"], ["updated_at", "2016-05-11 19:58:55.956224"]]
+  [1m[35m (13.2ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "menu_lists" ("menu_item", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["menu_item", "Burger"], ["price", "3"], ["created_at", "2016-05-11 19:58:55.985214"], ["updated_at", "2016-05-11 19:58:55.985214"]]
+  [1m[36m (10.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["foodCourt", "Marketplace"], ["distance", "0.4 mile"], ["created_at", "2016-05-11 19:58:56.007491"], ["updated_at", "2016-05-11 19:58:56.007491"]]
+  [1m[35m (11.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["foodCourt", "Hinman"], ["distance", "0.5 mile"], ["created_at", "2016-05-11 19:58:56.022959"], ["updated_at", "2016-05-11 19:58:56.022959"]]
+  [1m[36m (12.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["foodCourt", "CIW"], ["distance", "0.1 mile"], ["created_at", "2016-05-11 19:58:56.037548"], ["updated_at", "2016-05-11 19:58:56.037548"]]
+  [1m[35m (10.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["foodCourt", "C4"], ["distance", "0.3 mile"], ["created_at", "2016-05-11 19:58:56.049865"], ["updated_at", "2016-05-11 19:58:56.049865"]]
+  [1m[36m (9.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["foodCourt", "Jazzman"], ["distance", "0.5 mile"], ["created_at", "2016-05-11 19:58:56.061595"], ["updated_at", "2016-05-11 19:58:56.061595"]]
+  [1m[35m (9.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["foodCourt", "Chenango"], ["distance", "0.6 mile"], ["created_at", "2016-05-11 19:58:56.073541"], ["updated_at", "2016-05-11 19:58:56.073541"]]
+  [1m[36m (9.8ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/" for 149.125.95.186 at 2016-05-11 19:59:15 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 488ms (Views: 426.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/menu_lists" for 149.125.95.186 at 2016-05-11 19:59:19 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#index as HTML
+  [1m[36mMenuList Load (0.3ms)[0m  [1mSELECT "menu_lists".* FROM "menu_lists"[0m
+  Rendered menu_lists/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 55ms (Views: 44.5ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/reviews_and_ratings/new" for 149.125.95.186 at 2016-05-11 19:59:22 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [POST] "/reviews_and_ratings/new"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:20:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (68.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (205.0ms)
+
+
+Started GET "/" for 149.125.95.186 at 2016-05-11 20:01:51 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 394ms (Views: 339.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/menu_lists" for 149.125.95.186 at 2016-05-11 20:01:54 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#index as HTML
+  [1m[36mMenuList Load (0.3ms)[0m  [1mSELECT "menu_lists".* FROM "menu_lists"[0m
+  Rendered menu_lists/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 56ms (Views: 44.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/menu_lists" for 149.125.95.186 at 2016-05-11 20:02:07 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#index as HTML
+  [1m[35mMenuList Load (0.3ms)[0m  SELECT "menu_lists".* FROM "menu_lists"
+  Rendered menu_lists/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 65ms (Views: 43.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/custom.self-0a0f3618bffda2d5b2653e81511009cb10e51960feab15aa10ac2045e6be95c9.css?body=1" for 149.125.95.186 at 2016-05-11 20:02:08 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/reviews_and_ratings.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 149.125.95.186 at 2016-05-11 20:02:08 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/food_courts.self-b3f050961e6dcca4c395c503fac80f2c08c78e9864b0eba2bb8fa95f6da9a5e1.css?body=1" for 149.125.95.186 at 2016-05-11 20:02:08 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/menu_lists.self-e2cacc3c2ab89c7676d0410b3f98267be5d4661e6f8d47dcf5a2bd3aa7b478a1.css?body=1" for 149.125.95.186 at 2016-05-11 20:02:08 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 149.125.95.186 at 2016-05-11 20:02:08 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/scaffolds.self-a8199c7a0d79425ced25d9d4d313254b17d9c6ada4b22f82d7b850f80313f0f3.css?body=1" for 149.125.95.186 at 2016-05-11 20:02:08 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 149.125.95.186 at 2016-05-11 20:02:08 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 149.125.95.186 at 2016-05-11 20:02:08 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 149.125.95.186 at 2016-05-11 20:02:08 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 149.125.95.186 at 2016-05-11 20:02:08 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 149.125.95.186 at 2016-05-11 20:02:08 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/food_courts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.95.186 at 2016-05-11 20:02:08 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/menu_lists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.95.186 at 2016-05-11 20:02:08 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/reviews_and_ratings.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.95.186 at 2016-05-11 20:02:08 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.95.186 at 2016-05-11 20:02:08 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.95.186 at 2016-05-11 20:02:08 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 149.125.95.186 at 2016-05-11 20:02:08 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started POST "/reviews_and_ratings/new" for 149.125.95.186 at 2016-05-11 20:02:10 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [POST] "/reviews_and_ratings/new"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:20:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (8.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (26.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (226.9ms)
+
+
+Started POST "/reviews_and_ratings/new" for 149.125.95.186 at 2016-05-11 20:02:50 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [POST] "/reviews_and_ratings/new"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:20:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (146.7ms)
+
+
+Started POST "/reviews_and_ratings/new" for 149.125.95.186 at 2016-05-11 20:03:35 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [POST] "/reviews_and_ratings/new"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:20:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (160.7ms)
+
+
+Started POST "/reviews_and_ratings/new" for 149.125.95.186 at 2016-05-11 20:09:03 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [POST] "/reviews_and_ratings/new"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:20:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (20.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (11.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (177.6ms)
+
+
+Started GET "/" for 149.125.95.186 at 2016-05-11 20:09:42 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 563ms (Views: 463.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/menu_lists" for 149.125.95.186 at 2016-05-11 20:09:47 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#index as HTML
+  [1m[36mMenuList Load (0.3ms)[0m  [1mSELECT "menu_lists".* FROM "menu_lists"[0m
+  Rendered menu_lists/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 223ms (Views: 212.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/reviews_and_ratings/new" for 149.125.95.186 at 2016-05-11 20:10:02 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#new as HTML
+  Rendered reviews_and_ratings/_form.html.erb (11.1ms)
+  Rendered reviews_and_ratings/new.html.erb within layouts/application (26.6ms)
+Completed 200 OK in 139ms (Views: 124.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/menu_lists" for 149.125.95.186 at 2016-05-11 20:10:44 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#index as HTML
+  [1m[35mMenuList Load (0.3ms)[0m  SELECT "menu_lists".* FROM "menu_lists"
+  Rendered menu_lists/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 47ms (Views: 44.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/menu_lists" for 149.125.95.186 at 2016-05-11 20:10:46 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#index as HTML
+  [1m[36mMenuList Load (0.3ms)[0m  [1mSELECT "menu_lists".* FROM "menu_lists"[0m
+  Rendered menu_lists/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 204ms (Views: 202.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/custom.self-0a0f3618bffda2d5b2653e81511009cb10e51960feab15aa10ac2045e6be95c9.css?body=1" for 149.125.95.186 at 2016-05-11 20:10:46 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/reviews_and_ratings.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 149.125.95.186 at 2016-05-11 20:10:46 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/menu_lists.self-e2cacc3c2ab89c7676d0410b3f98267be5d4661e6f8d47dcf5a2bd3aa7b478a1.css?body=1" for 149.125.95.186 at 2016-05-11 20:10:46 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 149.125.95.186 at 2016-05-11 20:10:46 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/food_courts.self-b3f050961e6dcca4c395c503fac80f2c08c78e9864b0eba2bb8fa95f6da9a5e1.css?body=1" for 149.125.95.186 at 2016-05-11 20:10:47 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/scaffolds.self-a8199c7a0d79425ced25d9d4d313254b17d9c6ada4b22f82d7b850f80313f0f3.css?body=1" for 149.125.95.186 at 2016-05-11 20:10:47 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 149.125.95.186 at 2016-05-11 20:10:47 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 149.125.95.186 at 2016-05-11 20:10:47 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 149.125.95.186 at 2016-05-11 20:10:47 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 149.125.95.186 at 2016-05-11 20:10:47 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 149.125.95.186 at 2016-05-11 20:10:47 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/food_courts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.95.186 at 2016-05-11 20:10:47 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/menu_lists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.95.186 at 2016-05-11 20:10:47 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/reviews_and_ratings.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.95.186 at 2016-05-11 20:10:47 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.95.186 at 2016-05-11 20:10:47 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.95.186 at 2016-05-11 20:10:47 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 149.125.95.186 at 2016-05-11 20:10:47 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/reviews_and_ratings/new" for 149.125.95.186 at 2016-05-11 20:10:51 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#new as HTML
+  Rendered reviews_and_ratings/_form.html.erb (0.9ms)
+  Rendered reviews_and_ratings/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 53ms (Views: 51.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/reviews_and_ratings" for 149.125.95.186 at 2016-05-11 20:11:00 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"48aKhqZgWtI2+PLDk8tLhF9aKrdeMOI4H0FEjowZewj+uXFkSd6w9aOBN339EKzqr8aXooCWyulxLRlXsg/51g==", "commit"=>"Rate"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "reviews_and_ratings" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2016-05-11 20:11:00.444799"], ["updated_at", "2016-05-11 20:11:00.444799"]]
+  [1m[35m (17.4ms)[0m  commit transaction
+Redirected to https://demo-hw0-practice-kushalshinde.c9users.io/reviews_and_ratings/1
+Completed 302 Found in 33ms (ActiveRecord: 18.9ms)
+
+
+Started GET "/reviews_and_ratings/1" for 149.125.95.186 at 2016-05-11 20:11:00 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mReviewsAndRating Load (0.3ms)[0m  [1mSELECT  "reviews_and_ratings".* FROM "reviews_and_ratings" WHERE "reviews_and_ratings"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered reviews_and_ratings/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 63ms (Views: 46.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reviews_and_ratings" for 149.125.95.186 at 2016-05-11 20:11:07 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#index as HTML
+  [1m[35mReviewsAndRating Load (0.3ms)[0m  SELECT "reviews_and_ratings".* FROM "reviews_and_ratings"
+  Rendered reviews_and_ratings/index.html.erb within layouts/application (22.3ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined method `edit_reviews_and_rating' for #<#<Class:0x007f949a32e228>:0x007f948c5a6a40>):
+    15:         <td><%= link_to 'Rate', reviews_and_rating %></td>
+    16:         <td><%= link_to 'Stars', reviews_and_rating %></td>
+    17:         <td><%= link_to 'Show', reviews_and_rating %></td>
+    18:         <td><%= link_to 'Edit', edit_reviews_and_rating(reviews_and_rating) %></td>
+    19:         <td><%= link_to 'Destroy', reviews_and_rating, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    20:       </tr>
+    21:     <% end %>
+  app/views/reviews_and_ratings/index.html.erb:18:in `block in _app_views_reviews_and_ratings_index_html_erb__2666579903898153492_70137993309020'
+  app/views/reviews_and_ratings/index.html.erb:13:in `_app_views_reviews_and_ratings_index_html_erb__2666579903898153492_70137993309020'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (108.1ms)
+
+
+Started GET "/reviews_and_ratings" for 149.125.95.186 at 2016-05-11 20:11:08 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#index as HTML
+  [1m[36mReviewsAndRating Load (0.3ms)[0m  [1mSELECT "reviews_and_ratings".* FROM "reviews_and_ratings"[0m
+  Rendered reviews_and_ratings/index.html.erb within layouts/application (25.8ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined method `edit_reviews_and_rating' for #<#<Class:0x007f949a32e228>:0x000000050d7a50>):
+    15:         <td><%= link_to 'Rate', reviews_and_rating %></td>
+    16:         <td><%= link_to 'Stars', reviews_and_rating %></td>
+    17:         <td><%= link_to 'Show', reviews_and_rating %></td>
+    18:         <td><%= link_to 'Edit', edit_reviews_and_rating(reviews_and_rating) %></td>
+    19:         <td><%= link_to 'Destroy', reviews_and_rating, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    20:       </tr>
+    21:     <% end %>
+  app/views/reviews_and_ratings/index.html.erb:18:in `block in _app_views_reviews_and_ratings_index_html_erb__2666579903898153492_42343800'
+  app/views/reviews_and_ratings/index.html.erb:13:in `_app_views_reviews_and_ratings_index_html_erb__2666579903898153492_42343800'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (112.6ms)
+
+
+Started GET "/menu_lists" for 149.125.95.186 at 2016-05-11 20:11:17 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#index as HTML
+  [1m[35mMenuList Load (0.3ms)[0m  SELECT "menu_lists".* FROM "menu_lists"
+  Rendered menu_lists/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 44ms (Views: 41.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/menu_lists" for 149.125.95.186 at 2016-05-11 20:11:44 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#index as HTML
+  [1m[36mMenuList Load (0.5ms)[0m  [1mSELECT "menu_lists".* FROM "menu_lists"[0m
+  Rendered menu_lists/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 54ms (Views: 50.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/food_courts.self-b3f050961e6dcca4c395c503fac80f2c08c78e9864b0eba2bb8fa95f6da9a5e1.css?body=1" for 149.125.95.186 at 2016-05-11 20:11:44 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/custom.self-0a0f3618bffda2d5b2653e81511009cb10e51960feab15aa10ac2045e6be95c9.css?body=1" for 149.125.95.186 at 2016-05-11 20:11:44 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/menu_lists.self-e2cacc3c2ab89c7676d0410b3f98267be5d4661e6f8d47dcf5a2bd3aa7b478a1.css?body=1" for 149.125.95.186 at 2016-05-11 20:11:44 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/scaffolds.self-a8199c7a0d79425ced25d9d4d313254b17d9c6ada4b22f82d7b850f80313f0f3.css?body=1" for 149.125.95.186 at 2016-05-11 20:11:44 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/reviews_and_ratings.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 149.125.95.186 at 2016-05-11 20:11:44 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 149.125.95.186 at 2016-05-11 20:11:44 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 149.125.95.186 at 2016-05-11 20:11:44 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 149.125.95.186 at 2016-05-11 20:11:44 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 149.125.95.186 at 2016-05-11 20:11:44 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 149.125.95.186 at 2016-05-11 20:11:44 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 149.125.95.186 at 2016-05-11 20:11:44 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/food_courts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.95.186 at 2016-05-11 20:11:44 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/menu_lists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.95.186 at 2016-05-11 20:11:44 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/reviews_and_ratings.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.95.186 at 2016-05-11 20:11:44 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.95.186 at 2016-05-11 20:11:44 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.95.186 at 2016-05-11 20:11:44 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 149.125.95.186 at 2016-05-11 20:11:44 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/menu_lists" for 149.125.95.186 at 2016-05-11 20:12:13 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#index as HTML
+  [1m[35mMenuList Load (0.3ms)[0m  SELECT "menu_lists".* FROM "menu_lists"
+  Rendered menu_lists/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 163ms (Views: 44.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/custom.self-0a0f3618bffda2d5b2653e81511009cb10e51960feab15aa10ac2045e6be95c9.css?body=1" for 149.125.95.186 at 2016-05-11 20:12:13 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/reviews_and_ratings.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 149.125.95.186 at 2016-05-11 20:12:13 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/menu_lists.self-e2cacc3c2ab89c7676d0410b3f98267be5d4661e6f8d47dcf5a2bd3aa7b478a1.css?body=1" for 149.125.95.186 at 2016-05-11 20:12:13 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 149.125.95.186 at 2016-05-11 20:12:13 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/food_courts.self-b3f050961e6dcca4c395c503fac80f2c08c78e9864b0eba2bb8fa95f6da9a5e1.css?body=1" for 149.125.95.186 at 2016-05-11 20:12:13 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/scaffolds.self-a8199c7a0d79425ced25d9d4d313254b17d9c6ada4b22f82d7b850f80313f0f3.css?body=1" for 149.125.95.186 at 2016-05-11 20:12:13 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 149.125.95.186 at 2016-05-11 20:12:13 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 149.125.95.186 at 2016-05-11 20:12:13 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 149.125.95.186 at 2016-05-11 20:12:13 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 149.125.95.186 at 2016-05-11 20:12:13 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 149.125.95.186 at 2016-05-11 20:12:13 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/food_courts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.95.186 at 2016-05-11 20:12:13 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/menu_lists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.95.186 at 2016-05-11 20:12:13 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.95.186 at 2016-05-11 20:12:13 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/reviews_and_ratings.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.95.186 at 2016-05-11 20:12:14 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.95.186 at 2016-05-11 20:12:14 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 149.125.95.186 at 2016-05-11 20:12:14 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/menu_lists" for 149.125.95.186 at 2016-05-11 20:13:22 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#index as HTML
+  [1m[36mMenuList Load (0.3ms)[0m  [1mSELECT "menu_lists".* FROM "menu_lists"[0m
+  Rendered menu_lists/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 50ms (Views: 47.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/custom.self-0a0f3618bffda2d5b2653e81511009cb10e51960feab15aa10ac2045e6be95c9.css?body=1" for 149.125.95.186 at 2016-05-11 20:13:23 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/food_courts.self-b3f050961e6dcca4c395c503fac80f2c08c78e9864b0eba2bb8fa95f6da9a5e1.css?body=1" for 149.125.95.186 at 2016-05-11 20:13:23 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/menu_lists.self-e2cacc3c2ab89c7676d0410b3f98267be5d4661e6f8d47dcf5a2bd3aa7b478a1.css?body=1" for 149.125.95.186 at 2016-05-11 20:13:23 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/reviews_and_ratings.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 149.125.95.186 at 2016-05-11 20:13:23 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 149.125.95.186 at 2016-05-11 20:13:23 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/scaffolds.self-a8199c7a0d79425ced25d9d4d313254b17d9c6ada4b22f82d7b850f80313f0f3.css?body=1" for 149.125.95.186 at 2016-05-11 20:13:23 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 149.125.95.186 at 2016-05-11 20:13:23 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 149.125.95.186 at 2016-05-11 20:13:23 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 149.125.95.186 at 2016-05-11 20:13:23 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 149.125.95.186 at 2016-05-11 20:13:23 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 149.125.95.186 at 2016-05-11 20:13:23 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/food_courts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.95.186 at 2016-05-11 20:13:23 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/menu_lists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.95.186 at 2016-05-11 20:13:23 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.95.186 at 2016-05-11 20:13:23 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/reviews_and_ratings.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.95.186 at 2016-05-11 20:13:23 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.95.186 at 2016-05-11 20:13:23 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 149.125.95.186 at 2016-05-11 20:13:23 +0000
+Cannot render console from 149.125.95.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
