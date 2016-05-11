@@ -5,3 +5,4 @@ Given(/^the following menu items exist in database:$/) do |table|
   end
 end
 
+

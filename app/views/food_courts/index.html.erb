@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Food Courts</h1>
+
+<table id= "foodCourtList">
+  <thead>
+    <tr>
+      <th>Food Courts</th>
+      <th>Distance from Union</th>
+      
+    </tr>
+  </thead>
+   <tbody>
+    <% @food_court.each do |food_court| %>
+      <tr>
+        <td><%= link_to "#{food_court.foodCourt}", menu_lists_path(food_court)%></td>
+        <td><%= food_court.distance %></td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>

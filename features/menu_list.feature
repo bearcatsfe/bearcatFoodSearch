@@ -42,6 +42,13 @@ Background:  Menu items have been added to the database
 #  And I should see the "menu list" 
   #And  I should see " a max of 10 menu items listed in one page with price and rating for each of the menu item"
   
+#Scenario: List the menu items
+#  Then I should see the "Menu Lists" page
+#  And I should see all the menu items  
+
 Scenario: List the menu items
+  When I am on the Bearcat home page
+  And I click on the "Menu Listing" link
   Then I should see the "Menu Lists" page
-  And I should see all the menu items  
+  And I should see all the menu items
+

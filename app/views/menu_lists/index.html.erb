@@ -6,22 +6,30 @@
   <thead>
     <tr>
       <th>Menu Item</th>
-      <th>Price</th>
-      <th colspan="2"></th>
+      <th>Price in $</th>
+      <th>Review and Ratings</th>
+      
     </tr>
   </thead>
 
   <tbody>
     <% @menu_list.each do |menu_list| %>
       <tr>
-        <td><%= link_to 'Show', menu_list %></td>
-        <td><%= link_to 'Edit', edit_menu_list_path(menu_list) %></td>
-        <td><%= link_to 'Destroy', menu_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= menu_list.menu_item %></td>
+        <td><%= menu_list.price %></td>
+          <td>
+            
+            <%#=<form method="POST" action="/reviews_and_ratings/new">
+              <div>
+                <input value="Rate" type="submit" />
+              </div>
+            </form>%>
+            <%= link_to 'Rate', new_reviews_and_rating_path %>
+          </td>
       </tr>
     <% end %>
   </tbody>
+  
+  
 </table>
 
-<br>
-
-<%= link_to 'New Menu list', new_menu_list_path %>
