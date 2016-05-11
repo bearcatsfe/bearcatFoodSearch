@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :food_outlets
   root 'users#index'
   get 'sessions/new'
 

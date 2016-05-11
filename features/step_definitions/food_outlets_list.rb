@@ -1,12 +1,16 @@
 Given(/^the following sample food outlets exist:$/) do |table|
-  # table is a Cucumber::Core::Ast::DataTable
-  pending
+  table.hashes.each do |menu_list|
+    test_menu = FoodOutlet.create!(menu_list)
+
+  end
 end
+
 
 When(/^I select a particular food court$/) do
-  pending
+  
 end
 
+=begin
 Then(/^I should see "([^"]*)"$/) do |arg1|
   pending
 end
@@ -38,3 +42,4 @@ end
 Then(/^A message should be shown "([^"]*)"$/) do |arg1|
   pending
 end
+=end
