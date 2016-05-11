@@ -26,12 +26,4 @@ Scenario: Login with invalid credentials
    And  I fill in "Email" with "ssah@bon.edu"
    And  I fill in "Password" with "126"
    When I click on the "Submit" button to Login
-   Then I should see the "Invalid Username/Password" message   
-
-#Scenario: Login with invalid format
-#   When I am on the Login page
-#   And  I fill in "Email" with "matt.sifj"
-#   And  I fill in "Password" with "owj"
-#   When I click on the "Submit" button to Login
-#   Then I should see the "include an '@'" flash message 
-  
+   Then I should see the "Invalid Username/Password" message

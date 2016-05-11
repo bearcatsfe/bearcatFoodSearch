@@ -3458,3 +3458,118 @@ Processing by UsersController#index as HTML
   [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
   Rendered users/index.html.erb within layouts/application (2.2ms)
 Completed 200 OK in 52ms (Views: 51.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 149.125.40.175 at 2016-05-11 18:57:48 +0000
+Cannot render console from 149.125.40.175! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 484ms (Views: 405.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/custom.self-2361724c0679f90cb1fe690f1f58525565d68e41b5940618c756244f4b3648f6.css?body=1" for 149.125.40.175 at 2016-05-11 18:57:49 +0000
+Cannot render console from 149.125.40.175! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/menu_lists.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 149.125.40.175 at 2016-05-11 18:57:49 +0000
+Cannot render console from 149.125.40.175! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/reviews_and_ratings.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 149.125.40.175 at 2016-05-11 18:57:49 +0000
+Cannot render console from 149.125.40.175! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/scaffolds.self-d2e5ccad1506299feea3a35bfb7c525e101bb3b214303715deb675fdc539948b.css?body=1" for 149.125.40.175 at 2016-05-11 18:57:49 +0000
+Cannot render console from 149.125.40.175! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 149.125.40.175 at 2016-05-11 18:57:49 +0000
+Cannot render console from 149.125.40.175! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 149.125.40.175 at 2016-05-11 18:57:49 +0000
+Cannot render console from 149.125.40.175! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 149.125.40.175 at 2016-05-11 18:57:49 +0000
+Cannot render console from 149.125.40.175! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 149.125.40.175 at 2016-05-11 18:57:49 +0000
+Cannot render console from 149.125.40.175! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 149.125.40.175 at 2016-05-11 18:57:49 +0000
+Cannot render console from 149.125.40.175! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 149.125.40.175 at 2016-05-11 18:57:49 +0000
+Cannot render console from 149.125.40.175! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/menu_lists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.40.175 at 2016-05-11 18:57:49 +0000
+Cannot render console from 149.125.40.175! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/reviews_and_ratings.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.40.175 at 2016-05-11 18:57:49 +0000
+Cannot render console from 149.125.40.175! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.40.175 at 2016-05-11 18:57:49 +0000
+Cannot render console from 149.125.40.175! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.40.175 at 2016-05-11 18:57:50 +0000
+Cannot render console from 149.125.40.175! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 149.125.40.175 at 2016-05-11 18:57:50 +0000
+Cannot render console from 149.125.40.175! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/login" for 149.125.40.175 at 2016-05-11 18:57:58 +0000
+Cannot render console from 149.125.40.175! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (54.3ms)
+Completed 200 OK in 121ms (Views: 120.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 149.125.40.175 at 2016-05-11 18:58:12 +0000
+Cannot render console from 149.125.40.175! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 30ms (Views: 29.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 149.125.40.175 at 2016-05-11 18:58:19 +0000
+Cannot render console from 149.125.40.175! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CjBohg/UWFtVm/y/BxxW5BTjfuBv1D0b3XfVhxQjIoSoBMWIMc0byYliIb9ekXtU3dap1xOGZvJx+ZTthcxs5w==", "session"=>{"email"=>"ssahu1@bing.com", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "ssahu1@bing.com"]]
+Redirected to https://bearcatsfoodsearch-sunilbinghamton.c9users.io/login
+Completed 302 Found in 122ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/login" for 149.125.40.175 at 2016-05-11 18:58:19 +0000
+Cannot render console from 149.125.40.175! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 38ms (Views: 37.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 149.125.40.175 at 2016-05-11 18:58:21 +0000
+Cannot render console from 149.125.40.175! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2isxwrgXvVIv10gaEdOkkbVRghFHSCvw4p6hMcCuw+J4H5zMhg7+wPMulRpIXokhfGRVJjsacBlOEOBbUUGNgQ==", "session"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", ""]]
+Redirected to https://bearcatsfoodsearch-sunilbinghamton.c9users.io/login
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for 149.125.40.175 at 2016-05-11 18:58:21 +0000
+Cannot render console from 149.125.40.175! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 50ms (Views: 49.5ms | ActiveRecord: 0.0ms)
