@@ -74,3 +74,8 @@ Then /I should see all the menu items/ do
   # Make sure that all the menu itemms in the app are visible in the table
   page.assert_selector('#menulist tbody tr', count: MenuList.count)
 end 
+
+Then /I should see all the food courts/ do
+  # Shows all the food courts
+  page.assert_selector('#foodCourtList tbody tr', count:FoodCourt.count)
+end
