@@ -19,14 +19,14 @@ Scenario: List the food outlets
   When I am on Food Court page
   And I click on the "Marketplace" link
   And I should see the "Food Court" page
-  And  I should see the list of food outlets.
-  
+  And I should see the list of food outlets.
+
 # Scenario: Search for a food outlet that is listed
 #   When Enter some text in serch box
 #   And There is a list of food outlets listed
 #   And The search keyword matches any of the list item
 #   Then The matched food outlet should be shortlisted.
-  
+
 # Scenario: Search for a food outlet that is not listed
 #   When Enter some text in serch box
 #   And There is a list of food outlets listed
