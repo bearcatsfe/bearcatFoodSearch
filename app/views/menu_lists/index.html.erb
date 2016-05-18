@@ -1,7 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Menu Lists</h1>
-
 <table id="menulist">
   <thead>
     <tr>
@@ -24,7 +23,7 @@
                 <input value="Rate" type="submit" />
               </div>
             </form>%>
-            <%= link_to 'Rate', new_reviews_and_rating_path %>
+            <%= link_to 'Rate', new_reviews_and_rating_path(menu_list) %>
           </td>
       </tr>
     <% end %>

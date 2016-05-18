@@ -29,7 +29,7 @@ class FoodCourtsController < ApplicationController
   # GET /food_courts/1
   # GET /food_courts/1.json
   def show
-    id = params[:id] 
+    id = params[:session][:id] 
     @food_court = FoodCourt.find(id) 
     puts "printing food courts", @food_court.id
   end
