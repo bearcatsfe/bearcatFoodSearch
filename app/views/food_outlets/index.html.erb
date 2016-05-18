@@ -2,19 +2,18 @@
 
 <h1>Listing Food Outlets</h1>
 
-<table>
-  <thead>
+<table id= "foodOutletList">
+ <thead>
     <tr>
-      <th colspan="3"></th>
+      <th>Food Outlets</th>
+      
     </tr>
   </thead>
-
-  <tbody>
-    <% @food_outlets.each do |food_outlet| %>
+   <tbody>
+    <% @food_outlets.each do |food_outlets| %>
       <tr>
-        <td><%= link_to 'Show', food_outlet %></td>
-        <td><%= link_to 'Edit', edit_food_outlet_path(food_outlet) %></td>
-        <td><%= link_to 'Destroy', food_outlet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to "#{food_outlets.foodOutletList}", food_outlets_path(food_outlets)%></td>
+        
       </tr>
     <% end %>
   </tbody>
@@ -22,4 +21,4 @@
 
 <br>
 
-<%= link_to 'New Food outlet', new_food_outlet_path %>
+<!--%= link_to 'New Food outlet', new_food_outlet_path %>

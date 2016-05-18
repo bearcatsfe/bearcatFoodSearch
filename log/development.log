@@ -1700,3 +1700,754 @@ Processing by FoodOutletsController#index as HTML
   [1m[36mFoodOutlet Load (0.5ms)[0m  [1mSELECT "food_outlets".* FROM "food_outlets"[0m
   Rendered food_outlets/index.html.erb within layouts/application (4.6ms)
 Completed 200 OK in 109ms (Views: 105.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 149.125.105.168 at 2016-05-18 18:04:13 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 526ms (Views: 446.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/food_courts" for 149.125.105.168 at 2016-05-18 18:04:18 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodCourtsController#index as HTML
+  [1m[36mFoodCourt Load (0.3ms)[0m  [1mSELECT "food_courts".* FROM "food_courts"[0m
+  Rendered food_courts/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 123ms (Views: 112.9ms | ActiveRecord: 0.9ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.3ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "menu_lists" ("menu_item", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["menu_item", "Coffee"], ["price", "2"], ["created_at", "2016-05-18 19:31:41.249847"], ["updated_at", "2016-05-18 19:31:41.249847"]]
+  [1m[35m (14.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "menu_lists" ("menu_item", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["menu_item", "Burger"], ["price", "3"], ["created_at", "2016-05-18 19:31:41.276887"], ["updated_at", "2016-05-18 19:31:41.276887"]]
+  [1m[36m (13.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["foodCourt", "Marketplace"], ["distance", "0.4 mile"], ["created_at", "2016-05-18 19:31:41.299204"], ["updated_at", "2016-05-18 19:31:41.299204"]]
+  [1m[35m (7.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["foodCourt", "Hinman"], ["distance", "0.5 mile"], ["created_at", "2016-05-18 19:31:41.310043"], ["updated_at", "2016-05-18 19:31:41.310043"]]
+  [1m[36m (12.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["foodCourt", "CIW"], ["distance", "0.1 mile"], ["created_at", "2016-05-18 19:31:41.324567"], ["updated_at", "2016-05-18 19:31:41.324567"]]
+  [1m[35m (11.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["foodCourt", "C4"], ["distance", "0.3 mile"], ["created_at", "2016-05-18 19:31:41.338601"], ["updated_at", "2016-05-18 19:31:41.338601"]]
+  [1m[36m (10.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["foodCourt", "Jazzman"], ["distance", "0.5 mile"], ["created_at", "2016-05-18 19:31:41.352293"], ["updated_at", "2016-05-18 19:31:41.352293"]]
+  [1m[35m (14.1ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["foodCourt", "Chenango"], ["distance", "0.6 mile"], ["created_at", "2016-05-18 19:31:41.369161"], ["updated_at", "2016-05-18 19:31:41.369161"]]
+  [1m[36m (14.8ms)[0m  [1mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "menu_lists" ("menu_item", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["menu_item", "Coffee"], ["price", "2"], ["created_at", "2016-05-18 19:32:29.182504"], ["updated_at", "2016-05-18 19:32:29.182504"]]
+  [1m[35m (11.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "menu_lists" ("menu_item", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["menu_item", "Burger"], ["price", "3"], ["created_at", "2016-05-18 19:32:29.201361"], ["updated_at", "2016-05-18 19:32:29.201361"]]
+  [1m[36m (12.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["foodCourt", "Marketplace"], ["distance", "0.4 mile"], ["created_at", "2016-05-18 19:32:29.222940"], ["updated_at", "2016-05-18 19:32:29.222940"]]
+  [1m[35m (11.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["foodCourt", "Hinman"], ["distance", "0.5 mile"], ["created_at", "2016-05-18 19:32:29.237288"], ["updated_at", "2016-05-18 19:32:29.237288"]]
+  [1m[36m (13.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["foodCourt", "CIW"], ["distance", "0.1 mile"], ["created_at", "2016-05-18 19:32:29.253600"], ["updated_at", "2016-05-18 19:32:29.253600"]]
+  [1m[35m (12.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["foodCourt", "C4"], ["distance", "0.3 mile"], ["created_at", "2016-05-18 19:32:29.269545"], ["updated_at", "2016-05-18 19:32:29.269545"]]
+  [1m[36m (10.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["foodCourt", "Jazzman"], ["distance", "0.5 mile"], ["created_at", "2016-05-18 19:32:29.282496"], ["updated_at", "2016-05-18 19:32:29.282496"]]
+  [1m[35m (12.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["foodCourt", "Chenango"], ["distance", "0.6 mile"], ["created_at", "2016-05-18 19:32:29.297187"], ["updated_at", "2016-05-18 19:32:29.297187"]]
+  [1m[36m (10.2ms)[0m  [1mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "menu_lists" ("menu_item", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["menu_item", "Coffee"], ["price", "2"], ["created_at", "2016-05-18 19:39:54.702429"], ["updated_at", "2016-05-18 19:39:54.702429"]]
+  [1m[35m (11.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "menu_lists" ("menu_item", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["menu_item", "Burger"], ["price", "3"], ["created_at", "2016-05-18 19:39:54.724001"], ["updated_at", "2016-05-18 19:39:54.724001"]]
+  [1m[36m (13.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["foodCourt", "Marketplace"], ["distance", "0.4 mile"], ["created_at", "2016-05-18 19:39:54.748845"], ["updated_at", "2016-05-18 19:39:54.748845"]]
+  [1m[35m (10.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["foodCourt", "Hinman"], ["distance", "0.5 mile"], ["created_at", "2016-05-18 19:39:54.762027"], ["updated_at", "2016-05-18 19:39:54.762027"]]
+  [1m[36m (9.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["foodCourt", "CIW"], ["distance", "0.1 mile"], ["created_at", "2016-05-18 19:39:54.773914"], ["updated_at", "2016-05-18 19:39:54.773914"]]
+  [1m[35m (10.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["foodCourt", "C4"], ["distance", "0.3 mile"], ["created_at", "2016-05-18 19:39:54.786496"], ["updated_at", "2016-05-18 19:39:54.786496"]]
+  [1m[36m (9.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["foodCourt", "Jazzman"], ["distance", "0.5 mile"], ["created_at", "2016-05-18 19:39:54.798327"], ["updated_at", "2016-05-18 19:39:54.798327"]]
+  [1m[35m (9.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["foodCourt", "Chenango"], ["distance", "0.6 mile"], ["created_at", "2016-05-18 19:39:54.810800"], ["updated_at", "2016-05-18 19:39:54.810800"]]
+  [1m[36m (7.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "food_outlets" ("foodOutletList", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["foodOutletList", "subway"], ["created_at", "2016-05-18 19:39:54.826532"], ["updated_at", "2016-05-18 19:39:54.826532"]]
+  [1m[35m (11.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "food_outlets" ("foodOutletList", "created_at", "updated_at") VALUES (?, ?, ?)  [["foodOutletList", "tully"], ["created_at", "2016-05-18 19:39:54.840742"], ["updated_at", "2016-05-18 19:39:54.840742"]]
+  [1m[36m (11.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "food_outlets" ("foodOutletList", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["foodOutletList", "mogul"], ["created_at", "2016-05-18 19:39:54.855144"], ["updated_at", "2016-05-18 19:39:54.855144"]]
+  [1m[35m (11.7ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "menu_lists" ("menu_item", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["menu_item", "Coffee"], ["price", "2"], ["created_at", "2016-05-18 19:40:37.529882"], ["updated_at", "2016-05-18 19:40:37.529882"]]
+  [1m[35m (17.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "menu_lists" ("menu_item", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["menu_item", "Burger"], ["price", "3"], ["created_at", "2016-05-18 19:40:37.556944"], ["updated_at", "2016-05-18 19:40:37.556944"]]
+  [1m[36m (9.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["foodCourt", "Marketplace"], ["distance", "0.4 mile"], ["created_at", "2016-05-18 19:40:37.575102"], ["updated_at", "2016-05-18 19:40:37.575102"]]
+  [1m[35m (12.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["foodCourt", "Hinman"], ["distance", "0.5 mile"], ["created_at", "2016-05-18 19:40:37.589706"], ["updated_at", "2016-05-18 19:40:37.589706"]]
+  [1m[36m (12.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["foodCourt", "CIW"], ["distance", "0.1 mile"], ["created_at", "2016-05-18 19:40:37.605032"], ["updated_at", "2016-05-18 19:40:37.605032"]]
+  [1m[35m (21.4ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["foodCourt", "C4"], ["distance", "0.3 mile"], ["created_at", "2016-05-18 19:40:37.629085"], ["updated_at", "2016-05-18 19:40:37.629085"]]
+  [1m[36m (10.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["foodCourt", "Jazzman"], ["distance", "0.5 mile"], ["created_at", "2016-05-18 19:40:37.641767"], ["updated_at", "2016-05-18 19:40:37.641767"]]
+  [1m[35m (12.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["foodCourt", "Chenango"], ["distance", "0.6 mile"], ["created_at", "2016-05-18 19:40:37.656749"], ["updated_at", "2016-05-18 19:40:37.656749"]]
+  [1m[36m (23.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "food_outlets" ("foodOutletList", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["foodOutletList", "subway"], ["created_at", "2016-05-18 19:40:37.686975"], ["updated_at", "2016-05-18 19:40:37.686975"]]
+  [1m[35m (15.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "food_outlets" ("foodOutletList", "created_at", "updated_at") VALUES (?, ?, ?)  [["foodOutletList", "tully"], ["created_at", "2016-05-18 19:40:37.705432"], ["updated_at", "2016-05-18 19:40:37.705432"]]
+  [1m[36m (12.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "food_outlets" ("foodOutletList", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["foodOutletList", "mogul"], ["created_at", "2016-05-18 19:40:37.720140"], ["updated_at", "2016-05-18 19:40:37.720140"]]
+  [1m[35m (11.4ms)[0m  commit transaction
+
+
+Started GET "/" for 149.125.105.168 at 2016-05-18 19:46:02 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 530ms (Views: 449.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/menu_lists" for 149.125.105.168 at 2016-05-18 19:46:06 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#index as HTML
+  [1m[36mMenuList Load (0.4ms)[0m  [1mSELECT "menu_lists".* FROM "menu_lists"[0m
+  Rendered menu_lists/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 221ms (Views: 50.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/food_courts" for 149.125.105.168 at 2016-05-18 19:46:10 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodCourtsController#index as HTML
+  [1m[35mFoodCourt Load (0.6ms)[0m  SELECT "food_courts".* FROM "food_courts"
+  Rendered food_courts/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 253ms (Views: 110.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 149.125.105.168 at 2016-05-18 19:50:58 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 401ms (Views: 330.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/food_outlets" for 149.125.105.168 at 2016-05-18 19:51:01 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#index as HTML
+  [1m[36mFoodOutlet Load (0.3ms)[0m  [1mSELECT "food_outlets".* FROM "food_outlets"[0m
+  Rendered food_outlets/index.html.erb within layouts/application (90.2ms)
+Completed 500 Internal Server Error in 107ms (ActiveRecord: 0.7ms)
+
+ActionView::Template::Error (undefined local variable or method `food_outlets' for #<#<Class:0x007f8006452a30>:0x007f8006463c68>):
+    12:    <tbody>
+    13:     <% @food_outlets.each do |food_outlet| %>
+    14:       <tr>
+    15:         <td><%= link_to "#{food_outlets.foodOutletList}", food_outlets_path(food_outlets)%></td>
+    16:         
+    17:       </tr>
+    18:     <% end %>
+  app/views/food_outlets/index.html.erb:15:in `block in _app_views_food_outlets_index_html_erb___3335330264077206180_70093918901340'
+  app/views/food_outlets/index.html.erb:13:in `_app_views_food_outlets_index_html_erb___3335330264077206180_70093918901340'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (17.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (122.8ms)
+
+
+Started GET "/food_outlets" for 149.125.105.168 at 2016-05-18 19:51:02 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#index as HTML
+  [1m[35mFoodOutlet Load (0.4ms)[0m  SELECT "food_outlets".* FROM "food_outlets"
+  Rendered food_outlets/index.html.erb within layouts/application (33.0ms)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined local variable or method `food_outlets' for #<#<Class:0x007f8006452a30>:0x007f8006027028>):
+    12:    <tbody>
+    13:     <% @food_outlets.each do |food_outlet| %>
+    14:       <tr>
+    15:         <td><%= link_to "#{food_outlets.foodOutletList}", food_outlets_path(food_outlets)%></td>
+    16:         
+    17:       </tr>
+    18:     <% end %>
+  app/views/food_outlets/index.html.erb:15:in `block in _app_views_food_outlets_index_html_erb___3335330264077206180_70093916679820'
+  app/views/food_outlets/index.html.erb:13:in `_app_views_food_outlets_index_html_erb___3335330264077206180_70093916679820'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (28.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (125.7ms)
+
+
+Started GET "/" for 149.125.105.168 at 2016-05-18 19:52:16 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 58ms (Views: 56.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/food_outlets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 149.125.105.168 at 2016-05-18 19:52:16 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/menu_lists.self-e2cacc3c2ab89c7676d0410b3f98267be5d4661e6f8d47dcf5a2bd3aa7b478a1.css?body=1" for 149.125.105.168 at 2016-05-18 19:52:16 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/custom.self-78eb09f65f14e4f08a99707ecf179936466d9ee021c47461eb79b8d4fcc8e83a.css?body=1" for 149.125.105.168 at 2016-05-18 19:52:16 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/reviews_and_ratings.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 149.125.105.168 at 2016-05-18 19:52:16 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/scaffolds.self-a8199c7a0d79425ced25d9d4d313254b17d9c6ada4b22f82d7b850f80313f0f3.css?body=1" for 149.125.105.168 at 2016-05-18 19:52:16 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/food_courts.self-98033a627fa08c2f6437bac9532f6802a0375ba75d585c657a767568c6582cbc.css?body=1" for 149.125.105.168 at 2016-05-18 19:52:17 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 149.125.105.168 at 2016-05-18 19:52:17 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 149.125.105.168 at 2016-05-18 19:52:17 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 149.125.105.168 at 2016-05-18 19:52:17 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 149.125.105.168 at 2016-05-18 19:52:17 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 149.125.105.168 at 2016-05-18 19:52:17 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 149.125.105.168 at 2016-05-18 19:52:17 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/food_courts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.105.168 at 2016-05-18 19:52:17 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/food_outlets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.105.168 at 2016-05-18 19:52:17 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/menu_lists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.105.168 at 2016-05-18 19:52:17 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/reviews_and_ratings.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.105.168 at 2016-05-18 19:52:17 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.105.168 at 2016-05-18 19:52:17 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.105.168 at 2016-05-18 19:52:17 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 149.125.105.168 at 2016-05-18 19:52:17 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/food_outlets" for 149.125.105.168 at 2016-05-18 19:52:18 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#index as HTML
+  Rendered food_outlets/index.html.erb within layouts/application (5.1ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    10:     </tr>
+    11:   </thead>
+    12:    <tbody>
+    13:     <% @food_outlet.each do |food_outlet| %>
+    14:       <tr>
+    15:         <td><%= link_to "#{food_outlets.foodOutletList}", food_outlets_path(food_outlets)%></td>
+    16:         
+  app/views/food_outlets/index.html.erb:13:in `_app_views_food_outlets_index_html_erb___3335330264077206180_70093920398100'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (8.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (75.7ms)
+
+
+Started GET "/food_outlets" for 149.125.105.168 at 2016-05-18 19:52:19 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#index as HTML
+  Rendered food_outlets/index.html.erb within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    10:     </tr>
+    11:   </thead>
+    12:    <tbody>
+    13:     <% @food_outlet.each do |food_outlet| %>
+    14:       <tr>
+    15:         <td><%= link_to "#{food_outlets.foodOutletList}", food_outlets_path(food_outlets)%></td>
+    16:         
+  app/views/food_outlets/index.html.erb:13:in `_app_views_food_outlets_index_html_erb___3335330264077206180_70093909965200'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (123.5ms)
+
+
+Started GET "/food_outlets" for 149.125.105.168 at 2016-05-18 19:53:30 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#index as HTML
+  Rendered food_outlets/index.html.erb within layouts/application (2.4ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    10:     </tr>
+    11:   </thead>
+    12:    <tbody>
+    13:     <% @food_outlet.each do |food_outlet| %>
+    14:       <tr>
+    15:         <td><%= link_to "#{food_outlets.foodOutletList}", food_outlets_path(food_outlets)%></td>
+    16:         
+  app/views/food_outlets/index.html.erb:13:in `_app_views_food_outlets_index_html_erb___3335330264077206180_70093909965200'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (92.6ms)
+
+
+Started GET "/food_outlets" for 149.125.105.168 at 2016-05-18 19:53:32 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#index as HTML
+  Rendered food_outlets/index.html.erb within layouts/application (2.6ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    10:     </tr>
+    11:   </thead>
+    12:    <tbody>
+    13:     <% @food_outlet.each do |food_outlet| %>
+    14:       <tr>
+    15:         <td><%= link_to "#{food_outlets.foodOutletList}", food_outlets_path(food_outlets)%></td>
+    16:         
+  app/views/food_outlets/index.html.erb:13:in `_app_views_food_outlets_index_html_erb___3335330264077206180_70093909965200'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (102.0ms)
+
+
+Started GET "/" for 149.125.105.168 at 2016-05-18 19:53:36 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 52ms (Views: 50.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/food_courts.self-98033a627fa08c2f6437bac9532f6802a0375ba75d585c657a767568c6582cbc.css?body=1" for 149.125.105.168 at 2016-05-18 19:53:36 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/food_outlets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 149.125.105.168 at 2016-05-18 19:53:36 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/scaffolds.self-a8199c7a0d79425ced25d9d4d313254b17d9c6ada4b22f82d7b850f80313f0f3.css?body=1" for 149.125.105.168 at 2016-05-18 19:53:36 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/reviews_and_ratings.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 149.125.105.168 at 2016-05-18 19:53:36 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/menu_lists.self-e2cacc3c2ab89c7676d0410b3f98267be5d4661e6f8d47dcf5a2bd3aa7b478a1.css?body=1" for 149.125.105.168 at 2016-05-18 19:53:36 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 149.125.105.168 at 2016-05-18 19:53:36 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/custom.self-78eb09f65f14e4f08a99707ecf179936466d9ee021c47461eb79b8d4fcc8e83a.css?body=1" for 149.125.105.168 at 2016-05-18 19:53:36 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 149.125.105.168 at 2016-05-18 19:53:36 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 149.125.105.168 at 2016-05-18 19:53:36 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 149.125.105.168 at 2016-05-18 19:53:36 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 149.125.105.168 at 2016-05-18 19:53:36 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 149.125.105.168 at 2016-05-18 19:53:36 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/food_courts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.105.168 at 2016-05-18 19:53:36 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/food_outlets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.105.168 at 2016-05-18 19:53:36 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/menu_lists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.105.168 at 2016-05-18 19:53:36 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/reviews_and_ratings.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.105.168 at 2016-05-18 19:53:36 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.105.168 at 2016-05-18 19:53:36 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.105.168 at 2016-05-18 19:53:36 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 149.125.105.168 at 2016-05-18 19:53:36 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/food_outlets" for 149.125.105.168 at 2016-05-18 19:53:37 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#index as HTML
+  Rendered food_outlets/index.html.erb within layouts/application (2.6ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    10:     </tr>
+    11:   </thead>
+    12:    <tbody>
+    13:     <% @food_outlet.each do |food_outlet| %>
+    14:       <tr>
+    15:         <td><%= link_to "#{food_outlets.foodOutletList}", food_outlets_path(food_outlets)%></td>
+    16:         
+  app/views/food_outlets/index.html.erb:13:in `_app_views_food_outlets_index_html_erb___3335330264077206180_70093920398100'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (17.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (101.7ms)
+
+
+Started GET "/food_outlets" for 149.125.105.168 at 2016-05-18 19:53:38 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#index as HTML
+  Rendered food_outlets/index.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    10:     </tr>
+    11:   </thead>
+    12:    <tbody>
+    13:     <% @food_outlet.each do |food_outlet| %>
+    14:       <tr>
+    15:         <td><%= link_to "#{food_outlets.foodOutletList}", food_outlets_path(food_outlets)%></td>
+    16:         
+  app/views/food_outlets/index.html.erb:13:in `_app_views_food_outlets_index_html_erb___3335330264077206180_70093909965200'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (111.4ms)
+
+
+Started GET "/" for 149.125.105.168 at 2016-05-18 19:53:59 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 421ms (Views: 354.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/food_outlets" for 149.125.105.168 at 2016-05-18 19:54:10 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#index as HTML
+  Rendered food_outlets/index.html.erb within layouts/application (8.3ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    10:     </tr>
+    11:   </thead>
+    12:    <tbody>
+    13:     <% @food_outlet.each do |food_outlet| %>
+    14:       <tr>
+    15:         <td><%= link_to "#{food_outlets.foodOutletList}", food_outlets_path(food_outlets)%></td>
+    16:         
+  app/views/food_outlets/index.html.erb:13:in `_app_views_food_outlets_index_html_erb___2769689716249003823_69983055012480'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (23.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (10.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (109.6ms)
+
+
+Started GET "/food_outlets" for 149.125.105.168 at 2016-05-18 19:54:11 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#index as HTML
+  Rendered food_outlets/index.html.erb within layouts/application (5.6ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    10:     </tr>
+    11:   </thead>
+    12:    <tbody>
+    13:     <% @food_outlet.each do |food_outlet| %>
+    14:       <tr>
+    15:         <td><%= link_to "#{food_outlets.foodOutletList}", food_outlets_path(food_outlets)%></td>
+    16:         
+  app/views/food_outlets/index.html.erb:13:in `_app_views_food_outlets_index_html_erb___2769689716249003823_69983052323860'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (100.1ms)
+
+
+Started GET "/" for 149.125.105.168 at 2016-05-18 19:54:54 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 377ms (Views: 321.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/food_outlets" for 149.125.105.168 at 2016-05-18 19:55:01 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#index as HTML
+  [1m[36mFoodOutlet Load (0.4ms)[0m  [1mSELECT "food_outlets".* FROM "food_outlets"[0m
+  Rendered food_outlets/index.html.erb within layouts/application (36.9ms)
+Completed 500 Internal Server Error in 148ms (ActiveRecord: 1.0ms)
+
+ActionView::Template::Error (undefined local variable or method `food_outlets' for #<#<Class:0x007f4ef244c7b0>:0x007f4ef245dad8>):
+    12:    <tbody>
+    13:     <% @food_outlets.each do |food_outlet| %>
+    14:       <tr>
+    15:         <td><%= link_to "#{food_outlets.foodOutletList}", food_outlets_path(food_outlets)%></td>
+    16:         
+    17:       </tr>
+    18:     <% end %>
+  app/views/food_outlets/index.html.erb:15:in `block in _app_views_food_outlets_index_html_erb__1470812105398688240_69988524417940'
+  app/views/food_outlets/index.html.erb:13:in `_app_views_food_outlets_index_html_erb__1470812105398688240_69988524417940'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (27.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (21.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (137.4ms)
+
+
+Started GET "/food_outlets" for 149.125.105.168 at 2016-05-18 19:55:02 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#index as HTML
+  [1m[35mFoodOutlet Load (0.4ms)[0m  SELECT "food_outlets".* FROM "food_outlets"
+  Rendered food_outlets/index.html.erb within layouts/application (36.1ms)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined local variable or method `food_outlets' for #<#<Class:0x007f4ef244c7b0>:0x007f4ef23200a8>):
+    12:    <tbody>
+    13:     <% @food_outlets.each do |food_outlet| %>
+    14:       <tr>
+    15:         <td><%= link_to "#{food_outlets.foodOutletList}", food_outlets_path(food_outlets)%></td>
+    16:         
+    17:       </tr>
+    18:     <% end %>
+  app/views/food_outlets/index.html.erb:15:in `block in _app_views_food_outlets_index_html_erb__1470812105398688240_69988523792040'
+  app/views/food_outlets/index.html.erb:13:in `_app_views_food_outlets_index_html_erb__1470812105398688240_69988523792040'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (25.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (11.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (122.5ms)
+
+
+Started GET "/" for 149.125.105.168 at 2016-05-18 19:55:53 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 308ms (Views: 256.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/food_outlets" for 149.125.105.168 at 2016-05-18 19:55:55 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#index as HTML
+  [1m[36mFoodOutlet Load (0.3ms)[0m  [1mSELECT "food_outlets".* FROM "food_outlets"[0m
+  Rendered food_outlets/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 87ms (Views: 80.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/food_outlets.1" for 149.125.105.168 at 2016-05-18 19:56:03 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#index as 
+  [1m[35mFoodOutlet Load (0.3ms)[0m  SELECT "food_outlets".* FROM "food_outlets"
+  Rendered food_outlets/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 100ms (Views: 99.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/food_outlets.2" for 149.125.105.168 at 2016-05-18 19:56:05 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#index as 
+  [1m[36mFoodOutlet Load (0.2ms)[0m  [1mSELECT "food_outlets".* FROM "food_outlets"[0m
+  Rendered food_outlets/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 58ms (Views: 57.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/food_outlets.3" for 149.125.105.168 at 2016-05-18 19:56:06 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#index as 
+  [1m[35mFoodOutlet Load (0.3ms)[0m  SELECT "food_outlets".* FROM "food_outlets"
+  Rendered food_outlets/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 63ms (Views: 61.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/food_outlets.4" for 149.125.105.168 at 2016-05-18 19:56:07 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#index as 
+  [1m[36mFoodOutlet Load (0.3ms)[0m  [1mSELECT "food_outlets".* FROM "food_outlets"[0m
+  Rendered food_outlets/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 181ms (Views: 179.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/food_outlets.5" for 149.125.105.168 at 2016-05-18 19:56:08 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#index as 
+  [1m[35mFoodOutlet Load (0.2ms)[0m  SELECT "food_outlets".* FROM "food_outlets"
+  Rendered food_outlets/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 79ms (Views: 78.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/food_outlets.6" for 149.125.105.168 at 2016-05-18 19:56:09 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#index as 
+  [1m[36mFoodOutlet Load (0.2ms)[0m  [1mSELECT "food_outlets".* FROM "food_outlets"[0m
+  Rendered food_outlets/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 68ms (Views: 66.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 149.125.105.168 at 2016-05-18 19:58:27 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 423ms (Views: 348.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/food_outlets" for 149.125.105.168 at 2016-05-18 19:58:32 +0000
+Cannot render console from 149.125.105.168! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#index as HTML
+  [1m[36mFoodOutlet Load (0.4ms)[0m  [1mSELECT "food_outlets".* FROM "food_outlets"[0m
+  Rendered food_outlets/index.html.erb within layouts/application (27.8ms)
+Completed 200 OK in 76ms (Views: 72.0ms | ActiveRecord: 1.1ms)
