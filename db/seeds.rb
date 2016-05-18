@@ -32,9 +32,12 @@ end
 
 
 food_outlets = [
-                {:foodOutletList => 'subway'},
-                {:foodOutletList =>'tully'},
-                {:foodOutletList => 'mogul'},
+                {:foodOutletList => 'Subway', :outletId => "1"},
+                {:foodOutletList =>'Tully',  :outletId => "2"},
+                {:foodOutletList => 'Mogul', :outletId => "3"},
+                {:foodOutletList => 'Garden Fresh', :outletId => "4"},
+                {:foodOutletList => 'Starbucks', :outletId => "5"},
+                {:foodOutletList => 'Cakes n Eggs', :outletId => "6"},
               ]
                 
 food_outlets.each do |list_food_outlet|

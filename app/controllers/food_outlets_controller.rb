@@ -5,11 +5,17 @@ class FoodOutletsController < ApplicationController
   # GET /food_outlets.json
   def index
     @food_outlets = FoodOutlet.all
+    
   end
 
   # GET /food_outlets/1
   # GET /food_outlets/1.json
   def show
+    
+    @idOutlet = params[:id]
+    @food_outlets = FoodOutlet.where(outletId:@idOutlet)
+    
+    
   end
 
   # GET /food_outlets/new
