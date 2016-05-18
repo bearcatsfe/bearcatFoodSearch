@@ -25,7 +25,6 @@ module NavigationHelpers
     when /^Food Outlet\s?page$/
       food_outlet_path
           
-      
     when /^Menu List\s?page$/
       menu_lists_path  
       
