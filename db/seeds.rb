@@ -32,3 +32,14 @@ food_courts = [
 food_courts.each do |list_food_court|
   FoodCourt.create!(list_food_court)
 end
+
+food_outlets = [
+                {:foodOutletList => 'subway'},
+                {:foodOutletList =>'tully'},
+                {:foodOutletList => 'mogul'},
+              ]
+                
+food_outlets.each do |list_food_outlet|
+  FoodOutlet.create!(list_food_outlet)
+
+end

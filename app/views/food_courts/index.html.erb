@@ -5,13 +5,19 @@
 <table id= "foodCourtList">
   <thead>
     <tr>
-      <th>Food Courts</th>
-      <th>Distance from Union</th>
+      <th class="<%= @foodCourt_header %>">
+  <%= link_to 'Food Courts', food_courts_path(:sort => 'foodCourt'), :id => 'foodCourt_header' %>
+  </th>  
+  <th class="<%= @distance_header %>">
+    <%= link_to 'Distance from Union', food_courts_path(:sort => 'distance'), :id => 'distance_header' %>
+  </th>
+  
+
       
     </tr>
   </thead>
    <tbody>
-    <% @food_court.each do |food_court| %>
+    <% @food_outlets.each do |food_court| %>
       <tr>
         <td><%= link_to "#{food_court.foodCourt}", menu_lists_path(food_court)%></td>
         <td><%= food_court.distance %></td>
