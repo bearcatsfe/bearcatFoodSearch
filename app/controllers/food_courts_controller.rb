@@ -4,11 +4,19 @@ class FoodCourtsController < ApplicationController
   # GET /food_courts
   # GET /food_courts.json
   def index
+    
     #@food_courts = FoodCourt.all
     @sort = params[:sort]
     @food_court = FoodCourt.order(@sort)
     puts "printing food courts",@food_court
-
+    
+    sort = params[:sort] || session[:sort]
+    case sort
+    when 'foodCourt'
+      ordering,@foodCourt_header = {:foodCourt => :asc}, 'hilite'
+    when 'distance'
+      ordering,@distance_header = {:distance => :asc}, 'hilite'
+    end
     #sort = params[:sort] || session[:sort]
     #case sort
     #when 'foodCourt'
@@ -21,6 +29,9 @@ class FoodCourtsController < ApplicationController
   # GET /food_courts/1
   # GET /food_courts/1.json
   def show
+    id = params[:id] 
+    @food_court = FoodCourt.find(id) 
+    puts "printing food courts", @food_court.id
   end
 
   # GET /food_courts/new
@@ -30,6 +41,7 @@ class FoodCourtsController < ApplicationController
 
   # GET /food_courts/1/edit
   def edit
+        @food_court = FoodCourt.find params[:id]
   end
 
   # POST /food_courts
