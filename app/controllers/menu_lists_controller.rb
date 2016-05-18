@@ -15,6 +15,7 @@ class MenuListsController < ApplicationController
   # GET /menu_lists/1
   # GET /menu_lists/1.json
   def show
+    
   end
 
   # GET /menu_lists/new
