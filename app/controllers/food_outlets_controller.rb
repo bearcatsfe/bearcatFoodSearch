@@ -15,7 +15,6 @@ class FoodOutletsController < ApplicationController
     @idOutlet = params[:id]
     @food_outlets = FoodOutlet.where(outletId:@idOutlet)
     
-    
   end
 
   # GET /food_outlets/new
