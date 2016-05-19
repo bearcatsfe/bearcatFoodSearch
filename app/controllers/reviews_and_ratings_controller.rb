@@ -1,5 +1,5 @@
 class ReviewsAndRatingsController < ApplicationController
-  before_action :set_reviews_and_rating, only: [:show, :edit, :update, :destroy]
+  before_action :set_reviews_and_rating, :logged_in_user, only: [:show, :edit, :update, :destroy]
 
   # GET /reviews_and_ratings
   # GET /reviews_and_ratings.json
