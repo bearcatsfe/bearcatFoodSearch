@@ -11,7 +11,7 @@ describe SessionsController , :type => :controller do
       
       it 'should login successfully only if both username and password are valid and redirect_to Homepage' do
         post :create, session: {email: 'sunilsahu@gmail.com', password: '123456'}
-        expect(response).to redirect_to root_url
+        expect(response).to redirect_to new_reviews_and_rating_path
       end
   
       it 'should not login successfully if username is invalid and redirect_to to login page' do
