@@ -4,17 +4,29 @@ class MenuListsController < ApplicationController
   # GET /menu_lists
   # GET /menu_lists.json
   def index
-    @sort = params[:sort]
-    @menu_list = MenuList.order(@sort)
-    puts "printing menus",@menu_list
+    #@sort = params[:sort]
+    #@menu_list = MenuList.order(@sort)
+    #Rails.logger.debug("debug::" + params[:id])
     
-    #@menu_list = MenuList.all
+    @menu_list = MenuList.all
     #@menu_lists = MenuList.where(rating: @selected_ratings.keys).order(ordering)
+    
+   # @menu_list = MenuList.where(foodCourt: params[:session][:foodCourt])
+    #@menu_list = MenuList.find(params[id])
   end
 
   # GET /menu_lists/1
   # GET /menu_lists/1.json
   def show
+    #@outlet_name = SELECT  "food_courts".foodCourt FROM "food_courts" WHERE "food_courts"."id" = ? LIMIT 1 [["id", params[:id]];
+    #puts("name "+@outlet_name)
+    @idMenu = params[:id]
+    @menu_list = MenuList.where(outlet_id: @idMenu)
+    #@menu_list = MenuList.all
+    # retrieve movie ID from URI route
+    #@menu_list = MenuList.find(id)
+    #@menu_list = MenuList.where(outlet_id: params[:id])
+    #redirect_to menu_lists_path
   end
 
   # GET /menu_lists/new

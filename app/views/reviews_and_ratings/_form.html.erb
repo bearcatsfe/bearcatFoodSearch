@@ -11,8 +11,24 @@
     </div>
   <% end %>
 
+<form>
+  <select name="Rate">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select>
+  <br><br>
   <div class="actions">
     <%= f.submit "Rate"%>
-    <%= f.submit "Stars"%>
+    <%#= f.submit "Stars"%>
   </div>
+  
+  <textarea name="message" rows="10" cols="30">Enter your reviews here.</textarea>
+  <br>
+  <input type="submit">
+</form>
+
+  
 <% end %>

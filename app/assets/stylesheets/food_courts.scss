@@ -5,12 +5,12 @@ table#foodCourtList {
   margin: 10px;
   border-collapse: collapse;
   width: 100%;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid cyan;
 }
 table#foodCourtList th {
   border: 2px solid white;
   font-weight: bold;
-  background-color: wheat;
+  background-color: cyan;
 }
 table#foodCourtList th, table#foodCourtList td {
   padding: 4px;

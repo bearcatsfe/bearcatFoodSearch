@@ -1,17 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Menu Lists</h1>
-
 <table id="menulist">
   <thead>
     <tr>
       <th>Menu Item</th>
-<<<<<<< HEAD
-      <th>Price</th>
-      <th>Review and Ratings</th>
-=======
       <th>Price in $</th>
->>>>>>> e897a92606afec54147c17d524cb601bc07f4670
+      <th>Review and Ratings</th>
+      
     </tr>
   </thead>
 
@@ -21,11 +17,13 @@
         <td><%= menu_list.menu_item %></td>
         <td><%= menu_list.price %></td>
           <td>
-            "<form method="post" action="/reviews_and_ratings/new">
+            
+            <%#=<form method="POST" action="/reviews_and_ratings/new">
               <div>
                 <input value="Rate" type="submit" />
               </div>
-            </form>"
+            </form>%>
+            <%= link_to 'Rate', new_reviews_and_rating_path(menu_list) %>
           </td>
       </tr>
     <% end %>
