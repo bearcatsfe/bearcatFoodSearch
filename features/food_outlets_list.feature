@@ -16,9 +16,9 @@ Background: Food courts has been selected
 
 Scenario: List the food outlets
   When I am on Food Court page
-  And I click on the "Food Courts" link
+  And I click on the "Link to Food Outlet" link
   Then I should see the "Food Outlet" page
-  And I should see the list of food outlets.
+  Then I should see the list of food outlets.
 
 # Scenario: Search for a food outlet that is listed
 #   When Enter some text in serch box

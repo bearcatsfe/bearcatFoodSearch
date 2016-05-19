@@ -80,3 +80,7 @@ Then /I should see all the food courts/ do
   # Shows all the food courts
   page.assert_selector('#foodCourtList tbody tr', count:FoodCourt.count)
 end
+
+Then(/^I should see the list of food outlets\.$/) do
+  
+end
