@@ -2942,3 +2942,633 @@ Processing by FoodCourtsController#index as HTML
   [1m[35mFoodCourt Load (0.3ms)[0m  SELECT "food_courts".* FROM "food_courts"  ORDER BY foodCourt
   Rendered food_courts/index.html.erb within layouts/application (1.2ms)
 Completed 200 OK in 142ms (Views: 35.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 149.125.66.183 at 2016-05-18 20:31:32 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 422ms (Views: 368.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/menu_lists.self-ff00edb7f66f205c99ca5b8ec1342a56de5d2e5b16dc614ca64c927e65edf060.css?body=1" for 149.125.66.183 at 2016-05-18 20:31:34 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/food_courts" for 149.125.66.183 at 2016-05-18 20:31:37 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodCourtsController#index as HTML
+  [1m[36mFoodCourt Load (0.4ms)[0m  [1mSELECT "food_courts".* FROM "food_courts"[0m
+  Rendered food_courts/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 68ms (Views: 39.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/food_outlets/1" for 149.125.66.183 at 2016-05-18 20:31:40 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mFoodOutlet Load (2.2ms)[0m  SELECT  "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered food_outlets/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 83ms (Views: 47.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/food_outlets/1" for 149.125.66.183 at 2016-05-18 20:32:02 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFoodOutlet Load (0.2ms)[0m  [1mSELECT  "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered food_outlets/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 42ms (Views: 40.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/food_outlets" for 149.125.66.183 at 2016-05-18 20:32:16 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#index as HTML
+  [1m[35mFoodOutlet Load (0.2ms)[0m  SELECT "food_outlets".* FROM "food_outlets"
+  Rendered food_outlets/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 41ms (Views: 40.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/food_outlets" for 149.125.66.183 at 2016-05-18 20:32:23 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#index as HTML
+  [1m[36mFoodOutlet Load (0.3ms)[0m  [1mSELECT "food_outlets".* FROM "food_outlets"[0m
+  Rendered food_outlets/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 39ms (Views: 37.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/food_courts" for 149.125.66.183 at 2016-05-18 20:32:37 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodCourtsController#index as HTML
+  [1m[35mFoodCourt Load (0.2ms)[0m  SELECT "food_courts".* FROM "food_courts"
+  Rendered food_courts/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 195ms (Views: 49.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/food_outlets/2" for 149.125.66.183 at 2016-05-18 20:32:39 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mFoodOutlet Load (0.2ms)[0m  [1mSELECT  "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered food_outlets/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 43ms (Views: 41.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/food_outlets" for 149.125.66.183 at 2016-05-18 20:33:31 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#index as HTML
+  [1m[35mFoodOutlet Load (0.2ms)[0m  SELECT "food_outlets".* FROM "food_outlets"
+  Rendered food_outlets/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 44ms (Views: 43.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/food_outlets" for 149.125.66.183 at 2016-05-18 20:33:42 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#index as HTML
+  [1m[36mFoodOutlet Load (0.3ms)[0m  [1mSELECT "food_outlets".* FROM "food_outlets"[0m
+  Rendered food_outlets/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 43ms (Views: 41.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/food_courts" for 149.125.66.183 at 2016-05-18 20:34:02 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodCourtsController#index as HTML
+  [1m[35mFoodCourt Load (0.3ms)[0m  SELECT "food_courts".* FROM "food_courts"
+  Rendered food_courts/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 151ms (Views: 148.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/food_outlets/3" for 149.125.66.183 at 2016-05-18 20:34:04 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mFoodOutlet Load (0.2ms)[0m  [1mSELECT  "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered food_outlets/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 45ms (Views: 43.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/food_outlets" for 149.125.66.183 at 2016-05-18 20:34:11 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#index as HTML
+  [1m[35mFoodOutlet Load (0.3ms)[0m  SELECT "food_outlets".* FROM "food_outlets"
+  Rendered food_outlets/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 46ms (Views: 45.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/food_outlets" for 149.125.66.183 at 2016-05-18 20:34:25 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#index as HTML
+  [1m[36mFoodOutlet Load (0.3ms)[0m  [1mSELECT "food_outlets".* FROM "food_outlets"[0m
+  Rendered food_outlets/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 41ms (Views: 39.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 149.125.66.183 at 2016-05-18 20:34:32 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 36ms (Views: 35.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/food_courts" for 149.125.66.183 at 2016-05-18 20:34:37 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodCourtsController#index as HTML
+  [1m[36mFoodCourt Load (0.2ms)[0m  [1mSELECT "food_courts".* FROM "food_courts"[0m
+  Rendered food_courts/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 48ms (Views: 46.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/food_outlets" for 149.125.66.183 at 2016-05-18 20:34:52 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#index as HTML
+  [1m[35mFoodOutlet Load (0.2ms)[0m  SELECT "food_outlets".* FROM "food_outlets"
+  Rendered food_outlets/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 46ms (Views: 44.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 149.125.66.183 at 2016-05-18 20:58:08 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 533ms (Views: 483.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/food_courts.self-9b35e7160e25470f6889053bc146cf2dcc5f493124caa9d70ec2aac34c7f26bc.css?body=1" for 149.125.66.183 at 2016-05-18 20:58:09 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/food_courts" for 149.125.66.183 at 2016-05-18 20:58:12 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodCourtsController#index as HTML
+  [1m[36mFoodCourt Load (0.3ms)[0m  [1mSELECT "food_courts".* FROM "food_courts"[0m
+  Rendered food_courts/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 61ms (Views: 51.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/food_courts?sort=foodCourt" for 149.125.66.183 at 2016-05-18 20:58:14 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodCourtsController#index as HTML
+  Parameters: {"sort"=>"foodCourt"}
+  [1m[35mFoodCourt Load (0.5ms)[0m  SELECT "food_courts".* FROM "food_courts"  ORDER BY foodCourt
+  Rendered food_courts/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 186ms (Views: 70.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/food_courts?sort=distance" for 149.125.66.183 at 2016-05-18 20:58:24 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodCourtsController#index as HTML
+  Parameters: {"sort"=>"distance"}
+  [1m[36mFoodCourt Load (0.3ms)[0m  [1mSELECT "food_courts".* FROM "food_courts"  ORDER BY distance[0m
+  Rendered food_courts/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 99ms (Views: 96.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/food_courts?sort=distance" for 149.125.66.183 at 2016-05-18 20:58:24 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodCourtsController#index as HTML
+  Parameters: {"sort"=>"distance"}
+  [1m[35mFoodCourt Load (0.3ms)[0m  SELECT "food_courts".* FROM "food_courts"  ORDER BY distance
+  Rendered food_courts/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 66ms (Views: 63.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/food_courts?sort=foodCourt" for 149.125.66.183 at 2016-05-18 20:58:34 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodCourtsController#index as HTML
+  Parameters: {"sort"=>"foodCourt"}
+  [1m[36mFoodCourt Load (0.3ms)[0m  [1mSELECT "food_courts".* FROM "food_courts"  ORDER BY foodCourt[0m
+  Rendered food_courts/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 84ms (Views: 81.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/food_courts?sort=foodCourt" for 149.125.66.183 at 2016-05-18 20:58:35 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodCourtsController#index as HTML
+  Parameters: {"sort"=>"foodCourt"}
+  [1m[35mFoodCourt Load (0.2ms)[0m  SELECT "food_courts".* FROM "food_courts"  ORDER BY foodCourt
+  Rendered food_courts/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 41ms (Views: 39.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/food_courts?sort=distance" for 149.125.66.183 at 2016-05-18 20:58:37 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodCourtsController#index as HTML
+  Parameters: {"sort"=>"distance"}
+  [1m[36mFoodCourt Load (0.4ms)[0m  [1mSELECT "food_courts".* FROM "food_courts"  ORDER BY distance[0m
+  Rendered food_courts/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 61ms (Views: 54.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/food_courts?sort=foodCourt" for 149.125.66.183 at 2016-05-18 20:59:22 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodCourtsController#index as HTML
+  Parameters: {"sort"=>"foodCourt"}
+  [1m[35mFoodCourt Load (0.6ms)[0m  SELECT "food_courts".* FROM "food_courts"  ORDER BY foodCourt
+  Rendered food_courts/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 139ms (Views: 44.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/food_courts?sort=distance" for 149.125.66.183 at 2016-05-18 21:00:18 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodCourtsController#index as HTML
+  Parameters: {"sort"=>"distance"}
+  [1m[36mFoodCourt Load (0.3ms)[0m  [1mSELECT "food_courts".* FROM "food_courts"  ORDER BY distance[0m
+  Rendered food_courts/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 226ms (Views: 37.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/food_courts?sort=foodCourt" for 149.125.66.183 at 2016-05-18 21:00:24 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodCourtsController#index as HTML
+  Parameters: {"sort"=>"foodCourt"}
+  [1m[35mFoodCourt Load (0.4ms)[0m  SELECT "food_courts".* FROM "food_courts"  ORDER BY foodCourt
+  Rendered food_courts/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 50ms (Views: 47.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 149.125.66.183 at 2016-05-18 21:23:51 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 444ms (Views: 387.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/food_courts" for 149.125.66.183 at 2016-05-18 21:23:55 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodCourtsController#index as HTML
+  [1m[36mFoodCourt Load (0.3ms)[0m  [1mSELECT "food_courts".* FROM "food_courts"[0m
+  Rendered food_courts/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 154ms (Views: 39.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/food_outlets/4" for 149.125.66.183 at 2016-05-18 21:23:58 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mFoodOutlet Load (0.3ms)[0m  SELECT  "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."id" = ? LIMIT 1  [["id", 4]]
+Completed 404 Not Found in 34ms (ActiveRecord: 0.6ms)
+
+ActiveRecord::RecordNotFound (Couldn't find FoodOutlet with 'id'=4):
+  app/controllers/food_outlets_controller.rb:67:in `set_food_outlet'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (86.1ms)
+
+
+Started GET "/food_outlets/4" for 149.125.66.183 at 2016-05-18 21:23:58 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mFoodOutlet Load (0.2ms)[0m  [1mSELECT  "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."id" = ? LIMIT 1[0m  [["id", 4]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+ActiveRecord::RecordNotFound (Couldn't find FoodOutlet with 'id'=4):
+  app/controllers/food_outlets_controller.rb:67:in `set_food_outlet'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (85.5ms)
+
+
+Started GET "/" for 149.125.66.183 at 2016-05-18 21:27:47 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 340ms (Views: 289.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/food_courts" for 149.125.66.183 at 2016-05-18 21:27:50 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodCourtsController#index as HTML
+  [1m[36mFoodCourt Load (0.2ms)[0m  [1mSELECT "food_courts".* FROM "food_courts"[0m
+  Rendered food_courts/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 164ms (Views: 41.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/food_courts?sort=foodCourt" for 149.125.66.183 at 2016-05-18 21:28:01 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodCourtsController#index as HTML
+  Parameters: {"sort"=>"foodCourt"}
+  [1m[35mFoodCourt Load (0.4ms)[0m  SELECT "food_courts".* FROM "food_courts"  ORDER BY foodCourt
+  Rendered food_courts/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 76ms (Views: 73.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 149.125.66.183 at 2016-05-18 21:40:30 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (25.8ms)
+Completed 200 OK in 417ms (Views: 371.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/food_outlets" for 149.125.66.183 at 2016-05-18 21:40:34 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#index as HTML
+  [1m[36mFoodOutlet Load (0.3ms)[0m  [1mSELECT "food_outlets".* FROM "food_outlets"[0m
+  Rendered food_outlets/index.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 99ms (Views: 95.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/food_courts" for 149.125.66.183 at 2016-05-18 21:40:40 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodCourtsController#index as HTML
+  [1m[35mFoodCourt Load (0.3ms)[0m  SELECT "food_courts".* FROM "food_courts"
+  Rendered food_courts/index.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 80ms (Views: 70.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/food_outlets/2" for 149.125.66.183 at 2016-05-18 21:40:43 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mFoodOutlet Load (0.3ms)[0m  [1mSELECT  "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered food_outlets/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 179ms (Views: 156.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/food_outlets/5" for 149.125.66.183 at 2016-05-18 21:40:52 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mFoodOutlet Load (0.2ms)[0m  SELECT  "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."id" = ? LIMIT 1  [["id", 5]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+ActiveRecord::RecordNotFound (Couldn't find FoodOutlet with 'id'=5):
+  app/controllers/food_outlets_controller.rb:67:in `set_food_outlet'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (8.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (76.3ms)
+
+
+Started GET "/food_outlets/5" for 149.125.66.183 at 2016-05-18 21:40:52 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mFoodOutlet Load (0.2ms)[0m  [1mSELECT  "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."id" = ? LIMIT 1[0m  [["id", 5]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+ActiveRecord::RecordNotFound (Couldn't find FoodOutlet with 'id'=5):
+  app/controllers/food_outlets_controller.rb:67:in `set_food_outlet'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (10.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (96.9ms)
+
+
+Started GET "/food_courts" for 149.125.66.183 at 2016-05-18 21:40:58 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodCourtsController#index as HTML
+  [1m[35mFoodCourt Load (0.3ms)[0m  SELECT "food_courts".* FROM "food_courts"
+  Rendered food_courts/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 193ms (Views: 190.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/food_outlets/6" for 149.125.66.183 at 2016-05-18 21:41:02 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mFoodOutlet Load (0.2ms)[0m  [1mSELECT  "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."id" = ? LIMIT 1[0m  [["id", 6]]
+Completed 404 Not Found in 179ms (ActiveRecord: 0.2ms)
+
+ActiveRecord::RecordNotFound (Couldn't find FoodOutlet with 'id'=6):
+  app/controllers/food_outlets_controller.rb:67:in `set_food_outlet'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (66.5ms)
+
+
+Started GET "/food_outlets/6" for 149.125.66.183 at 2016-05-18 21:41:03 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mFoodOutlet Load (0.2ms)[0m  SELECT  "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."id" = ? LIMIT 1  [["id", 6]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+ActiveRecord::RecordNotFound (Couldn't find FoodOutlet with 'id'=6):
+  app/controllers/food_outlets_controller.rb:67:in `set_food_outlet'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (60.7ms)
+
+
+Started GET "/food_courts" for 149.125.66.183 at 2016-05-18 21:41:05 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodCourtsController#index as HTML
+  [1m[36mFoodCourt Load (0.3ms)[0m  [1mSELECT "food_courts".* FROM "food_courts"[0m
+  Rendered food_courts/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 107ms (Views: 65.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/food_outlets/2" for 149.125.66.183 at 2016-05-18 21:41:08 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mFoodOutlet Load (0.3ms)[0m  SELECT  "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered food_outlets/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 52ms (Views: 50.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/food_outlets/5" for 149.125.66.183 at 2016-05-18 21:41:20 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mFoodOutlet Load (0.3ms)[0m  [1mSELECT  "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."id" = ? LIMIT 1[0m  [["id", 5]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms)
+
+ActiveRecord::RecordNotFound (Couldn't find FoodOutlet with 'id'=5):
+  app/controllers/food_outlets_controller.rb:67:in `set_food_outlet'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (106.0ms)
+
+
+Started GET "/food_outlets/5" for 149.125.66.183 at 2016-05-18 21:41:20 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mFoodOutlet Load (0.1ms)[0m  SELECT  "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."id" = ? LIMIT 1  [["id", 5]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms)
+
+ActiveRecord::RecordNotFound (Couldn't find FoodOutlet with 'id'=5):
+  app/controllers/food_outlets_controller.rb:67:in `set_food_outlet'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (23.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (120.7ms)
+
+
+Started GET "/food_outlets/5" for 149.125.66.183 at 2016-05-18 21:41:21 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mFoodOutlet Load (0.2ms)[0m  [1mSELECT  "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."id" = ? LIMIT 1[0m  [["id", 5]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.2ms)
+
+ActiveRecord::RecordNotFound (Couldn't find FoodOutlet with 'id'=5):
+  app/controllers/food_outlets_controller.rb:67:in `set_food_outlet'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (112.6ms)
+
+
+Started GET "/food_courts" for 149.125.66.183 at 2016-05-18 21:41:33 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodCourtsController#index as HTML
+  [1m[35mFoodCourt Load (0.4ms)[0m  SELECT "food_courts".* FROM "food_courts"
+  Rendered food_courts/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 224ms (Views: 49.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/food_outlets/5" for 149.125.66.183 at 2016-05-18 21:41:55 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mFoodOutlet Load (0.2ms)[0m  [1mSELECT  "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."id" = ? LIMIT 1[0m  [["id", 5]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+ActiveRecord::RecordNotFound (Couldn't find FoodOutlet with 'id'=5):
+  app/controllers/food_outlets_controller.rb:67:in `set_food_outlet'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (13.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (89.5ms)
+
+
+Started GET "/food_outlets/5" for 149.125.66.183 at 2016-05-18 21:41:55 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mFoodOutlet Load (0.2ms)[0m  SELECT  "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."id" = ? LIMIT 1  [["id", 5]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+ActiveRecord::RecordNotFound (Couldn't find FoodOutlet with 'id'=5):
+  app/controllers/food_outlets_controller.rb:67:in `set_food_outlet'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (81.9ms)
+
+
+Started GET "/food_courts" for 149.125.66.183 at 2016-05-18 21:41:59 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodCourtsController#index as HTML
+  [1m[36mFoodCourt Load (0.3ms)[0m  [1mSELECT "food_courts".* FROM "food_courts"[0m
+  Rendered food_courts/index.html.erb within layouts/application (33.6ms)
+Completed 200 OK in 82ms (Views: 79.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/food_outlets/1" for 149.125.66.183 at 2016-05-18 21:42:01 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mFoodOutlet Load (0.3ms)[0m  SELECT  "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered food_outlets/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 59ms (Views: 56.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 149.125.66.183 at 2016-05-18 21:43:21 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 445ms (Views: 397.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/food_courts" for 149.125.66.183 at 2016-05-18 21:43:25 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodCourtsController#index as HTML
+  [1m[36mFoodCourt Load (0.4ms)[0m  [1mSELECT "food_courts".* FROM "food_courts"[0m
+  Rendered food_courts/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 63ms (Views: 50.4ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/food_outlets.2" for 149.125.66.183 at 2016-05-18 21:43:29 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#index as 
+  [1m[35mFoodOutlet Load (0.3ms)[0m  SELECT "food_outlets".* FROM "food_outlets"
+  Rendered food_outlets/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 169ms (Views: 165.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 149.125.66.183 at 2016-05-18 23:53:37 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 475ms (Views: 416.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 149.125.66.183 at 2016-05-19 00:40:56 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (23.3ms)
+Completed 200 OK in 366ms (Views: 317.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/food_courts" for 149.125.66.183 at 2016-05-19 00:41:00 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodCourtsController#index as HTML
+  [1m[36mFoodCourt Load (0.3ms)[0m  [1mSELECT "food_courts".* FROM "food_courts"[0m
+  Rendered food_courts/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 51ms (Views: 40.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/food_courts?sort=foodCourt" for 149.125.66.183 at 2016-05-19 00:41:02 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodCourtsController#index as HTML
+  Parameters: {"sort"=>"foodCourt"}
+  [1m[35mFoodCourt Load (0.3ms)[0m  SELECT "food_courts".* FROM "food_courts"  ORDER BY foodCourt
+  Rendered food_courts/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 86ms (Views: 84.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/food_courts?sort=distance" for 149.125.66.183 at 2016-05-19 00:41:05 +0000
+Cannot render console from 149.125.66.183! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodCourtsController#index as HTML
+  Parameters: {"sort"=>"distance"}
+  [1m[36mFoodCourt Load (0.5ms)[0m  [1mSELECT "food_courts".* FROM "food_courts"  ORDER BY distance[0m
+  Rendered food_courts/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 50ms (Views: 48.3ms | ActiveRecord: 0.5ms)

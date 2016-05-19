@@ -19,7 +19,7 @@
    <tbody>
     <% @food_court.each do |food_court| %>
       <tr>
-        <td><%= link_to "#{food_court.foodCourt}", food_outlet_path(food_court)%></td>
+        <td><%= link_to "#{food_court.foodCourt}", food_outlets_path(food_court)%></td>
         <td><%= food_court.distance %></td>
         
       </tr>
