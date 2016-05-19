@@ -29,11 +29,11 @@ Background:  Menu items have been added to the database
   Given the following menu items exist in database:
 
   | menu_item     |price    |         
-  | Burger        |2$       |
-  | Coffee        |3$       |
-  | Pizza         |4$       |
-  | Salad         |4$       |
-  | Chicken Sub   |5$       |
+  | Burger        |2       |
+  | Coffee        |3       |
+  | Pizza         |4       |
+  | Salad         |4       |
+  | Chicken Sub   |5       |
   
   #Given I am on Food Outlet page
 
@@ -41,19 +41,13 @@ Scenario: List the menu items
   When I am on Menu List page
   And I should see all the menu items
 
-#Scenario: List the menu items for selected food outlet
- # When I am on Food Outlet page
-#  And I click on the "Menu" link
-#  Then I should see the "Menu List" page
-#  And I should see all the menu items for the selected outlet
+Scenario: List the menu items for selected food outlet
+  When I am on Food Outlet page
+  And I click on the "Menu" item link
+  Then I should see the Menu listing page for selected outlet
+  And For the selected outlet I should be able to see all menu items
   
-#Scenario: List the menu items for selected Outlet
- # When I am on the Food Outlet page
-#  And I click on the "Menu" link
-#  Then I should see the "Menu Lists" page
-#  And I should see all the menu items for the selected outlet
-
-#Scenario: List  the menu items for selected food outlet
- # And I click on the "Subway" link
-#  Then I should see all the menu items for selected outlet
-  
+Scenario: I should not click multiple rate links at same time
+  When I have selected on the Menu List
+  And I click on the "Rate" link for many menu items
+  Then I should not be able to do click many links
