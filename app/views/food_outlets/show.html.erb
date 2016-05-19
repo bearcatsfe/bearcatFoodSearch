@@ -7,15 +7,17 @@
  <thead>
     <tr>
       <th>Food Outlets</th>
-      
+      <th>Menu Link</th>
     </tr>
   </thead>
    <tbody>
     <% @food_outlets.each do |food_outlets| %>
       <tr>
         <td><%= link_to "#{food_outlets.foodOutletList}", menu_list_path(food_outlets)%></td>
+        
       </tr>
     <% end %>
   </tbody>
+  
 </table>
 

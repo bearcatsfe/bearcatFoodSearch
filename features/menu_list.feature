@@ -27,28 +27,33 @@ Feature: List the menu with prices
 Background:  Menu items have been added to the database
   
   Given the following menu items exist in database:
-  | menu_item     |price     |         
-  | Burger        |12$       |
+
+  | menu_item     |price    |         
+  | Burger        |2$       |
   | Coffee        |3$       |
-
-  Given I am on the Bearcat home page
-  And I click on the "Menu Listing" link
-  #Then I should see the "Menu Lists" page
-
-#Scenario: List the menu items
- # When I am on the Bearcat home page
-#  And I click on Menu Listing link
- # Then I go to "Menu Listing page"
-#  And I should see the "menu list" 
-  #And  I should see " a max of 10 menu items listed in one page with price and rating for each of the menu item"
+  | Pizza         |4$       |
+  | Salad         |4$       |
+  | Chicken Sub   |5$       |
   
-#Scenario: List the menu items
-#  Then I should see the "Menu Lists" page
-#  And I should see all the menu items  
+  #Given I am on Food Outlet page
 
 Scenario: List the menu items
-  When I am on the Bearcat home page
-  And I click on the "Menu Listing" link
-  Then I should see the "Menu Lists" page
+  When I am on Menu List page
   And I should see all the menu items
 
+#Scenario: List the menu items for selected food outlet
+ # When I am on Food Outlet page
+#  And I click on the "Menu" link
+#  Then I should see the "Menu List" page
+#  And I should see all the menu items for the selected outlet
+  
+#Scenario: List the menu items for selected Outlet
+ # When I am on the Food Outlet page
+#  And I click on the "Menu" link
+#  Then I should see the "Menu Lists" page
+#  And I should see all the menu items for the selected outlet
+
+#Scenario: List  the menu items for selected food outlet
+ # And I click on the "Subway" link
+#  Then I should see all the menu items for selected outlet
+  
