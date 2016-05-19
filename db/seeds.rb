@@ -6,7 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-menu_lists = [  {:menu_item => 'Coffee', :price => '2', :outlet_id=>'1', :foodCourt => 'Marketplace' },
+menu_lists = [
+              {:menu_item => 'Coffee', :price => '2', :outlet_id=>'1', :foodCourt => 'Marketplace' },
     	        {:menu_item => 'Burger', :price => '3', :outlet_id=>'2', :foodCourt =>'Hinman'},
     	        {:menu_item => 'Pizza', :price => '4', :outlet_id=>'3', :foodCourt => 'CIW'},
     	        {:menu_item => 'Rice and Chicken', :price => '4', :outlet_id=>'4', :foodCourt => 'C4'},
@@ -47,6 +48,8 @@ food_outlets = [
                 {:foodOutletList => 'DoughnutCentre', :outletId => "5"},
                 {:foodOutletList => 'GardenToss', :outletId => "5"},
                 {:foodOutletList => 'PizzaFlavours', :outletId => "6"},
+                {:foodOutletList => 'RiceBowlOutlet', :outletId => "7"},
+                {:foodOutletList => 'FriesDen', :outletId => "8"},
               ]
                 
 food_outlets.each do |list_food_outlet|

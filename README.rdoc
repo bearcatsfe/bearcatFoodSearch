@@ -1,28 +1,19 @@
-== README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The code base is hosted on Github having the clone url: https://github.com/bearcatsfe/bearcatFoodSearch.git
 
-Things you may want to cover:
+Navigate to the project folder 'bearcatFoodSearch'
 
-* Ruby version
+Run the bundle install command to downliad required gems'bundle install'
 
-* System dependencies
+First login to the Heroku account 'heroku login'
 
-* Configuration
+TO create app link on heroku run the command 'heroku create'
 
-* Database creation
+Push the code base to the heroku by running command 'git push heroku master'
 
-* Database initialization
+Data from the local developnment enviromwent is to be migrated to the heroku server.
+Command to migrate the data to the heroku server 'heroku run rake db:migrate'
 
-* How to run the test suite
+Command to seed the data 'heroku run rake db:seed'
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+To generate the link for the hosted app run the command 'heroku open'
