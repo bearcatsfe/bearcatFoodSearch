@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20160510011614) do
 
   create_table "food_outlets", force: :cascade do |t|
     t.string   "foodOutletList"
+    t.string   "outletId"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
@@ -29,6 +30,11 @@ ActiveRecord::Schema.define(version: 20160510011614) do
   create_table "menu_lists", force: :cascade do |t|
     t.string   "menu_item"
     t.string   "price"
+<<<<<<< HEAD
+=======
+    t.string   "outlet_id"
+    t.string   "foodCourt"
+>>>>>>> 26df243e1cb50c2ee4ac6f0e375f482d66f3eb63
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

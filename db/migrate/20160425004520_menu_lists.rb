@@ -4,6 +4,7 @@ class MenuLists < ActiveRecord::Migration
       t.string :menu_item
       t.string :price
       t.string :outlet_id
+      t.string :foodCourt
       t.timestamps null: false
     end
   end

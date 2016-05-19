@@ -2,7 +2,8 @@
 
 <h1>Listing Food Outlets</h1>
 
-<table id= "foodOutletList">
+<h2> <%= @idOutlet %> </h2>
+<table id = "foodOutletList">
  <thead>
     <tr>
       <th>Food Outlets</th>
@@ -12,8 +13,7 @@
    <tbody>
     <% @food_outlets.each do |food_outlets| %>
       <tr>
-        <td><%= link_to "#{food_outlets.foodOutletList}", food_outlets_path(food_outlets)%></td>
-        
+        <td><%= link_to "#{food_outlets.foodOutletList}", menu_list_path(food_outlets)%></td>
       </tr>
     <% end %>
   </tbody>
