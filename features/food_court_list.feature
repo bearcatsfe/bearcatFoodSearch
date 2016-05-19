@@ -1,7 +1,7 @@
 Feature: List food courts around me
  
   As a user, 
-  I want to see Food Courts listed in an increasing order of distance from my current location, 
+  I want to see Food Courts listed in an increasing order of distance from Union, 
   so that I can chose a food court closest to me.
 
 Background: Food courts have been added to database

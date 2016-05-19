@@ -8,7 +8,7 @@ class FoodCourtsController < ApplicationController
     #@food_courts = FoodCourt.all
     @sort = params[:sort] || session[:sort]
     @food_court = FoodCourt.order(@sort)
-    puts "printing food courts",@food_court
+    #puts "printing food courts",@food_court
     
     sort = params[:sort] || session[:sort]
     case sort
@@ -31,7 +31,7 @@ class FoodCourtsController < ApplicationController
   def show
     id = params[:session][:id] 
     @food_court = FoodCourt.find(id) 
-    puts "printing food courts", @food_court.id
+    #puts "printing food courts", @food_court.id
   end
 
   # GET /food_courts/new
