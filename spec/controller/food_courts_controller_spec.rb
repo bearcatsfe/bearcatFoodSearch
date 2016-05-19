@@ -19,5 +19,16 @@ describe FoodCourtsController , :type => :controller do
       expect(response).to have_http_status(200)
       #expect(response).to redirect_to users_url
     end
-    
+    it 'Sorted by the name of food courts' do
+      get :index, sort: :foodCourt
+      expect(response).to have_http_status(200)
+      
+    end
+    it 'Sorted by distance' do
+      get :index, sort: :distance
+      expect(response).to have_http_status(200)
+      
+    end
+
 end
+

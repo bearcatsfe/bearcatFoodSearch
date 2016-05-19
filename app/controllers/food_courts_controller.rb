@@ -6,7 +6,7 @@ class FoodCourtsController < ApplicationController
   def index
     
     #@food_courts = FoodCourt.all
-    @sort = params[:sort]
+    @sort = params[:sort] || session[:sort]
     @food_court = FoodCourt.order(@sort)
     puts "printing food courts",@food_court
     
