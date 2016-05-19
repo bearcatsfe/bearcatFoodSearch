@@ -27,6 +27,8 @@ food_courts = [
                 {:foodCourt => 'C4', :distance => '0.3 mile'},
                 {:foodCourt => 'Jazzman', :distance => '0.5 mile'},
                 {:foodCourt => 'Chenango', :distance => '0.6 mile'},
+                {:foodCourt => 'Einstein Bros', :distance =>'0.6 mile'},
+                {:foodCourt => 'Arthurs Cafe', :distance =>'0.3 mile'}
               ]
                 
 food_courts.each do |list_food_court|
