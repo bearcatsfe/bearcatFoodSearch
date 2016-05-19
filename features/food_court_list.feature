@@ -25,12 +25,12 @@ Scenario: List the food courts
   Then I should see the "Food Courts" page
   And I should see all the food courts  
   
-#  Scenario: sort food courts alphabetically
- # When I follow "foodCourt"
-#  Then I should see "Hinman" before "Marketplace"
+Scenario: sort food courts alphabetically
+  When I follow "Food Courts"
+  Then I should see "Hinman" before "Marketplace"
   
 
-#Scenario: sort food courts in increasing order of distance
- # When I follow "distance"
-  #Then I should see "CIW" before "Jazzman"  
+Scenario: sort food courts in increasing order of distance
+  When I follow "Distance from Union"
+  Then I should see "CIW" before "Jazzman"  
   
