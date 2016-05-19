@@ -11,20 +11,17 @@
   <th class="<%= @distance_header %>">
     <%= link_to 'Distance from Union', food_courts_path(:sort => 'distance'), :id => 'distance_header' %>
   </th>
+  
+
       
     </tr>
   </thead>
    <tbody>
     <% @food_court.each do |food_court| %>
       <tr>
-<<<<<<< HEAD
         <td><%= link_to "#{food_court.foodCourt}", food_outlets_path(food_court)%></td>
-=======
-
-        <td><%= link_to "#{food_court.foodCourt}", food_outlet_path(food_court)%></td>
-
->>>>>>> e121251c581318a3910e0465207d62f70fb131c0
         <td><%= food_court.distance %></td>
+        
       </tr>
     <% end %>
   </tbody>
