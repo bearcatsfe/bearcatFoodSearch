@@ -15,6 +15,7 @@ class ReviewsAndRatingsController < ApplicationController
   # GET /reviews_and_ratings/new
   def new
     @reviews_and_rating = ReviewsAndRating.new
+    session[:current_item] = @reviews_and_rating
   end
 
   # GET /reviews_and_ratings/1/edit

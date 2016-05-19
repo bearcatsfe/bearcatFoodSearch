@@ -7,11 +7,11 @@ Feature: Login to Bearcat food search
  Background: Sign up details have been added to the database
    
    Given the following signup details exist in database:
-    |menu_list              |email                   |password  |    
-    |Matt              |matt@binghamton.edu     | mattyu89     |
-    |Neil              |neil@binghamton.edu     | patrickk983   |
+    |name              |email                   |password  |    
+    |Matt              |matt@binghamton.edu     |mattyu89     |
+    |Neil              |neil@binghamton.edu     |patrickk983   |
 
-   Given I am on the Bearcat home page
+   Given I am on the Reviews and Rating page
    And I click on the "Login" link
    Then I should see the "Login" page
 

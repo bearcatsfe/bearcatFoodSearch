@@ -30,6 +30,9 @@ module NavigationHelpers
       
     when /^Food Court\s?page$/
       food_courts_path
+    
+    when /^the Reviews and Rating\s?page$/
+      new_reviews_and_rating_path
       
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

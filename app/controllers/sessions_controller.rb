@@ -7,7 +7,8 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
       log_in user
-      redirect_to reviews_and_ratings_path, :notice => "Login Successful.."+ "\n"+ "Logged in as: "+user.name
+      redirect_to new_reviews_and_rating_path, 
+      :notice => "Login Successful"+ "\n"+ "Logged in as: "+user.name
       #flash[:success] = 'Login Successful'
     else
       #p "User login failure"

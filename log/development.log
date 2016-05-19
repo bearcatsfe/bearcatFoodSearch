@@ -10159,3 +10159,1970 @@ ActionController::RoutingError (No route matches [POST] "/reviews_and_ratings/ne
   Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.0ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (100.0ms)
+  [1m[36m (24.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (11.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateUsers (20160329171948)
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160329171948"]]
+  [1m[35m (14.8ms)[0m  commit transaction
+Migrating to AddPasswordDigestToUsers (20160404130516)
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "users" ADD "password_digest" varchar
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160404130516"]]
+  [1m[35m (14.4ms)[0m  commit transaction
+Migrating to AddIndexToUsersEmail (20160404132723)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160404132723"]]
+  [1m[35m (14.3ms)[0m  commit transaction
+Migrating to CreateReviewsAndRatings (20160409220521)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "reviews_and_ratings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "foodcourts" varchar, "foodoutlets" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160409220521"]]
+  [1m[35m (11.1ms)[0m  commit transaction
+Migrating to MenuLists (20160425004520)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "menu_lists" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "menu_item" varchar, "price" varchar, "outlet_id" varchar, "foodCourt" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160425004520"]]
+  [1m[35m (12.3ms)[0m  commit transaction
+Migrating to CreateFoodCourts (20160504132919)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "food_courts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "foodCourt" varchar, "distance" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160504132919"]]
+  [1m[35m (11.2ms)[0m  commit transaction
+Migrating to CreateFoodOutlets (20160510011614)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "food_outlets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "foodOutletList" varchar, "outletId" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160510011614"]]
+  [1m[35m (11.5ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "menu_lists" ("menu_item", "price", "outlet_id", "foodCourt", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["menu_item", "Coffee"], ["price", "2"], ["outlet_id", "1"], ["foodCourt", "Marketplace"], ["created_at", "2016-05-19 00:46:20.287260"], ["updated_at", "2016-05-19 00:46:20.287260"]]
+  [1m[35m (16.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "menu_lists" ("menu_item", "price", "outlet_id", "foodCourt", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["menu_item", "Burger"], ["price", "3"], ["outlet_id", "2"], ["foodCourt", "Hinman"], ["created_at", "2016-05-19 00:46:20.318658"], ["updated_at", "2016-05-19 00:46:20.318658"]]
+  [1m[36m (11.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "menu_lists" ("menu_item", "price", "outlet_id", "foodCourt", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["menu_item", "Pizza"], ["price", "4"], ["outlet_id", "3"], ["foodCourt", "CIW"], ["created_at", "2016-05-19 00:46:20.332417"], ["updated_at", "2016-05-19 00:46:20.332417"]]
+  [1m[35m (9.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "menu_lists" ("menu_item", "price", "outlet_id", "foodCourt", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["menu_item", "Rice and Chicken"], ["price", "4"], ["outlet_id", "4"], ["foodCourt", "C4"], ["created_at", "2016-05-19 00:46:20.344437"], ["updated_at", "2016-05-19 00:46:20.344437"]]
+  [1m[36m (10.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "menu_lists" ("menu_item", "price", "outlet_id", "foodCourt", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["menu_item", "Roti"], ["price", "5"], ["outlet_id", "5"], ["foodCourt", "Jazzman"], ["created_at", "2016-05-19 00:46:20.356663"], ["updated_at", "2016-05-19 00:46:20.356663"]]
+  [1m[35m (7.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "menu_lists" ("menu_item", "price", "outlet_id", "foodCourt", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["menu_item", "Salad"], ["price", "6"], ["outlet_id", "6"], ["foodCourt", "Chenango"], ["created_at", "2016-05-19 00:46:20.366006"], ["updated_at", "2016-05-19 00:46:20.366006"]]
+  [1m[36m (10.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["foodCourt", "Marketplace"], ["distance", "0.4 mile"], ["created_at", "2016-05-19 00:46:20.383891"], ["updated_at", "2016-05-19 00:46:20.383891"]]
+  [1m[35m (7.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["foodCourt", "Hinman"], ["distance", "0.5 mile"], ["created_at", "2016-05-19 00:46:20.393449"], ["updated_at", "2016-05-19 00:46:20.393449"]]
+  [1m[36m (9.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["foodCourt", "CIW"], ["distance", "0.1 mile"], ["created_at", "2016-05-19 00:46:20.404877"], ["updated_at", "2016-05-19 00:46:20.404877"]]
+  [1m[35m (9.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["foodCourt", "C4"], ["distance", "0.3 mile"], ["created_at", "2016-05-19 00:46:20.416280"], ["updated_at", "2016-05-19 00:46:20.416280"]]
+  [1m[36m (7.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["foodCourt", "Jazzman"], ["distance", "0.5 mile"], ["created_at", "2016-05-19 00:46:20.425415"], ["updated_at", "2016-05-19 00:46:20.425415"]]
+  [1m[35m (9.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["foodCourt", "Chenango"], ["distance", "0.6 mile"], ["created_at", "2016-05-19 00:46:20.437055"], ["updated_at", "2016-05-19 00:46:20.437055"]]
+  [1m[36m (9.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "food_outlets" ("foodOutletList", "outletId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["foodOutletList", "Subway"], ["outletId", "1"], ["created_at", "2016-05-19 00:46:20.453410"], ["updated_at", "2016-05-19 00:46:20.453410"]]
+  [1m[35m (9.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "food_outlets" ("foodOutletList", "outletId", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["foodOutletList", "Tully"], ["outletId", "2"], ["created_at", "2016-05-19 00:46:20.465095"], ["updated_at", "2016-05-19 00:46:20.465095"]]
+  [1m[36m (10.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "food_outlets" ("foodOutletList", "outletId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["foodOutletList", "Mogul"], ["outletId", "3"], ["created_at", "2016-05-19 00:46:20.477009"], ["updated_at", "2016-05-19 00:46:20.477009"]]
+  [1m[35m (8.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "food_outlets" ("foodOutletList", "outletId", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["foodOutletList", "Garden Fresh"], ["outletId", "4"], ["created_at", "2016-05-19 00:46:20.487044"], ["updated_at", "2016-05-19 00:46:20.487044"]]
+  [1m[36m (11.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "food_outlets" ("foodOutletList", "outletId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["foodOutletList", "Starbucks"], ["outletId", "5"], ["created_at", "2016-05-19 00:46:20.500979"], ["updated_at", "2016-05-19 00:46:20.500979"]]
+  [1m[35m (9.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "food_outlets" ("foodOutletList", "outletId", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["foodOutletList", "Cakes n Eggs"], ["outletId", "6"], ["created_at", "2016-05-19 00:46:20.512907"], ["updated_at", "2016-05-19 00:46:20.512907"]]
+  [1m[36m (10.1ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/" for 149.125.40.130 at 2016-05-19 00:47:03 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 637ms (Views: 587.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/food_courts.self-7cdffca2789660691c2c480b1c7f269df3831e6f0efe456fc16d4c38fdc5eae6.css?body=1" for 149.125.40.130 at 2016-05-19 00:47:05 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/food_outlets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 149.125.40.130 at 2016-05-19 00:47:05 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/menu_lists.self-adcca2c5480b8c75e90cc1ab33c73230de6b207fee91373f7d74c02625eb6cc6.css?body=1" for 149.125.40.130 at 2016-05-19 00:47:05 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/food_outlets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.40.130 at 2016-05-19 00:47:05 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/food_courts" for 149.125.40.130 at 2016-05-19 00:47:12 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodCourtsController#index as HTML
+  [1m[36mFoodCourt Load (0.4ms)[0m  [1mSELECT "food_courts".* FROM "food_courts"[0m
+  Rendered food_courts/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 59ms (Views: 44.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/food_outlets/2" for 149.125.40.130 at 2016-05-19 00:47:15 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mFoodOutlet Load (0.4ms)[0m  SELECT  "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mFoodOutlet Load (0.4ms)[0m  [1mSELECT "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."outletId" = ?[0m  [["outletId", "2"]]
+  Rendered food_outlets/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 97ms (Views: 59.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/menu_lists/2" for 149.125.40.130 at 2016-05-19 00:47:21 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mMenuList Load (0.3ms)[0m  SELECT  "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mMenuList Load (0.5ms)[0m  [1mSELECT "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."outlet_id" = ?[0m  [["outlet_id", "2"]]
+  Rendered menu_lists/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 143ms (Views: 127.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/reviews_and_ratings/new.2" for 149.125.40.130 at 2016-05-19 00:47:24 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#new as 
+  Rendered reviews_and_ratings/_form.html.erb (9.8ms)
+  Rendered reviews_and_ratings/new.html.erb within layouts/application (31.4ms)
+Completed 200 OK in 124ms (Views: 114.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 149.125.40.130 at 2016-05-19 00:48:59 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 538ms (Views: 470.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/reviews_and_ratings" for 149.125.40.130 at 2016-05-19 00:49:04 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mReviewsAndRating Load (0.2ms)[0m  SELECT "reviews_and_ratings".* FROM "reviews_and_ratings"
+  Rendered reviews_and_ratings/index.html.erb within layouts/application (67.9ms)
+Completed 200 OK in 137ms (Views: 132.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/reviews_and_ratings" for 149.125.40.130 at 2016-05-19 00:49:05 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mReviewsAndRating Load (0.3ms)[0m  SELECT "reviews_and_ratings".* FROM "reviews_and_ratings"
+  Rendered reviews_and_ratings/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 64ms (Views: 62.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 149.125.40.130 at 2016-05-19 00:49:42 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 53ms (Views: 51.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/food_courts" for 149.125.40.130 at 2016-05-19 00:49:47 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodCourtsController#index as HTML
+  [1m[35mFoodCourt Load (0.3ms)[0m  SELECT "food_courts".* FROM "food_courts"
+  Rendered food_courts/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 102ms (Views: 92.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/food_outlets/1" for 149.125.40.130 at 2016-05-19 00:49:49 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFoodOutlet Load (0.2ms)[0m  [1mSELECT  "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mFoodOutlet Load (0.3ms)[0m  SELECT "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."outletId" = ?  [["outletId", "1"]]
+  Rendered food_outlets/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 211ms (Views: 202.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/menu_lists/1" for 149.125.40.130 at 2016-05-19 00:49:51 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMenuList Load (0.3ms)[0m  [1mSELECT  "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mMenuList Load (0.3ms)[0m  SELECT "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."outlet_id" = ?  [["outlet_id", "1"]]
+  Rendered menu_lists/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 69ms (Views: 56.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/reviews_and_ratings/new.1" for 149.125.40.130 at 2016-05-19 00:50:17 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#new as 
+  Rendered reviews_and_ratings/_form.html.erb (7.2ms)
+  Rendered reviews_and_ratings/new.html.erb within layouts/application (26.3ms)
+Completed 200 OK in 100ms (Views: 95.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/reviews_and_ratings/new.1" for 149.125.40.130 at 2016-05-19 00:52:02 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#new as 
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered reviews_and_ratings/_form.html.erb (0.9ms)
+  Rendered reviews_and_ratings/new.html.erb within layouts/application (17.7ms)
+Completed 200 OK in 68ms (Views: 67.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/food_courts.self-7cdffca2789660691c2c480b1c7f269df3831e6f0efe456fc16d4c38fdc5eae6.css?body=1" for 149.125.40.130 at 2016-05-19 00:52:03 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/custom.self-2361724c0679f90cb1fe690f1f58525565d68e41b5940618c756244f4b3648f6.css?body=1" for 149.125.40.130 at 2016-05-19 00:52:03 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/menu_lists.self-adcca2c5480b8c75e90cc1ab33c73230de6b207fee91373f7d74c02625eb6cc6.css?body=1" for 149.125.40.130 at 2016-05-19 00:52:03 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/food_outlets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 149.125.40.130 at 2016-05-19 00:52:03 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/reviews_and_ratings.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 149.125.40.130 at 2016-05-19 00:52:03 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 149.125.40.130 at 2016-05-19 00:52:04 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 149.125.40.130 at 2016-05-19 00:52:04 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 149.125.40.130 at 2016-05-19 00:52:04 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 149.125.40.130 at 2016-05-19 00:52:04 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/scaffolds.self-d2e5ccad1506299feea3a35bfb7c525e101bb3b214303715deb675fdc539948b.css?body=1" for 149.125.40.130 at 2016-05-19 00:52:04 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 149.125.40.130 at 2016-05-19 00:52:04 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 149.125.40.130 at 2016-05-19 00:52:04 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/food_courts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.40.130 at 2016-05-19 00:52:04 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/reviews_and_ratings.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.40.130 at 2016-05-19 00:52:04 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/food_outlets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.40.130 at 2016-05-19 00:52:04 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/menu_lists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.40.130 at 2016-05-19 00:52:04 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.40.130 at 2016-05-19 00:52:04 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.40.130 at 2016-05-19 00:52:05 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 149.125.40.130 at 2016-05-19 00:52:05 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/food_outlets/1" for 149.125.40.130 at 2016-05-19 00:52:08 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mFoodOutlet Load (0.2ms)[0m  SELECT  "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mFoodOutlet Load (0.2ms)[0m  [1mSELECT "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."outletId" = ?[0m  [["outletId", "1"]]
+  Rendered food_outlets/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 36ms (Views: 34.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/menu_lists/1" for 149.125.40.130 at 2016-05-19 00:52:11 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMenuList Load (0.2ms)[0m  SELECT  "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mMenuList Load (0.2ms)[0m  [1mSELECT "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."outlet_id" = ?[0m  [["outlet_id", "1"]]
+  Rendered menu_lists/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 59ms (Views: 57.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/reviews_and_ratings/new.1" for 149.125.40.130 at 2016-05-19 00:52:13 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#new as 
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered reviews_and_ratings/_form.html.erb (0.7ms)
+  Rendered reviews_and_ratings/new.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 70ms (Views: 68.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/reviews_and_ratings" for 149.125.40.130 at 2016-05-19 00:52:38 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mReviewsAndRating Load (0.2ms)[0m  SELECT "reviews_and_ratings".* FROM "reviews_and_ratings"
+  Rendered reviews_and_ratings/index.html.erb within layouts/application (62.6ms)
+Completed 200 OK in 121ms (Views: 119.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/reviews_and_ratings/new.1" for 149.125.40.130 at 2016-05-19 00:53:33 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#new as 
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered reviews_and_ratings/_form.html.erb (0.7ms)
+  Rendered reviews_and_ratings/new.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 64ms (Views: 63.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/menu_lists" for 149.125.40.130 at 2016-05-19 00:53:35 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#index as HTML
+  [1m[35mMenuList Load (0.3ms)[0m  SELECT "menu_lists".* FROM "menu_lists"
+  Rendered menu_lists/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 37ms (Views: 35.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reviews_and_ratings/new.1" for 149.125.40.130 at 2016-05-19 00:54:00 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#new as 
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered reviews_and_ratings/_form.html.erb (4.9ms)
+  Rendered reviews_and_ratings/new.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 63ms (Views: 62.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/reviews_and_ratings/new.1" for 149.125.40.130 at 2016-05-19 00:54:10 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#new as 
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered reviews_and_ratings/_form.html.erb (0.6ms)
+  Rendered reviews_and_ratings/new.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 75ms (Views: 73.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/menu_lists" for 149.125.40.130 at 2016-05-19 00:54:12 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#index as HTML
+  [1m[36mMenuList Load (1.5ms)[0m  [1mSELECT "menu_lists".* FROM "menu_lists"[0m
+  Rendered menu_lists/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 61ms (Views: 58.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/reviews_and_ratings/new.1" for 149.125.40.130 at 2016-05-19 00:55:51 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#new as 
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered reviews_and_ratings/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 49ms (Views: 47.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/reviews_and_ratings/new.1" for 149.125.40.130 at 2016-05-19 00:58:18 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#new as 
+  Rendered reviews_and_ratings/new.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/ubuntu/workspace/app/views/reviews_and_ratings/new.html.erb:16: syntax error, unexpected keyword_ensure, expecting keyword_end
+/home/ubuntu/workspace/app/views/reviews_and_ratings/new.html.erb:18: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/views/reviews_and_ratings/new.html.erb:16: syntax error, unexpected keyword_ensure, expecting keyword_end
+  app/views/reviews_and_ratings/new.html.erb:18: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (11.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (109.5ms)
+
+
+Started GET "/reviews_and_ratings/new.1" for 149.125.40.130 at 2016-05-19 00:58:19 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#new as 
+  Rendered reviews_and_ratings/new.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/ubuntu/workspace/app/views/reviews_and_ratings/new.html.erb:16: syntax error, unexpected keyword_ensure, expecting keyword_end
+/home/ubuntu/workspace/app/views/reviews_and_ratings/new.html.erb:18: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/views/reviews_and_ratings/new.html.erb:16: syntax error, unexpected keyword_ensure, expecting keyword_end
+  app/views/reviews_and_ratings/new.html.erb:18: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (10.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (95.0ms)
+
+
+Started GET "/reviews_and_ratings/new.1" for 149.125.40.130 at 2016-05-19 00:58:48 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#new as 
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered reviews_and_ratings/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 186ms (Views: 185.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/custom.self-2361724c0679f90cb1fe690f1f58525565d68e41b5940618c756244f4b3648f6.css?body=1" for 149.125.40.130 at 2016-05-19 00:58:48 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/food_courts.self-7cdffca2789660691c2c480b1c7f269df3831e6f0efe456fc16d4c38fdc5eae6.css?body=1" for 149.125.40.130 at 2016-05-19 00:58:48 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/menu_lists.self-adcca2c5480b8c75e90cc1ab33c73230de6b207fee91373f7d74c02625eb6cc6.css?body=1" for 149.125.40.130 at 2016-05-19 00:58:48 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/food_outlets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 149.125.40.130 at 2016-05-19 00:58:48 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/reviews_and_ratings.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 149.125.40.130 at 2016-05-19 00:58:48 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 149.125.40.130 at 2016-05-19 00:58:48 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/scaffolds.self-d2e5ccad1506299feea3a35bfb7c525e101bb3b214303715deb675fdc539948b.css?body=1" for 149.125.40.130 at 2016-05-19 00:58:48 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 149.125.40.130 at 2016-05-19 00:58:48 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-dae5c5da7223ce739ad497817a3df9ba2fa2840da302653b11558b4f7d98bfc3.css?body=1" for 149.125.40.130 at 2016-05-19 00:58:48 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 149.125.40.130 at 2016-05-19 00:58:49 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 149.125.40.130 at 2016-05-19 00:58:49 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 149.125.40.130 at 2016-05-19 00:58:49 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/food_courts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.40.130 at 2016-05-19 00:58:49 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/food_outlets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.40.130 at 2016-05-19 00:58:49 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/menu_lists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.40.130 at 2016-05-19 00:58:49 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/reviews_and_ratings.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.40.130 at 2016-05-19 00:58:49 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.40.130 at 2016-05-19 00:58:49 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 149.125.40.130 at 2016-05-19 00:58:49 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 149.125.40.130 at 2016-05-19 00:58:49 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/login" for 149.125.40.130 at 2016-05-19 00:58:56 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (35.4ms)
+Completed 200 OK in 87ms (Views: 86.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 149.125.40.130 at 2016-05-19 00:59:09 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ijae/axMRYZiD43N5Tgdh4a6titEEwdSvaEzQmvXXiprjBdC9ZpmxFjKDBqhib1oo38JMn2xXgzPGbrC3mEv+g==", "session"=>{"email"=>"ssahu1@binghamton.edu", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "ssahu1@binghamton.edu"]]
+Redirected to https://bearcatsfoodsearch-sunilbinghamton.c9users.io/login
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for 149.125.40.130 at 2016-05-19 00:59:09 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 36ms (Views: 35.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 149.125.40.130 at 2016-05-19 00:59:18 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#new as HTML
+  Rendered shared/_error_messages.html.erb (0.4ms)
+  Rendered users/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 57ms (Views: 51.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for 149.125.40.130 at 2016-05-19 00:59:20 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 46ms (Views: 44.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/new" for 149.125.40.130 at 2016-05-19 01:00:49 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#new as HTML
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered users/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 39ms (Views: 37.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 149.125.40.130 at 2016-05-19 01:01:06 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wsmIGmIJGtFiuxgI0Xxt7638TNng2BhqLgPQDCNkrhIjcwGlO985k1h+md+Vzc0AiDnzwNl6QTRcu1mMltLfwg==", "user"=>{"name"=>"Sunil", "email"=>"ssahu1@bing.edu", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('ssahu1@bing.edu') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Sunil"], ["email", "ssahu1@bing.edu"], ["password_digest", "$2a$10$hHchuKp.Wq/kiS2s2bNlYOZVDq3L.4eRYc0V/zdfpqTdGyRd33FeG"], ["created_at", "2016-05-19 01:01:06.347626"], ["updated_at", "2016-05-19 01:01:06.347626"]]
+  [1m[35m (13.8ms)[0m  commit transaction
+Redirected to https://bearcatsfoodsearch-sunilbinghamton.c9users.io/users
+Completed 302 Found in 114ms (ActiveRecord: 14.5ms)
+
+
+Started GET "/users" for 149.125.40.130 at 2016-05-19 01:01:06 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 36ms (Views: 34.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/food_courts" for 149.125.40.130 at 2016-05-19 01:01:10 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodCourtsController#index as HTML
+  [1m[35mFoodCourt Load (0.3ms)[0m  SELECT "food_courts".* FROM "food_courts"
+  Rendered food_courts/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 36ms (Views: 33.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/food_outlets/1" for 149.125.40.130 at 2016-05-19 01:01:11 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFoodOutlet Load (0.3ms)[0m  [1mSELECT  "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mFoodOutlet Load (0.2ms)[0m  SELECT "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."outletId" = ?  [["outletId", "1"]]
+  Rendered food_outlets/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 80ms (Views: 78.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/menu_lists/1" for 149.125.40.130 at 2016-05-19 01:01:13 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMenuList Load (0.3ms)[0m  [1mSELECT  "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mMenuList Load (0.2ms)[0m  SELECT "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."outlet_id" = ?  [["outlet_id", "1"]]
+  Rendered menu_lists/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 44ms (Views: 42.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/reviews_and_ratings/new.1" for 149.125.40.130 at 2016-05-19 01:01:23 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#new as 
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered reviews_and_ratings/_form.html.erb (0.9ms)
+  Rendered reviews_and_ratings/new.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 112ms (Views: 111.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/menu_lists" for 149.125.40.130 at 2016-05-19 01:01:31 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#index as HTML
+  [1m[35mMenuList Load (0.4ms)[0m  SELECT "menu_lists".* FROM "menu_lists"
+  Rendered menu_lists/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 47ms (Views: 45.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/login" for 149.125.40.130 at 2016-05-19 01:02:08 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 42ms (Views: 41.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/food_courts" for 149.125.40.130 at 2016-05-19 01:02:13 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodCourtsController#index as HTML
+  [1m[36mFoodCourt Load (0.3ms)[0m  [1mSELECT "food_courts".* FROM "food_courts"[0m
+  Rendered food_courts/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 40ms (Views: 38.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/food_outlets/2" for 149.125.40.130 at 2016-05-19 01:02:15 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mFoodOutlet Load (0.3ms)[0m  SELECT  "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mFoodOutlet Load (0.4ms)[0m  [1mSELECT "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."outletId" = ?[0m  [["outletId", "2"]]
+  Rendered food_outlets/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 112ms (Views: 109.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/menu_lists/2" for 149.125.40.130 at 2016-05-19 01:02:16 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mMenuList Load (0.3ms)[0m  SELECT  "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mMenuList Load (0.2ms)[0m  [1mSELECT "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."outlet_id" = ?[0m  [["outlet_id", "2"]]
+  Rendered menu_lists/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 65ms (Views: 62.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/reviews_and_ratings/new.2" for 149.125.40.130 at 2016-05-19 01:02:18 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#new as 
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered reviews_and_ratings/_form.html.erb (0.7ms)
+  Rendered reviews_and_ratings/new.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 75ms (Views: 74.4ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/logout" for 149.125.40.130 at 2016-05-19 01:02:49 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"JoPQdxmuHj0qTWCdhc3w6KFsI5HF70KDyhqksR+TX5PHOVnIQHg9fxCI4UrBfFAHhKmciPxNG924oi0xqiUuQw=="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Redirected to https://bearcatsfoodsearch-sunilbinghamton.c9users.io/
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 149.125.40.130 at 2016-05-19 01:02:50 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 35ms (Views: 34.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/food_courts" for 149.125.40.130 at 2016-05-19 01:02:52 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodCourtsController#index as HTML
+  [1m[36mFoodCourt Load (0.2ms)[0m  [1mSELECT "food_courts".* FROM "food_courts"[0m
+  Rendered food_courts/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 46ms (Views: 44.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/food_outlets/1" for 149.125.40.130 at 2016-05-19 01:02:54 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mFoodOutlet Load (0.2ms)[0m  SELECT  "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mFoodOutlet Load (0.1ms)[0m  [1mSELECT "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."outletId" = ?[0m  [["outletId", "1"]]
+  Rendered food_outlets/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 38ms (Views: 36.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/menu_lists/1" for 149.125.40.130 at 2016-05-19 01:02:56 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMenuList Load (0.2ms)[0m  SELECT  "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mMenuList Load (0.1ms)[0m  [1mSELECT "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."outlet_id" = ?[0m  [["outlet_id", "1"]]
+  Rendered menu_lists/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 40ms (Views: 37.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reviews_and_ratings/new.1" for 149.125.40.130 at 2016-05-19 01:02:58 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#new as 
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered reviews_and_ratings/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 49ms (Views: 47.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for 149.125.40.130 at 2016-05-19 01:03:06 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 46ms (Views: 45.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 149.125.40.130 at 2016-05-19 01:03:19 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QT5zFYg7Dh1bj0sVBiUqCyx6LYa5M3FLXViL/JciWTCghPqq0e0tX2FKysJClIrkCb+Sn4CRKBUv4AJ8IpQo4A==", "session"=>{"email"=>"ssahu1@bing.edu", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "ssahu1@bing.edu"]]
+Redirected to https://bearcatsfoodsearch-sunilbinghamton.c9users.io/reviews_and_ratings
+Completed 302 Found in 78ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/reviews_and_ratings" for 149.125.40.130 at 2016-05-19 01:03:20 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mReviewsAndRating Load (0.3ms)[0m  SELECT "reviews_and_ratings".* FROM "reviews_and_ratings"
+  Rendered reviews_and_ratings/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 39ms (Views: 37.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/reviews_and_ratings/new" for 149.125.40.130 at 2016-05-19 01:11:08 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered reviews_and_ratings/_form.html.erb (5.7ms)
+  Rendered reviews_and_ratings/new.html.erb within layouts/application (72.1ms)
+Completed 200 OK in 118ms (Views: 116.7ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/logout" for 149.125.40.130 at 2016-05-19 01:13:28 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"R2GdqJPDDnlheH59uiVmLzjIbmpteknjHRIwj5ykW62m2xQXyhUtO1u9/6r+lMbAHQ3Rc1TYEL1vqrkPKRIqfQ=="}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to https://bearcatsfoodsearch-sunilbinghamton.c9users.io/
+Completed 302 Found in 10ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 149.125.40.130 at 2016-05-19 01:13:28 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 33ms (Views: 32.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/food_courts" for 149.125.40.130 at 2016-05-19 01:13:32 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodCourtsController#index as HTML
+  [1m[35mFoodCourt Load (0.4ms)[0m  SELECT "food_courts".* FROM "food_courts"
+  Rendered food_courts/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 47ms (Views: 39.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/login" for 149.125.40.130 at 2016-05-19 01:13:37 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 62ms (Views: 61.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/food_courts" for 149.125.40.130 at 2016-05-19 01:13:45 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodCourtsController#index as HTML
+  [1m[36mFoodCourt Load (0.4ms)[0m  [1mSELECT "food_courts".* FROM "food_courts"[0m
+  Rendered food_courts/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 35ms (Views: 32.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/food_outlets/2" for 149.125.40.130 at 2016-05-19 01:13:46 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mFoodOutlet Load (0.3ms)[0m  SELECT  "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mFoodOutlet Load (0.3ms)[0m  [1mSELECT "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."outletId" = ?[0m  [["outletId", "2"]]
+  Rendered food_outlets/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 58ms (Views: 47.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/menu_lists/2" for 149.125.40.130 at 2016-05-19 01:13:47 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mMenuList Load (0.2ms)[0m  SELECT  "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mMenuList Load (0.3ms)[0m  [1mSELECT "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."outlet_id" = ?[0m  [["outlet_id", "2"]]
+  Rendered menu_lists/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 157ms (Views: 148.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/reviews_and_ratings/new.2" for 149.125.40.130 at 2016-05-19 01:13:52 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#new as 
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered reviews_and_ratings/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 59ms (Views: 52.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/login" for 149.125.40.130 at 2016-05-19 01:13:55 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 61ms (Views: 59.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 149.125.40.130 at 2016-05-19 01:14:07 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8jaJJK6ooYV3Gi+0ZQF2RUciI1aW1dBLZXF3CZdqaBkTjACb936Cx03frmMhsNaqYuecT693iRUXyf6JItwZyQ==", "session"=>{"email"=>"ssahu1@bing.edu", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "ssahu1@bing.edu"]]
+Completed 500 Internal Server Error in 89ms (ActiveRecord: 0.3ms)
+
+NameError (undefined local variable or method `menu_list' for #<SessionsController:0x007fed72747680>
+Did you mean?  menu_list_url):
+  app/controllers/sessions_controller.rb:10:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (85.7ms)
+
+
+Started POST "/login" for 149.125.40.130 at 2016-05-19 01:17:21 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eAzUIwsN6FpAmOZIBkLP2kGLkyH6c51vmVdRJSzmogGZtl2cUtvLGHpdZ59C8281ZE4sOMPRxDHr79ilmVDT0Q==", "session"=>{"email"=>"ssahu1@bing.edu", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "ssahu1@bing.edu"]]
+Redirected to https://bearcatsfoodsearch-sunilbinghamton.c9users.io/reviews_and_ratings/new
+Completed 302 Found in 84ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/reviews_and_ratings/new" for 149.125.40.130 at 2016-05-19 01:17:21 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered reviews_and_ratings/_form.html.erb (1.4ms)
+  Rendered reviews_and_ratings/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 50ms (Views: 44.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/login" for 149.125.40.130 at 2016-05-19 01:17:48 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 39ms (Views: 38.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 149.125.40.130 at 2016-05-19 01:17:59 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DK+thLPTT7YhDvb32UhLlzfguHBStiAs/w7/igYCHCrtFSQ76gVs9BvLdyCd+et4EiUHaWsUeXKNtnYKs7Rt+g==", "session"=>{"email"=>"ssahu1@bing.edu", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "ssahu1@bing.edu"]]
+Redirected to https://bearcatsfoodsearch-sunilbinghamton.c9users.io/reviews_and_ratings/new
+Completed 302 Found in 78ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/reviews_and_ratings/new" for 149.125.40.130 at 2016-05-19 01:17:59 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered reviews_and_ratings/_form.html.erb (0.7ms)
+  Rendered reviews_and_ratings/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 36ms (Views: 35.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for 149.125.40.130 at 2016-05-19 01:18:24 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 33ms (Views: 32.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 149.125.40.130 at 2016-05-19 01:18:31 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#new as HTML
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered users/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 49ms (Views: 48.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 149.125.40.130 at 2016-05-19 01:18:32 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 32ms (Views: 31.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/food_courts" for 149.125.40.130 at 2016-05-19 01:18:44 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodCourtsController#index as HTML
+  [1m[35mFoodCourt Load (0.4ms)[0m  SELECT "food_courts".* FROM "food_courts"
+  Rendered food_courts/index.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 155ms (Views: 58.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/food_outlets/1" for 149.125.40.130 at 2016-05-19 01:18:45 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFoodOutlet Load (0.3ms)[0m  [1mSELECT  "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mFoodOutlet Load (0.5ms)[0m  SELECT "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."outletId" = ?  [["outletId", "1"]]
+  Rendered food_outlets/show.html.erb within layouts/application (34.7ms)
+Completed 200 OK in 86ms (Views: 76.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/menu_lists/1" for 149.125.40.130 at 2016-05-19 01:18:48 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMenuList Load (0.2ms)[0m  [1mSELECT  "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mMenuList Load (0.3ms)[0m  SELECT "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."outlet_id" = ?  [["outlet_id", "1"]]
+  Rendered menu_lists/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 102ms (Views: 90.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/reviews_and_ratings/new.1" for 149.125.40.130 at 2016-05-19 01:18:50 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#new as 
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered reviews_and_ratings/_form.html.erb (0.8ms)
+  Rendered reviews_and_ratings/new.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 118ms (Views: 117.0ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/logout" for 149.125.40.130 at 2016-05-19 01:18:58 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"KrS8nJH8vZPfJYdmkEiTUq+JZ2y9V48Xf70SPrbgDM7LDjUjyCqe0eXgBrHU+TO9ikzYdYT11kkNBZu+A1Z9Hg=="}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to https://bearcatsfoodsearch-sunilbinghamton.c9users.io/
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 149.125.40.130 at 2016-05-19 01:18:59 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 39ms (Views: 38.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/food_courts" for 149.125.40.130 at 2016-05-19 01:19:00 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodCourtsController#index as HTML
+  [1m[35mFoodCourt Load (0.3ms)[0m  SELECT "food_courts".* FROM "food_courts"
+  Rendered food_courts/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 54ms (Views: 51.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/food_outlets/2" for 149.125.40.130 at 2016-05-19 01:19:02 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mFoodOutlet Load (0.2ms)[0m  [1mSELECT  "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mFoodOutlet Load (0.1ms)[0m  SELECT "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."outletId" = ?  [["outletId", "2"]]
+  Rendered food_outlets/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 43ms (Views: 41.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/menu_lists/2" for 149.125.40.130 at 2016-05-19 01:19:03 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMenuList Load (0.2ms)[0m  [1mSELECT  "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mMenuList Load (0.1ms)[0m  SELECT "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."outlet_id" = ?  [["outlet_id", "2"]]
+  Rendered menu_lists/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 50ms (Views: 47.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reviews_and_ratings/new.2" for 149.125.40.130 at 2016-05-19 01:19:05 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#new as 
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered reviews_and_ratings/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 81ms (Views: 79.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/login" for 149.125.40.130 at 2016-05-19 01:21:55 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 65ms (Views: 64.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 149.125.40.130 at 2016-05-19 01:22:10 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Cwv5+aQ8BSK7tRn60TOsUSy82jO7f+igaRiIA7cJ6HfqsXBG/eomYIFwmC2Vggy+CXllKoLdsf4boAGDAr+Zpw==", "session"=>{"email"=>"ssahu1@bing.com", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "ssahu1@bing.com"]]
+Redirected to https://bearcatsfoodsearch-sunilbinghamton.c9users.io/login
+Completed 302 Found in 7ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/login" for 149.125.40.130 at 2016-05-19 01:22:10 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 36ms (Views: 35.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 149.125.40.130 at 2016-05-19 01:22:26 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dJToiuKmdqlFrD6Wj1WETIIEWVZWK4BVjhTuCh2/1g+VLmE1u3BV639pv0HL5CSjp8HmT2+J2Qv8rGeKqAmn3w==", "session"=>{"email"=>"ssahu1@bing.edu", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "ssahu1@bing.edu"]]
+Redirected to https://bearcatsfoodsearch-sunilbinghamton.c9users.io/reviews_and_ratings/new
+Completed 302 Found in 90ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/reviews_and_ratings/new" for 149.125.40.130 at 2016-05-19 01:22:27 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered reviews_and_ratings/_form.html.erb (0.9ms)
+  Rendered reviews_and_ratings/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 58ms (Views: 51.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/login" for 149.125.40.130 at 2016-05-19 01:40:44 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 110ms (Views: 109.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/reviews_and_ratings/new.2" for 149.125.40.130 at 2016-05-19 01:40:47 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#new as 
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered reviews_and_ratings/_form.html.erb (1.2ms)
+  Rendered reviews_and_ratings/new.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 86ms (Views: 76.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/menu_lists/2" for 149.125.40.130 at 2016-05-19 01:40:50 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMenuList Load (0.2ms)[0m  [1mSELECT  "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mMenuList Load (0.4ms)[0m  SELECT "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."outlet_id" = ?  [["outlet_id", "2"]]
+  Rendered menu_lists/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 207ms (Views: 197.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/reviews_and_ratings/new.2" for 149.125.40.130 at 2016-05-19 01:40:52 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#new as 
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered reviews_and_ratings/_form.html.erb (0.6ms)
+  Rendered reviews_and_ratings/new.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 55ms (Views: 53.4ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/logout" for 149.125.40.130 at 2016-05-19 01:40:55 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"z5masf1jp9Iacj/MieKPLY4yUwygN1otaJaQtJrA0wcuIxMOpLWEkCC3vhvNUy/Cq/fsFZmVA3MaLhk0L3ai1w=="}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to https://bearcatsfoodsearch-sunilbinghamton.c9users.io/
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 149.125.40.130 at 2016-05-19 01:40:55 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 38ms (Views: 36.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for 149.125.40.130 at 2016-05-19 01:41:04 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 45ms (Views: 44.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/food_courts" for 149.125.40.130 at 2016-05-19 01:41:09 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodCourtsController#index as HTML
+  [1m[35mFoodCourt Load (0.3ms)[0m  SELECT "food_courts".* FROM "food_courts"
+  Rendered food_courts/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 45ms (Views: 38.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/food_outlets/1" for 149.125.40.130 at 2016-05-19 01:41:13 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFoodOutlet Load (0.2ms)[0m  [1mSELECT  "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mFoodOutlet Load (0.3ms)[0m  SELECT "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."outletId" = ?  [["outletId", "1"]]
+  Rendered food_outlets/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 71ms (Views: 54.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/menu_lists/1" for 149.125.40.130 at 2016-05-19 01:41:15 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMenuList Load (0.2ms)[0m  [1mSELECT  "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mMenuList Load (0.2ms)[0m  SELECT "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."outlet_id" = ?  [["outlet_id", "1"]]
+  Rendered menu_lists/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 60ms (Views: 57.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/reviews_and_ratings/new.1" for 149.125.40.130 at 2016-05-19 01:41:16 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#new as 
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered reviews_and_ratings/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 60ms (Views: 58.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/login" for 149.125.40.130 at 2016-05-19 01:41:20 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 40ms (Views: 39.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 149.125.40.130 at 2016-05-19 01:41:31 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"V7MyxMZ+xFy4vXbMyjvlwbcOZchdIBgAb4AT+oLwYXG2Cbt7n6jnHoJ49xuOikUuksva0WSCQV4dOJp6N0YQoQ==", "session"=>{"email"=>"ssahu1@bing.edu", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "ssahu1@bing.edu"]]
+Completed 500 Internal Server Error in 164ms (ActiveRecord: 0.4ms)
+
+NameError (undefined local variable or method `current_item' for #<SessionsController:0x007fed71f007d8>
+Did you mean?  current_user):
+  app/controllers/sessions_controller.rb:10:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (98.6ms)
+
+
+Started POST "/login" for 149.125.40.130 at 2016-05-19 01:43:28 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qGam1USbhCRgQmS2W66bw4QgS1W+ifNwxPlfBMMICpBJ3C9qHU2nZlqH5WEfHzssoeX0TIcrqi62QdaEdr57QA==", "session"=>{"email"=>"ssahu1@bing.edu", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "ssahu1@bing.edu"]]
+Redirected to https://bearcatsfoodsearch-sunilbinghamton.c9users.io/reviews_and_ratings/new
+Completed 302 Found in 106ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/reviews_and_ratings/new" for 149.125.40.130 at 2016-05-19 01:43:28 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered reviews_and_ratings/_form.html.erb (1.2ms)
+  Rendered reviews_and_ratings/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 49ms (Views: 40.2ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/logout" for 149.125.40.130 at 2016-05-19 01:43:41 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"BrPzS4wESLfGCAcfxfroQxD8zUnqNxwcB4ahaEA5HsfnCXr01dJr9fzNhsiBS0isNTlyUNOVRUJ1Pijo9Y9vFw=="}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to https://bearcatsfoodsearch-sunilbinghamton.c9users.io/
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 149.125.40.130 at 2016-05-19 01:43:41 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 64ms (Views: 61.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/food_courts" for 149.125.40.130 at 2016-05-19 01:43:45 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodCourtsController#index as HTML
+  [1m[35mFoodCourt Load (0.4ms)[0m  SELECT "food_courts".* FROM "food_courts"
+  Rendered food_courts/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 50ms (Views: 44.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/food_outlets/1" for 149.125.40.130 at 2016-05-19 01:43:47 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFoodOutlet Load (0.2ms)[0m  [1mSELECT  "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mFoodOutlet Load (0.2ms)[0m  SELECT "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."outletId" = ?  [["outletId", "1"]]
+  Rendered food_outlets/show.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 51ms (Views: 43.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/menu_lists/1" for 149.125.40.130 at 2016-05-19 01:43:48 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMenuList Load (0.2ms)[0m  [1mSELECT  "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mMenuList Load (0.2ms)[0m  SELECT "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."outlet_id" = ?  [["outlet_id", "1"]]
+  Rendered menu_lists/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 51ms (Views: 42.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/reviews_and_ratings/new.1" for 149.125.40.130 at 2016-05-19 01:43:50 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#new as 
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered reviews_and_ratings/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 107ms (Views: 105.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for 149.125.40.130 at 2016-05-19 01:43:54 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 45ms (Views: 44.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 149.125.40.130 at 2016-05-19 01:44:05 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5J6eWqB49IfqprcuV0HxgzEEtJIuu2ZgH9ccMs5CEBoFJBfl+a7XxdBjNvkT8FFsFMELixcZPz5tb5Wye/Rhyg==", "session"=>{"email"=>"ssahu1@bing.edu", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "ssahu1@bing.edu"]]
+Redirected to https://bearcatsfoodsearch-sunilbinghamton.c9users.io/reviews_and_ratings/new
+Completed 302 Found in 78ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/reviews_and_ratings/new" for 149.125.40.130 at 2016-05-19 01:44:05 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered reviews_and_ratings/_form.html.erb (0.7ms)
+  Rendered reviews_and_ratings/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 58ms (Views: 57.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/menu_lists" for 149.125.40.130 at 2016-05-19 01:57:16 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#index as HTML
+  [1m[36mMenuList Load (0.3ms)[0m  [1mSELECT "menu_lists".* FROM "menu_lists"[0m
+  Rendered menu_lists/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 45ms (Views: 43.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for 149.125.40.130 at 2016-05-19 01:57:25 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 38ms (Views: 37.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 149.125.40.130 at 2016-05-19 01:57:27 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#new as HTML
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered users/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 45ms (Views: 43.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 149.125.40.130 at 2016-05-19 01:57:29 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 42ms (Views: 41.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/food_courts" for 149.125.40.130 at 2016-05-19 02:08:47 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodCourtsController#index as HTML
+  [1m[36mFoodCourt Load (0.3ms)[0m  [1mSELECT "food_courts".* FROM "food_courts"[0m
+  Rendered food_courts/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 37ms (Views: 35.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/food_outlets/3" for 149.125.40.130 at 2016-05-19 02:08:50 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mFoodOutlet Load (0.2ms)[0m  SELECT  "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mFoodOutlet Load (0.1ms)[0m  [1mSELECT "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."outletId" = ?[0m  [["outletId", "3"]]
+  Rendered food_outlets/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 50ms (Views: 47.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/menu_lists/3" for 149.125.40.130 at 2016-05-19 02:08:52 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mMenuList Load (0.2ms)[0m  SELECT  "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mMenuList Load (0.1ms)[0m  [1mSELECT "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."outlet_id" = ?[0m  [["outlet_id", "3"]]
+  Rendered menu_lists/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 40ms (Views: 37.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/menu_lists/3" for 149.125.40.130 at 2016-05-19 02:08:57 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mMenuList Load (0.3ms)[0m  SELECT  "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mMenuList Load (0.2ms)[0m  [1mSELECT "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."outlet_id" = ?[0m  [["outlet_id", "3"]]
+  Rendered menu_lists/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 40ms (Views: 38.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/reviews_and_ratings/new.3" for 149.125.40.130 at 2016-05-19 02:09:07 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#new as 
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered reviews_and_ratings/_form.html.erb (0.8ms)
+  Rendered reviews_and_ratings/new.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 66ms (Views: 64.8ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/logout" for 149.125.40.130 at 2016-05-19 02:09:09 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"puwkpaeoqZfvHB73e9qkrH4CvsazmJ5pGluzvivT8AJHVq0a/n6K1dXZnyA/awRDW8cB34o6xzdo4zo+nmWB0g=="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Redirected to https://bearcatsfoodsearch-sunilbinghamton.c9users.io/
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 149.125.40.130 at 2016-05-19 02:09:09 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 161ms (Views: 159.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/food_courts" for 149.125.40.130 at 2016-05-19 02:09:11 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodCourtsController#index as HTML
+  [1m[36mFoodCourt Load (0.3ms)[0m  [1mSELECT "food_courts".* FROM "food_courts"[0m
+  Rendered food_courts/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 35ms (Views: 33.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/food_outlets/2" for 149.125.40.130 at 2016-05-19 02:09:12 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mFoodOutlet Load (0.3ms)[0m  SELECT  "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mFoodOutlet Load (0.1ms)[0m  [1mSELECT "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."outletId" = ?[0m  [["outletId", "2"]]
+  Rendered food_outlets/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 44ms (Views: 42.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/menu_lists/2" for 149.125.40.130 at 2016-05-19 02:09:13 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mMenuList Load (0.2ms)[0m  SELECT  "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mMenuList Load (0.2ms)[0m  [1mSELECT "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."outlet_id" = ?[0m  [["outlet_id", "2"]]
+  Rendered menu_lists/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 39ms (Views: 37.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reviews_and_ratings/new.2" for 149.125.40.130 at 2016-05-19 02:09:15 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#new as 
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered reviews_and_ratings/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 111ms (Views: 109.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/menu_lists" for 149.125.40.130 at 2016-05-19 02:09:29 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#index as HTML
+  [1m[35mMenuList Load (0.4ms)[0m  SELECT "menu_lists".* FROM "menu_lists"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered menu_lists/index.html.erb within layouts/application (146.9ms)
+Completed 200 OK in 186ms (Views: 184.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/menu_lists" for 149.125.40.130 at 2016-05-19 02:11:57 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#index as HTML
+  [1m[36mMenuList Load (0.3ms)[0m  [1mSELECT "menu_lists".* FROM "menu_lists"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered menu_lists/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 43ms (Views: 41.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/login" for 149.125.40.130 at 2016-05-19 02:12:00 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 52ms (Views: 51.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 149.125.40.130 at 2016-05-19 02:12:26 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hxQrAZ7rG1Ghq6kNQi15IEGnh+OVIcBcQ2uY6Gib9kJmrqK+xz04E5tuKNoGnNnPZGI4+qyDmQIx0xFo3S2Hkg==", "session"=>{"email"=>"ssahu1@bing.edu", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "ssahu1@bing.edu"]]
+Redirected to https://bearcatsfoodsearch-sunilbinghamton.c9users.io/reviews_and_ratings/new
+Completed 302 Found in 151ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/reviews_and_ratings/new" for 149.125.40.130 at 2016-05-19 02:12:26 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered reviews_and_ratings/_form.html.erb (0.5ms)
+  Rendered reviews_and_ratings/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 46ms (Views: 45.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for 149.125.40.130 at 2016-05-19 02:14:19 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 58ms (Views: 57.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/menu_lists" for 149.125.40.130 at 2016-05-19 02:14:20 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#index as HTML
+  [1m[35mMenuList Load (0.3ms)[0m  SELECT "menu_lists".* FROM "menu_lists"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered menu_lists/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 236ms (Views: 234.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/reviews_and_ratings/new.2" for 149.125.40.130 at 2016-05-19 02:14:50 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#new as 
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered reviews_and_ratings/_form.html.erb (1.6ms)
+  Rendered reviews_and_ratings/new.html.erb within layouts/application (32.7ms)
+Completed 200 OK in 121ms (Views: 110.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/menu_lists/2" for 149.125.40.130 at 2016-05-19 02:14:52 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMenuList Load (0.2ms)[0m  [1mSELECT  "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mMenuList Load (0.2ms)[0m  SELECT "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."outlet_id" = ?  [["outlet_id", "2"]]
+  Rendered menu_lists/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 50ms (Views: 41.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/food_outlets/2" for 149.125.40.130 at 2016-05-19 02:14:56 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mFoodOutlet Load (0.3ms)[0m  [1mSELECT  "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mFoodOutlet Load (0.3ms)[0m  SELECT "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."outletId" = ?  [["outletId", "2"]]
+  Rendered food_outlets/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 183ms (Views: 175.6ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/logout" for 149.125.40.130 at 2016-05-19 02:15:02 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"A6S3QzCf/o6FWjkga6nLlg9rRdU+EDMd7h9aJSWg7mfiHj78aUndzL+fuPcvGGt5Kq76zAeyakOcp9OlkBaftw=="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Redirected to https://bearcatsfoodsearch-sunilbinghamton.c9users.io/
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 149.125.40.130 at 2016-05-19 02:15:02 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 42ms (Views: 40.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/food_courts" for 149.125.40.130 at 2016-05-19 02:15:05 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodCourtsController#index as HTML
+  [1m[36mFoodCourt Load (0.3ms)[0m  [1mSELECT "food_courts".* FROM "food_courts"[0m
+  Rendered food_courts/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 52ms (Views: 43.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/food_outlets/1" for 149.125.40.130 at 2016-05-19 02:15:06 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mFoodOutlet Load (0.2ms)[0m  SELECT  "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mFoodOutlet Load (0.1ms)[0m  [1mSELECT "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."outletId" = ?[0m  [["outletId", "1"]]
+  Rendered food_outlets/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 197ms (Views: 195.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/menu_lists/1" for 149.125.40.130 at 2016-05-19 02:15:08 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMenuList Load (0.2ms)[0m  SELECT  "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mMenuList Load (0.1ms)[0m  [1mSELECT "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."outlet_id" = ?[0m  [["outlet_id", "1"]]
+  Rendered menu_lists/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 43ms (Views: 40.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reviews_and_ratings/new.1" for 149.125.40.130 at 2016-05-19 02:15:10 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#new as 
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered reviews_and_ratings/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 51ms (Views: 49.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reviews_and_ratings/new.1" for 149.125.40.130 at 2016-05-19 02:15:18 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#new as 
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered reviews_and_ratings/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 68ms (Views: 66.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/menu_lists" for 149.125.40.130 at 2016-05-19 02:16:50 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#index as HTML
+  [1m[35mMenuList Load (0.6ms)[0m  SELECT "menu_lists".* FROM "menu_lists"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered menu_lists/index.html.erb within layouts/application (19.8ms)
+Completed 200 OK in 77ms (Views: 71.1ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/login" for 149.125.40.130 at 2016-05-19 02:17:10 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 69ms (Views: 68.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 149.125.40.130 at 2016-05-19 02:17:30 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zSxjzecraDKH2ZA+4c1xviis28lJjtDOsPTkA/RwH7oslupyvv1LcL0cEemlfNFRDWlk0HAsiZDCTG2DQcZuag==", "session"=>{"email"=>"ssahu1@bing.edu", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "ssahu1@bing.edu"]]
+Redirected to https://bearcatsfoodsearch-sunilbinghamton.c9users.io/menu_lists
+Completed 302 Found in 89ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/menu_lists" for 149.125.40.130 at 2016-05-19 02:17:30 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#index as HTML
+  [1m[35mMenuList Load (0.3ms)[0m  SELECT "menu_lists".* FROM "menu_lists"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered menu_lists/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 48ms (Views: 44.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/reviews_and_ratings/new.1" for 149.125.40.130 at 2016-05-19 02:17:41 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#new as 
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered reviews_and_ratings/_form.html.erb (1.1ms)
+  Rendered reviews_and_ratings/new.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 68ms (Views: 61.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 149.125.40.130 at 2016-05-19 02:24:56 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 68ms (Views: 62.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/food_courts" for 149.125.40.130 at 2016-05-19 02:25:03 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodCourtsController#index as HTML
+  [1m[35mFoodCourt Load (0.3ms)[0m  SELECT "food_courts".* FROM "food_courts"
+  Rendered food_courts/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 82ms (Views: 68.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/food_outlets/1" for 149.125.40.130 at 2016-05-19 02:25:04 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFoodOutlet Load (0.4ms)[0m  [1mSELECT  "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mFoodOutlet Load (0.4ms)[0m  SELECT "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."outletId" = ?  [["outletId", "1"]]
+  Rendered food_outlets/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 207ms (Views: 61.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/menu_lists/1" for 149.125.40.130 at 2016-05-19 02:25:07 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMenuList Load (0.3ms)[0m  [1mSELECT  "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mMenuList Load (0.3ms)[0m  SELECT "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."outlet_id" = ?  [["outlet_id", "1"]]
+  Rendered menu_lists/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 65ms (Views: 53.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/reviews_and_ratings/new.1" for 149.125.40.130 at 2016-05-19 02:25:09 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#new as 
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered reviews_and_ratings/_form.html.erb (1.5ms)
+  Rendered reviews_and_ratings/new.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 212ms (Views: 204.1ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/logout" for 149.125.40.130 at 2016-05-19 02:25:12 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ZY5kwGC209qcP3QVs+LvElmH3X95U6Fm4DCtgZuNAoCENO1/OWDwmKb69cL3U0/9fEJiZkDx+DiSiCQBLjtzUA=="}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to https://bearcatsfoodsearch-sunilbinghamton.c9users.io/
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 149.125.40.130 at 2016-05-19 02:25:12 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 61ms (Views: 59.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/food_courts" for 149.125.40.130 at 2016-05-19 02:25:14 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodCourtsController#index as HTML
+  [1m[35mFoodCourt Load (0.4ms)[0m  SELECT "food_courts".* FROM "food_courts"
+  Rendered food_courts/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 46ms (Views: 44.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/food_outlets/3" for 149.125.40.130 at 2016-05-19 02:25:16 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mFoodOutlet Load (0.3ms)[0m  [1mSELECT  "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mFoodOutlet Load (0.2ms)[0m  SELECT "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."outletId" = ?  [["outletId", "3"]]
+  Rendered food_outlets/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 48ms (Views: 45.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/menu_lists/3" for 149.125.40.130 at 2016-05-19 02:25:17 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMenuList Load (0.2ms)[0m  [1mSELECT  "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mMenuList Load (0.1ms)[0m  SELECT "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."outlet_id" = ?  [["outlet_id", "3"]]
+  Rendered menu_lists/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 42ms (Views: 39.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reviews_and_ratings/new.3" for 149.125.40.130 at 2016-05-19 02:25:19 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#new as 
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered reviews_and_ratings/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 59ms (Views: 57.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/login" for 149.125.40.130 at 2016-05-19 02:25:48 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 44ms (Views: 42.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 149.125.40.130 at 2016-05-19 02:25:58 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FadOK2UixiECj11k32xeFcxRRADLpLGnoUl5DhtNe430HceUPPTlYzhK3LOb3f766ZT7GfIG6PnT8fCOrvsKXQ==", "session"=>{"email"=>"ssahu1@bing.edu", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "ssahu1@bing.edu"]]
+Redirected to https://bearcatsfoodsearch-sunilbinghamton.c9users.io/reviews_and_ratings/new
+Completed 302 Found in 84ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/reviews_and_ratings/new" for 149.125.40.130 at 2016-05-19 02:25:58 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered reviews_and_ratings/_form.html.erb (0.5ms)
+  Rendered reviews_and_ratings/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 41ms (Views: 40.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for 149.125.40.130 at 2016-05-19 02:26:21 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 36ms (Views: 34.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/reviews_and_ratings/new.3" for 149.125.40.130 at 2016-05-19 02:26:24 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#new as 
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered reviews_and_ratings/_form.html.erb (0.8ms)
+  Rendered reviews_and_ratings/new.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 78ms (Views: 77.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/menu_lists/3" for 149.125.40.130 at 2016-05-19 02:26:26 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mMenuList Load (0.2ms)[0m  SELECT  "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mMenuList Load (0.3ms)[0m  [1mSELECT "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."outlet_id" = ?[0m  [["outlet_id", "3"]]
+  Rendered menu_lists/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 70ms (Views: 67.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/menu_lists" for 149.125.40.130 at 2016-05-19 02:26:33 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#index as HTML
+  [1m[35mMenuList Load (0.3ms)[0m  SELECT "menu_lists".* FROM "menu_lists"
+  Rendered menu_lists/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 43ms (Views: 42.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 149.125.40.130 at 2016-05-19 16:30:05 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 725ms (Views: 616.5ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/login" for 149.125.40.130 at 2016-05-19 16:53:04 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (63.0ms)
+Completed 200 OK in 118ms (Views: 117.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 149.125.40.130 at 2016-05-19 16:53:12 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lx7/lW8IzTevxUtkOaoq+xdh9Tke0I0DdDOCKL2dWaJ2pHYqNt7udZUAyrN9G4oUMqRKICdy1F0GiwuoCCsocg==", "session"=>{"email"=>"ssahu1@bing.edu", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "ssahu1@bing.edu"]]
+Redirected to https://bearcatsfoodsearch-sunilbinghamton.c9users.io/reviews_and_ratings/new
+Completed 302 Found in 148ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/reviews_and_ratings/new" for 149.125.40.130 at 2016-05-19 16:53:12 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#new as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered reviews_and_ratings/_form.html.erb (10.2ms)
+  Rendered reviews_and_ratings/new.html.erb within layouts/application (22.9ms)
+Completed 200 OK in 107ms (Views: 95.8ms | ActiveRecord: 1.2ms)
+
+
+Started DELETE "/logout" for 149.125.40.130 at 2016-05-19 16:58:27 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"WjmQ1fiIxBjXVsk+uGdr+LlBo+4OshF8U24LEobqkT+7gxlqoV7nWu2TSOn81ssXnIQc9zcQSCIh1oKSM1zg7w=="}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Redirected to https://bearcatsfoodsearch-sunilbinghamton.c9users.io/
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 149.125.40.130 at 2016-05-19 16:58:28 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 81ms (Views: 79.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/login" for 149.125.40.130 at 2016-05-19 17:00:34 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 80ms (Views: 78.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 149.125.40.130 at 2016-05-19 17:00:47 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"U8cwCoGGpJjVItoIO2l6LfENF/YsqkYeNC3d3MXvehuyfbm12FCH2u/nW99/2NrC1Mio7xUIH0BGlVRccFkLyw==", "session"=>{"email"=>"ssahu1@bing.edu", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "ssahu1@bing.edu"]]
+Redirected to https://bearcatsfoodsearch-sunilbinghamton.c9users.io/reviews_and_ratings/new
+Completed 302 Found in 93ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/reviews_and_ratings/new" for 149.125.40.130 at 2016-05-19 17:00:47 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#new as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered reviews_and_ratings/_form.html.erb (1.3ms)
+  Rendered reviews_and_ratings/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 72ms (Views: 63.2ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/logout" for 149.125.40.130 at 2016-05-19 17:02:30 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"R3sbnDTVyUGwiPyW6roJUb/8cqbZ9wh+y3ru5SNTePimwZIjbQPqA4pNfUGuC6m+mjnNv+BVUSC5wmdlluUJKA=="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Redirected to https://bearcatsfoodsearch-sunilbinghamton.c9users.io/
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 149.125.40.130 at 2016-05-19 17:02:30 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (1.7ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 67ms (Views: 64.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/login" for 149.125.40.130 at 2016-05-19 17:05:10 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 130ms (Views: 128.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 149.125.40.130 at 2016-05-19 17:05:24 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"y4exysZOEB6e5z/FYMT6u1Xv9hQu6QLZyM65A6RyXDQqPTh1n5gzXKQivhIkdVpUcCpJDRdLW4e6djCDEcQt5A==", "session"=>{"email"=>"ssahu1@bing.edu", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "ssahu1@bing.edu"]]
+Completed 500 Internal Server Error in 126ms (ActiveRecord: 1.5ms)
+
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"reviews_and_ratings"} missing required keys: [:id]):
+  app/controllers/sessions_controller.rb:10:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (101.0ms)
+
+
+Started POST "/login" for 149.125.40.130 at 2016-05-19 17:06:29 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XQLS3q4LWThDVvO0bilJc6M6EkSpraIi4YFDx6W8hnK8uFth9916enmTcmMqmOmchv+tXZAP+3yTOcpHEAr3og==", "session"=>{"email"=>"ssahu1@bing.edu", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "ssahu1@bing.edu"]]
+Redirected to https://bearcatsfoodsearch-sunilbinghamton.c9users.io/reviews_and_ratings
+Completed 302 Found in 86ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/reviews_and_ratings" for 149.125.40.130 at 2016-05-19 17:06:29 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mReviewsAndRating Load (0.2ms)[0m  SELECT "reviews_and_ratings".* FROM "reviews_and_ratings"
+  Rendered reviews_and_ratings/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 48ms (Views: 44.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/login" for 149.125.40.130 at 2016-05-19 17:09:04 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 90ms (Views: 88.6ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/logout" for 149.125.40.130 at 2016-05-19 17:09:07 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ahjiYe/B7UE1qWFRxaJ5UHPym2sagLOBX3jIMTzRZzuLomvethfOAw9s4IaBE9m/VjckciMi6t8twEGxiWcW6w=="}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Redirected to https://bearcatsfoodsearch-sunilbinghamton.c9users.io/
+Completed 302 Found in 21ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 149.125.40.130 at 2016-05-19 17:09:07 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 87ms (Views: 84.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/login" for 149.125.40.130 at 2016-05-19 17:09:14 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 39ms (Views: 38.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 149.125.40.130 at 2016-05-19 17:09:21 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AspePk+sCH01QR65cGqyyM9iebrglyY6qxfSScE/GsjjcNeBFnorPw+En2402xIn6qfGo9k1f2TZr1vJdIlrGA==", "session"=>{"email"=>"ssahu1@bing.edu", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "ssahu1@bing.edu"]]
+Redirected to https://bearcatsfoodsearch-sunilbinghamton.c9users.io/reviews_and_ratings/new
+Completed 302 Found in 80ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/reviews_and_ratings/new" for 149.125.40.130 at 2016-05-19 17:09:21 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered reviews_and_ratings/_form.html.erb (1.2ms)
+  Rendered reviews_and_ratings/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 71ms (Views: 61.6ms | ActiveRecord: 0.8ms)
