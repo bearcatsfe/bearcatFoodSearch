@@ -23,7 +23,7 @@ module NavigationHelpers
       login_path        
     
     when /^Food Outlet\s?page$/
-      food_outlet_path
+      food_outlets_path
           
     when /^Menu List\s?page$/
       menu_lists_path  

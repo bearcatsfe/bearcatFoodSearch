@@ -7,9 +7,18 @@ end
 
 
 When(/^I select a particular food court$/) do
-  
+
+end
+
+Then(/^I should see all the outlets$/) do
   
 end
+
+Then(/^I should see the list of food outlets$/) do
+  
+end
+
+
 
 =begin
 Then(/^I should see "([^"]*)"$/) do |arg1|
