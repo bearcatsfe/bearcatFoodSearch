@@ -6,8 +6,9 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
-      #p "User login successful"
-      redirect_to root_url, :notice => "Login Successful"
+      log_in user
+      redirect_to new_reviews_and_rating_path, 
+      :notice => "Login Successful"+ "\n"+ "Logged in as: "+user.name
       #flash[:success] = 'Login Successful'
     else
       #p "User login failure"
@@ -16,7 +17,7 @@ class SessionsController < ApplicationController
   end  
 
   def destroy
-    log_out
+    log_out if logged_in?
     redirect_to root_url
   end
 end

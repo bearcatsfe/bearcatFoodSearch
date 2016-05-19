@@ -7,16 +7,9 @@
 
 <img src="http://connorarchitecture.com/website/wp-content/uploads/2014/06/PAGE-HEADER-Binhamton-University-Union-NEW-CAMPUS-HOT-SPOT-Food-Management-Mag.-2014.jpg" alt="Bearcat Food" style="width:1500px;height:480px;">
 <table>
-  
-
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= user.name %></td>
-        <td><%= user.email %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
