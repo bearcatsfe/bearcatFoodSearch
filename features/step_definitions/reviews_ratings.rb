@@ -25,3 +25,35 @@ end
 
 And(/^I selected particular Food Outlet$/) do
 end
+
+Then(/^I should change rating of a food outlets$/) do
+  #pending # Write code here that turns the phrase above into concrete actions
+end
+
+Then(/^I should change reviews of a food outlets$/) do
+  #pending # Write code here that turns the phrase above into concrete actions
+end
+
+When(/^I select particular menu item$/) do
+  #pending # Write code here that turns the phrase above into concrete actions
+end
+
+When(/^I select rating for that item$/) do
+  #pending # Write code here that turns the phrase above into concrete actions
+end
+
+Then(/^I click on "([^"]*)" button to give user ratings$/) do |arg1|
+  #pending # Write code here that turns the phrase above into concrete actions
+end
+
+When(/^I change rating for that item$/) do
+  #pending # Write code here that turns the phrase above into concrete actions
+end
+
+Then(/^I should update the rating of a menu item$/) do
+  #pending # Write code here that turns the phrase above into concrete actions
+end
+
+When(/^I change reviews for that item$/) do
+  #pending # Write code here that turns the phrase above into concrete actions
+end
