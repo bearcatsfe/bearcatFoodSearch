@@ -13,12 +13,11 @@ Background: Food courts has been selected
   | Tully               |
   
   Given I am on Food Court page
-  And I click on the "Marketplace" link
 
 Scenario: List the food outlets
   When I am on Food Court page
-  And I click on the "Marketplace" link
-  And I should see the "Food Court" page
+  And I click on the "Food Courts" link
+  Then I should see the "Food Outlet" page
   And I should see the list of food outlets.
 
 # Scenario: Search for a food outlet that is listed
