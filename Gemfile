@@ -4,11 +4,7 @@ gem 'pg'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 # Use sqlite3 as the database for Active Record
-<<<<<<< HEAD
 #gem 'sqlite3'
-=======
-gem 'pg'
->>>>>>> 17a1003439702b2cab37c4766b2534d4f3dad146
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -35,36 +31,23 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
-<<<<<<< HEAD
-
-
-group :development do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
-=======
 group :development, :test  do
   gem 'spring'
-  gem 'sqlite3'
   gem 'rspec-rails'
   gem 'capybara'
   gem 'database_cleaner'
-  #gem 'pg'
->>>>>>> 17a1003439702b2cab37c4766b2534d4f3dad146
 end
 
 group :production do
-  #gem 'pg'
+
   gem 'rails_12factor'
 end
 
 
 group :test do
-  #gem 'sqlite3'
-  #gem 'pg'
-  #gem 'rspec-rails'
-  #gem 'capybara'
-  #gem 'database_cleaner'
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'database_cleaner'
   gem 'sinatra'  
   gem 'cucumber'  
   gem 'cucumber-sinatra'  
