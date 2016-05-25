@@ -13065,3 +13065,959 @@ Processing by UsersController#index as HTML
   [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
   Rendered users/index.html.erb within layouts/application (3.2ms)
 Completed 200 OK in 67ms (Views: 65.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 149.125.40.130 at 2016-05-19 19:03:01 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (21.9ms)
+Completed 200 OK in 465ms (Views: 414.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/food_courts" for 149.125.40.130 at 2016-05-19 19:03:10 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodCourtsController#index as HTML
+  [1m[36mFoodCourt Load (0.3ms)[0m  [1mSELECT "food_courts".* FROM "food_courts"[0m
+  Rendered food_courts/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 54ms (Views: 49.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/food_outlets/1" for 149.125.40.130 at 2016-05-19 19:03:12 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mFoodOutlet Load (0.5ms)[0m  SELECT  "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mFoodOutlet Load (0.4ms)[0m  [1mSELECT "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."outletId" = ?[0m  [["outletId", "1"]]
+  Rendered food_outlets/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 104ms (Views: 63.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/menu_lists/1" for 149.125.40.130 at 2016-05-19 19:03:14 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMenuList Load (0.2ms)[0m  SELECT  "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mMenuList Load (0.3ms)[0m  [1mSELECT "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."outlet_id" = ?[0m  [["outlet_id", "1"]]
+  Rendered menu_lists/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 111ms (Views: 101.5ms | ActiveRecord: 1.0ms)
+  [1m[36m (19.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (18.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateUsers (20160329171948)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160329171948"]]
+  [1m[35m (14.0ms)[0m  commit transaction
+Migrating to AddPasswordDigestToUsers (20160404130516)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "users" ADD "password_digest" varchar
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160404130516"]]
+  [1m[35m (14.6ms)[0m  commit transaction
+Migrating to AddIndexToUsersEmail (20160404132723)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160404132723"]]
+  [1m[35m (23.6ms)[0m  commit transaction
+Migrating to CreateReviewsAndRatings (20160409220521)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "reviews_and_ratings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "foodcourts" varchar, "foodoutlets" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160409220521"]]
+  [1m[35m (11.8ms)[0m  commit transaction
+Migrating to MenuLists (20160425004520)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "menu_lists" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "menu_item" varchar, "price" varchar, "outlet_id" varchar, "foodCourt" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160425004520"]]
+  [1m[35m (28.3ms)[0m  commit transaction
+Migrating to CreateFoodCourts (20160504132919)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "food_courts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "foodCourt" varchar, "distance" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160504132919"]]
+  [1m[35m (12.7ms)[0m  commit transaction
+Migrating to CreateFoodOutlets (20160510011614)
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "food_outlets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "foodOutletList" varchar, "outletId" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160510011614"]]
+  [1m[35m (14.2ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "menu_lists" ("menu_item", "price", "outlet_id", "foodCourt", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["menu_item", "Coffee"], ["price", "2"], ["outlet_id", "1"], ["foodCourt", "Marketplace"], ["created_at", "2016-05-19 19:06:23.916017"], ["updated_at", "2016-05-19 19:06:23.916017"]]
+  [1m[35m (17.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "menu_lists" ("menu_item", "price", "outlet_id", "foodCourt", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["menu_item", "Burger"], ["price", "3"], ["outlet_id", "2"], ["foodCourt", "Hinman"], ["created_at", "2016-05-19 19:06:23.940919"], ["updated_at", "2016-05-19 19:06:23.940919"]]
+  [1m[36m (13.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "menu_lists" ("menu_item", "price", "outlet_id", "foodCourt", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["menu_item", "Pizza"], ["price", "4"], ["outlet_id", "3"], ["foodCourt", "CIW"], ["created_at", "2016-05-19 19:06:23.957515"], ["updated_at", "2016-05-19 19:06:23.957515"]]
+  [1m[35m (13.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "menu_lists" ("menu_item", "price", "outlet_id", "foodCourt", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["menu_item", "Rice and Chicken"], ["price", "4"], ["outlet_id", "4"], ["foodCourt", "C4"], ["created_at", "2016-05-19 19:06:23.974503"], ["updated_at", "2016-05-19 19:06:23.974503"]]
+  [1m[36m (14.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "menu_lists" ("menu_item", "price", "outlet_id", "foodCourt", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["menu_item", "Roti"], ["price", "5"], ["outlet_id", "5"], ["foodCourt", "Jazzman"], ["created_at", "2016-05-19 19:06:23.990698"], ["updated_at", "2016-05-19 19:06:23.990698"]]
+  [1m[35m (16.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "menu_lists" ("menu_item", "price", "outlet_id", "foodCourt", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["menu_item", "Salad"], ["price", "6"], ["outlet_id", "6"], ["foodCourt", "Chenango"], ["created_at", "2016-05-19 19:06:24.009784"], ["updated_at", "2016-05-19 19:06:24.009784"]]
+  [1m[36m (13.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "menu_lists" ("menu_item", "price", "outlet_id", "foodCourt", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["menu_item", "Bagel"], ["price", "2"], ["outlet_id", "5"], ["foodCourt", "Jazzman"], ["created_at", "2016-05-19 19:06:24.026414"], ["updated_at", "2016-05-19 19:06:24.026414"]]
+  [1m[35m (15.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "menu_lists" ("menu_item", "price", "outlet_id", "foodCourt", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["menu_item", "Sandwich"], ["price", "6"], ["outlet_id", "6"], ["foodCourt", "Chenango"], ["created_at", "2016-05-19 19:06:24.044693"], ["updated_at", "2016-05-19 19:06:24.044693"]]
+  [1m[36m (11.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["foodCourt", "Marketplace"], ["distance", "0.4 mile"], ["created_at", "2016-05-19 19:06:24.063393"], ["updated_at", "2016-05-19 19:06:24.063393"]]
+  [1m[35m (12.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["foodCourt", "Hinman"], ["distance", "0.5 mile"], ["created_at", "2016-05-19 19:06:24.077972"], ["updated_at", "2016-05-19 19:06:24.077972"]]
+  [1m[36m (10.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["foodCourt", "CIW"], ["distance", "0.1 mile"], ["created_at", "2016-05-19 19:06:24.090652"], ["updated_at", "2016-05-19 19:06:24.090652"]]
+  [1m[35m (12.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["foodCourt", "C4"], ["distance", "0.3 mile"], ["created_at", "2016-05-19 19:06:24.104939"], ["updated_at", "2016-05-19 19:06:24.104939"]]
+  [1m[36m (11.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["foodCourt", "Jazzman"], ["distance", "0.5 mile"], ["created_at", "2016-05-19 19:06:24.117817"], ["updated_at", "2016-05-19 19:06:24.117817"]]
+  [1m[35m (11.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["foodCourt", "Chenango"], ["distance", "0.6 mile"], ["created_at", "2016-05-19 19:06:24.130817"], ["updated_at", "2016-05-19 19:06:24.130817"]]
+  [1m[36m (12.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["foodCourt", "Einstein Bros"], ["distance", "0.6 mile"], ["created_at", "2016-05-19 19:06:24.146414"], ["updated_at", "2016-05-19 19:06:24.146414"]]
+  [1m[35m (12.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["foodCourt", "Arthurs Cafe"], ["distance", "0.3 mile"], ["created_at", "2016-05-19 19:06:24.161498"], ["updated_at", "2016-05-19 19:06:24.161498"]]
+  [1m[36m (12.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "food_outlets" ("foodOutletList", "outletId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["foodOutletList", "Subway"], ["outletId", "1"], ["created_at", "2016-05-19 19:06:24.181814"], ["updated_at", "2016-05-19 19:06:24.181814"]]
+  [1m[35m (13.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "food_outlets" ("foodOutletList", "outletId", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["foodOutletList", "Tully"], ["outletId", "1"], ["created_at", "2016-05-19 19:06:24.197406"], ["updated_at", "2016-05-19 19:06:24.197406"]]
+  [1m[36m (10.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "food_outlets" ("foodOutletList", "outletId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["foodOutletList", "Mogul"], ["outletId", "2"], ["created_at", "2016-05-19 19:06:24.210670"], ["updated_at", "2016-05-19 19:06:24.210670"]]
+  [1m[35m (14.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "food_outlets" ("foodOutletList", "outletId", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["foodOutletList", "Garden Fresh"], ["outletId", "2"], ["created_at", "2016-05-19 19:06:24.227095"], ["updated_at", "2016-05-19 19:06:24.227095"]]
+  [1m[36m (12.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "food_outlets" ("foodOutletList", "outletId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["foodOutletList", "Starbucks"], ["outletId", "3"], ["created_at", "2016-05-19 19:06:24.242364"], ["updated_at", "2016-05-19 19:06:24.242364"]]
+  [1m[35m (13.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "food_outlets" ("foodOutletList", "outletId", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["foodOutletList", "Cakes n Eggs"], ["outletId", "3"], ["created_at", "2016-05-19 19:06:24.258080"], ["updated_at", "2016-05-19 19:06:24.258080"]]
+  [1m[36m (10.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "food_outlets" ("foodOutletList", "outletId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["foodOutletList", "Einstien"], ["outletId", "4"], ["created_at", "2016-05-19 19:06:24.270506"], ["updated_at", "2016-05-19 19:06:24.270506"]]
+  [1m[35m (10.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "food_outlets" ("foodOutletList", "outletId", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["foodOutletList", "PizzaHouse"], ["outletId", "4"], ["created_at", "2016-05-19 19:06:24.282451"], ["updated_at", "2016-05-19 19:06:24.282451"]]
+  [1m[36m (11.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "food_outlets" ("foodOutletList", "outletId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["foodOutletList", "DoughnutCentre"], ["outletId", "5"], ["created_at", "2016-05-19 19:06:24.295376"], ["updated_at", "2016-05-19 19:06:24.295376"]]
+  [1m[35m (12.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "food_outlets" ("foodOutletList", "outletId", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["foodOutletList", "GardenToss"], ["outletId", "5"], ["created_at", "2016-05-19 19:06:24.309137"], ["updated_at", "2016-05-19 19:06:24.309137"]]
+  [1m[36m (11.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "food_outlets" ("foodOutletList", "outletId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["foodOutletList", "PizzaFlavours"], ["outletId", "6"], ["created_at", "2016-05-19 19:06:24.321976"], ["updated_at", "2016-05-19 19:06:24.321976"]]
+  [1m[35m (11.3ms)[0m  commit transaction
+
+
+Started GET "/" for 149.125.40.130 at 2016-05-19 19:07:34 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 466ms (Views: 414.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/food_courts" for 149.125.40.130 at 2016-05-19 19:07:53 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodCourtsController#index as HTML
+  [1m[36mFoodCourt Load (0.3ms)[0m  [1mSELECT "food_courts".* FROM "food_courts"[0m
+  Rendered food_courts/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 42ms (Views: 38.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/food_outlets/1" for 149.125.40.130 at 2016-05-19 19:07:59 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mFoodOutlet Load (0.4ms)[0m  SELECT  "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mFoodOutlet Load (0.3ms)[0m  [1mSELECT "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."outletId" = ?[0m  [["outletId", "1"]]
+  Rendered food_outlets/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 83ms (Views: 50.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/menu_lists/1" for 149.125.40.130 at 2016-05-19 19:08:01 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMenuList Load (0.2ms)[0m  SELECT  "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mMenuList Load (0.2ms)[0m  [1mSELECT "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."outlet_id" = ?[0m  [["outlet_id", "1"]]
+  Rendered menu_lists/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 212ms (Views: 203.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/food_outlets/5" for 149.125.40.130 at 2016-05-19 19:08:07 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mFoodOutlet Load (0.2ms)[0m  SELECT  "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mFoodOutlet Load (0.1ms)[0m  [1mSELECT "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."outletId" = ?[0m  [["outletId", "5"]]
+  Rendered food_outlets/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 37ms (Views: 35.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/menu_lists/9" for 149.125.40.130 at 2016-05-19 19:08:08 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mMenuList Load (0.2ms)[0m  SELECT  "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."id" = ? LIMIT 1  [["id", 9]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+ActiveRecord::RecordNotFound (Couldn't find MenuList with 'id'=9):
+  app/controllers/menu_lists_controller.rb:84:in `set_menu_list'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (97.7ms)
+
+
+Started GET "/menu_lists/9" for 149.125.40.130 at 2016-05-19 19:08:08 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mMenuList Load (0.2ms)[0m  [1mSELECT  "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."id" = ? LIMIT 1[0m  [["id", 9]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+ActiveRecord::RecordNotFound (Couldn't find MenuList with 'id'=9):
+  app/controllers/menu_lists_controller.rb:84:in `set_menu_list'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (85.8ms)
+  [1m[36m (15.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (10.5ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateUsers (20160329171948)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160329171948"]]
+  [1m[35m (16.7ms)[0m  commit transaction
+Migrating to AddPasswordDigestToUsers (20160404130516)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "users" ADD "password_digest" varchar
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160404130516"]]
+  [1m[35m (15.7ms)[0m  commit transaction
+Migrating to AddIndexToUsersEmail (20160404132723)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160404132723"]]
+  [1m[35m (11.1ms)[0m  commit transaction
+Migrating to CreateReviewsAndRatings (20160409220521)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "reviews_and_ratings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "foodcourts" varchar, "foodoutlets" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160409220521"]]
+  [1m[35m (12.0ms)[0m  commit transaction
+Migrating to MenuLists (20160425004520)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "menu_lists" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "menu_item" varchar, "price" varchar, "outlet_id" varchar, "foodCourt" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160425004520"]]
+  [1m[35m (15.8ms)[0m  commit transaction
+Migrating to CreateFoodCourts (20160504132919)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "food_courts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "foodCourt" varchar, "distance" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160504132919"]]
+  [1m[35m (26.5ms)[0m  commit transaction
+Migrating to CreateFoodOutlets (20160510011614)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "food_outlets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "foodOutletList" varchar, "outletId" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160510011614"]]
+  [1m[35m (10.6ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "menu_lists" ("menu_item", "price", "outlet_id", "foodCourt", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["menu_item", "Coffee"], ["price", "2"], ["outlet_id", "1"], ["foodCourt", "Marketplace"], ["created_at", "2016-05-19 19:11:24.367339"], ["updated_at", "2016-05-19 19:11:24.367339"]]
+  [1m[35m (111.9ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "menu_lists" ("menu_item", "price", "outlet_id", "foodCourt", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["menu_item", "Burger"], ["price", "3"], ["outlet_id", "2"], ["foodCourt", "Hinman"], ["created_at", "2016-05-19 19:11:24.492389"], ["updated_at", "2016-05-19 19:11:24.492389"]]
+  [1m[36m (95.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "menu_lists" ("menu_item", "price", "outlet_id", "foodCourt", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["menu_item", "Pizza"], ["price", "4"], ["outlet_id", "3"], ["foodCourt", "CIW"], ["created_at", "2016-05-19 19:11:24.593262"], ["updated_at", "2016-05-19 19:11:24.593262"]]
+  [1m[35m (97.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "menu_lists" ("menu_item", "price", "outlet_id", "foodCourt", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["menu_item", "Rice and Chicken"], ["price", "4"], ["outlet_id", "4"], ["foodCourt", "C4"], ["created_at", "2016-05-19 19:11:24.694891"], ["updated_at", "2016-05-19 19:11:24.694891"]]
+  [1m[36m (105.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "menu_lists" ("menu_item", "price", "outlet_id", "foodCourt", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["menu_item", "Roti"], ["price", "5"], ["outlet_id", "5"], ["foodCourt", "Jazzman"], ["created_at", "2016-05-19 19:11:24.803331"], ["updated_at", "2016-05-19 19:11:24.803331"]]
+  [1m[35m (102.1ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "menu_lists" ("menu_item", "price", "outlet_id", "foodCourt", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["menu_item", "Salad"], ["price", "6"], ["outlet_id", "6"], ["foodCourt", "Chenango"], ["created_at", "2016-05-19 19:11:24.908905"], ["updated_at", "2016-05-19 19:11:24.908905"]]
+  [1m[36m (132.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["foodCourt", "Marketplace"], ["distance", "0.4 mile"], ["created_at", "2016-05-19 19:11:25.063595"], ["updated_at", "2016-05-19 19:11:25.063595"]]
+  [1m[35m (59.9ms)[0m  commit transaction
+  [1m[36m (3.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["foodCourt", "Hinman"], ["distance", "0.5 mile"], ["created_at", "2016-05-19 19:11:25.137761"], ["updated_at", "2016-05-19 19:11:25.137761"]]
+  [1m[36m (86.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["foodCourt", "CIW"], ["distance", "0.1 mile"], ["created_at", "2016-05-19 19:11:25.228291"], ["updated_at", "2016-05-19 19:11:25.228291"]]
+  [1m[35m (87.9ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["foodCourt", "C4"], ["distance", "0.3 mile"], ["created_at", "2016-05-19 19:11:25.321262"], ["updated_at", "2016-05-19 19:11:25.321262"]]
+  [1m[36m (67.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["foodCourt", "Jazzman"], ["distance", "0.5 mile"], ["created_at", "2016-05-19 19:11:25.392127"], ["updated_at", "2016-05-19 19:11:25.392127"]]
+  [1m[35m (58.1ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["foodCourt", "Chenango"], ["distance", "0.6 mile"], ["created_at", "2016-05-19 19:11:25.455600"], ["updated_at", "2016-05-19 19:11:25.455600"]]
+  [1m[36m (100.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["foodCourt", "Einstein Bros"], ["distance", "0.6 mile"], ["created_at", "2016-05-19 19:11:25.560927"], ["updated_at", "2016-05-19 19:11:25.560927"]]
+  [1m[35m (98.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["foodCourt", "Arthurs Cafe"], ["distance", "0.3 mile"], ["created_at", "2016-05-19 19:11:25.663265"], ["updated_at", "2016-05-19 19:11:25.663265"]]
+  [1m[36m (96.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "food_outlets" ("foodOutletList", "outletId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["foodOutletList", "Subway"], ["outletId", "1"], ["created_at", "2016-05-19 19:11:25.779066"], ["updated_at", "2016-05-19 19:11:25.779066"]]
+  [1m[35m (41.9ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "food_outlets" ("foodOutletList", "outletId", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["foodOutletList", "Tully"], ["outletId", "1"], ["created_at", "2016-05-19 19:11:25.825417"], ["updated_at", "2016-05-19 19:11:25.825417"]]
+  [1m[36m (100.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "food_outlets" ("foodOutletList", "outletId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["foodOutletList", "Mogul"], ["outletId", "2"], ["created_at", "2016-05-19 19:11:25.929436"], ["updated_at", "2016-05-19 19:11:25.929436"]]
+  [1m[35m (63.4ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "food_outlets" ("foodOutletList", "outletId", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["foodOutletList", "Garden Fresh"], ["outletId", "2"], ["created_at", "2016-05-19 19:11:25.996691"], ["updated_at", "2016-05-19 19:11:25.996691"]]
+  [1m[36m (76.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "food_outlets" ("foodOutletList", "outletId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["foodOutletList", "Starbucks"], ["outletId", "3"], ["created_at", "2016-05-19 19:11:26.076760"], ["updated_at", "2016-05-19 19:11:26.076760"]]
+  [1m[35m (87.6ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "food_outlets" ("foodOutletList", "outletId", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["foodOutletList", "Cakes n Eggs"], ["outletId", "3"], ["created_at", "2016-05-19 19:11:26.168363"], ["updated_at", "2016-05-19 19:11:26.168363"]]
+  [1m[36m (91.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "food_outlets" ("foodOutletList", "outletId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["foodOutletList", "Einstien"], ["outletId", "4"], ["created_at", "2016-05-19 19:11:26.263302"], ["updated_at", "2016-05-19 19:11:26.263302"]]
+  [1m[35m (46.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "food_outlets" ("foodOutletList", "outletId", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["foodOutletList", "PizzaHouse"], ["outletId", "4"], ["created_at", "2016-05-19 19:11:26.314318"], ["updated_at", "2016-05-19 19:11:26.314318"]]
+  [1m[36m (60.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "food_outlets" ("foodOutletList", "outletId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["foodOutletList", "DoughnutCentre"], ["outletId", "5"], ["created_at", "2016-05-19 19:11:26.378220"], ["updated_at", "2016-05-19 19:11:26.378220"]]
+  [1m[35m (61.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "food_outlets" ("foodOutletList", "outletId", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["foodOutletList", "GardenToss"], ["outletId", "5"], ["created_at", "2016-05-19 19:11:26.443363"], ["updated_at", "2016-05-19 19:11:26.443363"]]
+  [1m[36m (107.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "food_outlets" ("foodOutletList", "outletId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["foodOutletList", "PizzaFlavours"], ["outletId", "6"], ["created_at", "2016-05-19 19:11:26.553826"], ["updated_at", "2016-05-19 19:11:26.553826"]]
+  [1m[35m (88.8ms)[0m  commit transaction
+
+
+Started GET "/" for 149.125.40.130 at 2016-05-19 19:11:48 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (13.4ms)
+Completed 200 OK in 729ms (Views: 627.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/login" for 149.125.40.130 at 2016-05-19 19:12:05 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (117.3ms)
+Completed 200 OK in 197ms (Views: 195.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 149.125.40.130 at 2016-05-19 19:12:10 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#new as HTML
+  Rendered shared/_error_messages.html.erb (6.1ms)
+  Rendered users/new.html.erb within layouts/application (22.4ms)
+Completed 200 OK in 81ms (Views: 74.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/food_courts" for 149.125.40.130 at 2016-05-19 19:12:14 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodCourtsController#index as HTML
+  [1m[36mFoodCourt Load (0.7ms)[0m  [1mSELECT "food_courts".* FROM "food_courts"[0m
+  Rendered food_courts/index.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 101ms (Views: 94.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/food_outlets/5" for 149.125.40.130 at 2016-05-19 19:12:17 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mFoodOutlet Load (0.7ms)[0m  SELECT  "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mFoodOutlet Load (0.7ms)[0m  [1mSELECT "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."outletId" = ?[0m  [["outletId", "5"]]
+  Rendered food_outlets/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 238ms (Views: 70.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/menu_lists/9" for 149.125.40.130 at 2016-05-19 19:12:21 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mMenuList Load (0.4ms)[0m  SELECT  "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."id" = ? LIMIT 1  [["id", 9]]
+Completed 404 Not Found in 11ms (ActiveRecord: 1.0ms)
+
+ActiveRecord::RecordNotFound (Couldn't find MenuList with 'id'=9):
+  app/controllers/menu_lists_controller.rb:84:in `set_menu_list'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (15.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (7.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (153.9ms)
+
+
+Started GET "/menu_lists/9" for 149.125.40.130 at 2016-05-19 19:12:21 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mMenuList Load (0.3ms)[0m  [1mSELECT  "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."id" = ? LIMIT 1[0m  [["id", 9]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.3ms)
+
+ActiveRecord::RecordNotFound (Couldn't find MenuList with 'id'=9):
+  app/controllers/menu_lists_controller.rb:84:in `set_menu_list'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (21.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (131.2ms)
+
+
+Started GET "/food_courts" for 149.125.40.130 at 2016-05-19 19:12:27 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodCourtsController#index as HTML
+  [1m[35mFoodCourt Load (0.5ms)[0m  SELECT "food_courts".* FROM "food_courts"
+  Rendered food_courts/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 98ms (Views: 95.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/food_outlets/1" for 149.125.40.130 at 2016-05-19 19:12:28 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFoodOutlet Load (0.3ms)[0m  [1mSELECT  "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mFoodOutlet Load (0.3ms)[0m  SELECT "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."outletId" = ?  [["outletId", "1"]]
+  Rendered food_outlets/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 91ms (Views: 87.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/menu_lists/1" for 149.125.40.130 at 2016-05-19 19:12:30 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMenuList Load (0.3ms)[0m  [1mSELECT  "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mMenuList Load (0.5ms)[0m  SELECT "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."outlet_id" = ?  [["outlet_id", "1"]]
+  Rendered menu_lists/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 117ms (Views: 107.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/food_outlets/4" for 149.125.40.130 at 2016-05-19 19:12:40 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mFoodOutlet Load (0.3ms)[0m  [1mSELECT  "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mFoodOutlet Load (0.2ms)[0m  SELECT "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."outletId" = ?  [["outletId", "4"]]
+  Rendered food_outlets/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 79ms (Views: 75.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/menu_lists/7" for 149.125.40.130 at 2016-05-19 19:12:42 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mMenuList Load (0.3ms)[0m  [1mSELECT  "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."id" = ? LIMIT 1[0m  [["id", 7]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.3ms)
+
+ActiveRecord::RecordNotFound (Couldn't find MenuList with 'id'=7):
+  app/controllers/menu_lists_controller.rb:84:in `set_menu_list'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (127.2ms)
+
+
+Started GET "/menu_lists/7" for 149.125.40.130 at 2016-05-19 19:12:42 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mMenuList Load (0.3ms)[0m  SELECT  "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."id" = ? LIMIT 1  [["id", 7]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.3ms)
+
+ActiveRecord::RecordNotFound (Couldn't find MenuList with 'id'=7):
+  app/controllers/menu_lists_controller.rb:84:in `set_menu_list'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (19.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (140.3ms)
+
+
+Started GET "/food_courts" for 149.125.40.130 at 2016-05-19 19:12:56 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodCourtsController#index as HTML
+  [1m[36mFoodCourt Load (0.6ms)[0m  [1mSELECT "food_courts".* FROM "food_courts"[0m
+  Rendered food_courts/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 77ms (Views: 75.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/food_outlets/2" for 149.125.40.130 at 2016-05-19 19:12:58 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mFoodOutlet Load (0.3ms)[0m  SELECT  "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mFoodOutlet Load (0.2ms)[0m  [1mSELECT "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."outletId" = ?[0m  [["outletId", "2"]]
+  Rendered food_outlets/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 183ms (Views: 180.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/food_outlets/3" for 149.125.40.130 at 2016-05-19 19:13:03 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mFoodOutlet Load (0.3ms)[0m  SELECT  "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mFoodOutlet Load (0.3ms)[0m  [1mSELECT "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."outletId" = ?[0m  [["outletId", "3"]]
+  Rendered food_outlets/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 111ms (Views: 108.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/menu_lists/6" for 149.125.40.130 at 2016-05-19 19:13:05 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mMenuList Load (0.2ms)[0m  SELECT  "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mMenuList Load (0.3ms)[0m  [1mSELECT "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."outlet_id" = ?[0m  [["outlet_id", "6"]]
+  Rendered menu_lists/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 53ms (Views: 50.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/food_outlets/4" for 149.125.40.130 at 2016-05-19 19:13:41 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mFoodOutlet Load (0.2ms)[0m  SELECT  "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mFoodOutlet Load (0.2ms)[0m  [1mSELECT "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."outletId" = ?[0m  [["outletId", "4"]]
+  Rendered food_outlets/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 54ms (Views: 51.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/menu_lists/7" for 149.125.40.130 at 2016-05-19 19:13:43 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mMenuList Load (0.2ms)[0m  SELECT  "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."id" = ? LIMIT 1  [["id", 7]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+ActiveRecord::RecordNotFound (Couldn't find MenuList with 'id'=7):
+  app/controllers/menu_lists_controller.rb:84:in `set_menu_list'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (103.5ms)
+
+
+Started GET "/menu_lists/7" for 149.125.40.130 at 2016-05-19 19:13:43 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mMenuList Load (0.3ms)[0m  [1mSELECT  "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."id" = ? LIMIT 1[0m  [["id", 7]]
+Completed 404 Not Found in 4ms (ActiveRecord: 0.3ms)
+
+ActiveRecord::RecordNotFound (Couldn't find MenuList with 'id'=7):
+  app/controllers/menu_lists_controller.rb:84:in `set_menu_list'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (115.1ms)
+
+
+Started GET "/food_courts" for 149.125.40.130 at 2016-05-19 19:13:48 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodCourtsController#index as HTML
+  [1m[35mFoodCourt Load (0.4ms)[0m  SELECT "food_courts".* FROM "food_courts"
+  Rendered food_courts/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 54ms (Views: 52.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/food_outlets/3" for 149.125.40.130 at 2016-05-19 19:13:52 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mFoodOutlet Load (0.3ms)[0m  [1mSELECT  "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mFoodOutlet Load (0.2ms)[0m  SELECT "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."outletId" = ?  [["outletId", "3"]]
+  Rendered food_outlets/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 60ms (Views: 57.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/menu_lists/6" for 149.125.40.130 at 2016-05-19 19:13:53 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mMenuList Load (0.3ms)[0m  [1mSELECT  "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mMenuList Load (0.3ms)[0m  SELECT "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."outlet_id" = ?  [["outlet_id", "6"]]
+  Rendered menu_lists/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 78ms (Views: 74.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/reviews_and_ratings/new.6" for 149.125.40.130 at 2016-05-19 19:13:56 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#new as 
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered reviews_and_ratings/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 128ms (Views: 117.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/login" for 149.125.40.130 at 2016-05-19 19:14:00 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 48ms (Views: 47.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 149.125.40.130 at 2016-05-19 19:14:17 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"g8D+E3Kshf1H6ECHLL7apgfrUj2QmjVNfBarFg2+8RpienesK3qmv30twVBoD3pJIi7tJKk4bBMOriKWuAiAyg==", "session"=>{"email"=>"ssahu1@bing.edu", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "ssahu1@bing.edu"]]
+Redirected to https://bearcatsfoodsearch-sunilbinghamton.c9users.io/login
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/login" for 149.125.40.130 at 2016-05-19 19:14:17 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 54ms (Views: 53.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 149.125.40.130 at 2016-05-19 19:14:19 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#new as HTML
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered users/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 179ms (Views: 177.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 149.125.40.130 at 2016-05-19 19:14:30 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"U6r5aXSTdDTd4nxl/IN+3tKszEz93kQMO8ACS/snPDGyEHDWLUVXducn/bK4Mt4x92lzVcR8HVJJeIvLTpFN4Q==", "user"=>{"name"=>"Sunil", "email"=>"ssahu1@bing.edu", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('ssahu1@bing.edu') LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Sunil"], ["email", "ssahu1@bing.edu"], ["password_digest", "$2a$10$pbatrnIs.egyexx2v42Os.kz/zNTcjx4jA746xjPaWcETaoVe6ule"], ["created_at", "2016-05-19 19:14:31.008725"], ["updated_at", "2016-05-19 19:14:31.008725"]]
+  [1m[36m (19.8ms)[0m  [1mcommit transaction[0m
+Redirected to https://bearcatsfoodsearch-sunilbinghamton.c9users.io/users
+Completed 302 Found in 137ms (ActiveRecord: 21.0ms)
+
+
+Started GET "/users" for 149.125.40.130 at 2016-05-19 19:14:31 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 60ms (Views: 58.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/food_courts" for 149.125.40.130 at 2016-05-19 19:14:49 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodCourtsController#index as HTML
+  [1m[36mFoodCourt Load (0.3ms)[0m  [1mSELECT "food_courts".* FROM "food_courts"[0m
+  Rendered food_courts/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 44ms (Views: 42.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/food_outlets/2" for 149.125.40.130 at 2016-05-19 19:14:51 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodOutletsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mFoodOutlet Load (0.2ms)[0m  SELECT  "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mFoodOutlet Load (0.2ms)[0m  [1mSELECT "food_outlets".* FROM "food_outlets" WHERE "food_outlets"."outletId" = ?[0m  [["outletId", "2"]]
+  Rendered food_outlets/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 54ms (Views: 50.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/menu_lists/4" for 149.125.40.130 at 2016-05-19 19:14:53 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MenuListsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mMenuList Load (0.2ms)[0m  SELECT  "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mMenuList Load (0.2ms)[0m  [1mSELECT "menu_lists".* FROM "menu_lists" WHERE "menu_lists"."outlet_id" = ?[0m  [["outlet_id", "4"]]
+  Rendered menu_lists/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 100ms (Views: 98.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/reviews_and_ratings/new.4" for 149.125.40.130 at 2016-05-19 19:15:09 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#new as 
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered reviews_and_ratings/_form.html.erb (12.4ms)
+  Rendered reviews_and_ratings/new.html.erb within layouts/application (26.6ms)
+Completed 200 OK in 86ms (Views: 84.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/reviews_and_ratings" for 149.125.40.130 at 2016-05-19 19:15:25 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ebayL/b+kRLs8UY80BE9ckCYXzh0tD8m0qV3k7urReeYDDuQryiyUNY0x+uUoJ2dZV3gIU0WZnigHf4TDh00Nw==", "Rate"=>"2", "message"=>"Enter your reviews here."}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "reviews_and_ratings" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2016-05-19 19:15:25.355335"], ["updated_at", "2016-05-19 19:15:25.355335"]]
+  [1m[36m (24.7ms)[0m  [1mcommit transaction[0m
+Redirected to https://bearcatsfoodsearch-sunilbinghamton.c9users.io/reviews_and_ratings/1
+Completed 302 Found in 30ms (ActiveRecord: 25.3ms)
+
+
+Started GET "/reviews_and_ratings/1" for 149.125.40.130 at 2016-05-19 19:15:25 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mReviewsAndRating Load (0.3ms)[0m  SELECT  "reviews_and_ratings".* FROM "reviews_and_ratings" WHERE "reviews_and_ratings"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered reviews_and_ratings/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 42ms (Views: 39.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/reviews_and_ratings" for 149.125.40.130 at 2016-05-19 19:17:47 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ReviewsAndRatingsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mReviewsAndRating Load (0.2ms)[0m  [1mSELECT "reviews_and_ratings".* FROM "reviews_and_ratings"[0m
+  Rendered reviews_and_ratings/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 190ms (Views: 189.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 149.125.40.130 at 2016-05-19 19:17:48 +0000
+Cannot render console from 149.125.40.130! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 171ms (Views: 170.2ms | ActiveRecord: 0.4ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "menu_lists" ("menu_item", "price", "outlet_id", "foodCourt", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["menu_item", "Coffee"], ["price", "2"], ["outlet_id", "1"], ["foodCourt", "Marketplace"], ["created_at", "2016-05-19 21:12:26.891174"], ["updated_at", "2016-05-19 21:12:26.891174"]]
+  [1m[35m (20.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "menu_lists" ("menu_item", "price", "outlet_id", "foodCourt", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["menu_item", "Burger"], ["price", "3"], ["outlet_id", "2"], ["foodCourt", "Hinman"], ["created_at", "2016-05-19 21:12:26.925021"], ["updated_at", "2016-05-19 21:12:26.925021"]]
+  [1m[36m (22.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "menu_lists" ("menu_item", "price", "outlet_id", "foodCourt", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["menu_item", "Pizza"], ["price", "4"], ["outlet_id", "3"], ["foodCourt", "CIW"], ["created_at", "2016-05-19 21:12:26.950852"], ["updated_at", "2016-05-19 21:12:26.950852"]]
+  [1m[35m (27.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (6.0ms)[0m  INSERT INTO "menu_lists" ("menu_item", "price", "outlet_id", "foodCourt", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["menu_item", "Rice and Chicken"], ["price", "4"], ["outlet_id", "4"], ["foodCourt", "C4"], ["created_at", "2016-05-19 21:12:26.980821"], ["updated_at", "2016-05-19 21:12:26.980821"]]
+  [1m[36m (13.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "menu_lists" ("menu_item", "price", "outlet_id", "foodCourt", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["menu_item", "Roti"], ["price", "5"], ["outlet_id", "5"], ["foodCourt", "Jazzman"], ["created_at", "2016-05-19 21:12:27.002624"], ["updated_at", "2016-05-19 21:12:27.002624"]]
+  [1m[35m (17.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "menu_lists" ("menu_item", "price", "outlet_id", "foodCourt", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["menu_item", "Salad"], ["price", "6"], ["outlet_id", "6"], ["foodCourt", "Chenango"], ["created_at", "2016-05-19 21:12:27.022730"], ["updated_at", "2016-05-19 21:12:27.022730"]]
+  [1m[36m (13.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["foodCourt", "Marketplace"], ["distance", "0.4 mile"], ["created_at", "2016-05-19 21:12:27.065893"], ["updated_at", "2016-05-19 21:12:27.065893"]]
+  [1m[35m (15.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["foodCourt", "Hinman"], ["distance", "0.5 mile"], ["created_at", "2016-05-19 21:12:27.084252"], ["updated_at", "2016-05-19 21:12:27.084252"]]
+  [1m[36m (6.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["foodCourt", "CIW"], ["distance", "0.1 mile"], ["created_at", "2016-05-19 21:12:27.093140"], ["updated_at", "2016-05-19 21:12:27.093140"]]
+  [1m[35m (13.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["foodCourt", "C4"], ["distance", "0.3 mile"], ["created_at", "2016-05-19 21:12:27.109181"], ["updated_at", "2016-05-19 21:12:27.109181"]]
+  [1m[36m (13.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["foodCourt", "Jazzman"], ["distance", "0.5 mile"], ["created_at", "2016-05-19 21:12:27.125792"], ["updated_at", "2016-05-19 21:12:27.125792"]]
+  [1m[35m (13.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["foodCourt", "Chenango"], ["distance", "0.6 mile"], ["created_at", "2016-05-19 21:12:27.141667"], ["updated_at", "2016-05-19 21:12:27.141667"]]
+  [1m[36m (13.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["foodCourt", "Einstein Bros"], ["distance", "0.6 mile"], ["created_at", "2016-05-19 21:12:27.157772"], ["updated_at", "2016-05-19 21:12:27.157772"]]
+  [1m[35m (13.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "food_courts" ("foodCourt", "distance", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["foodCourt", "Arthurs Cafe"], ["distance", "0.3 mile"], ["created_at", "2016-05-19 21:12:27.173527"], ["updated_at", "2016-05-19 21:12:27.173527"]]
+  [1m[36m (13.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "food_outlets" ("foodOutletList", "outletId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["foodOutletList", "Subway"], ["outletId", "1"], ["created_at", "2016-05-19 21:12:27.196857"], ["updated_at", "2016-05-19 21:12:27.196857"]]
+  [1m[35m (8.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "food_outlets" ("foodOutletList", "outletId", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["foodOutletList", "Tully"], ["outletId", "1"], ["created_at", "2016-05-19 21:12:27.208274"], ["updated_at", "2016-05-19 21:12:27.208274"]]
+  [1m[36m (7.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "food_outlets" ("foodOutletList", "outletId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["foodOutletList", "Mogul"], ["outletId", "2"], ["created_at", "2016-05-19 21:12:27.218330"], ["updated_at", "2016-05-19 21:12:27.218330"]]
+  [1m[35m (13.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "food_outlets" ("foodOutletList", "outletId", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["foodOutletList", "Garden Fresh"], ["outletId", "2"], ["created_at", "2016-05-19 21:12:27.234536"], ["updated_at", "2016-05-19 21:12:27.234536"]]
+  [1m[36m (20.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "food_outlets" ("foodOutletList", "outletId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["foodOutletList", "Starbucks"], ["outletId", "3"], ["created_at", "2016-05-19 21:12:27.258428"], ["updated_at", "2016-05-19 21:12:27.258428"]]
+  [1m[35m (17.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "food_outlets" ("foodOutletList", "outletId", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["foodOutletList", "Cakes n Eggs"], ["outletId", "3"], ["created_at", "2016-05-19 21:12:27.278912"], ["updated_at", "2016-05-19 21:12:27.278912"]]
+  [1m[36m (24.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "food_outlets" ("foodOutletList", "outletId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["foodOutletList", "Einstien"], ["outletId", "4"], ["created_at", "2016-05-19 21:12:27.306489"], ["updated_at", "2016-05-19 21:12:27.306489"]]
+  [1m[35m (29.3ms)[0m  commit transaction
+  [1m[36m (1.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "food_outlets" ("foodOutletList", "outletId", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["foodOutletList", "PizzaHouse"], ["outletId", "4"], ["created_at", "2016-05-19 21:12:27.339443"], ["updated_at", "2016-05-19 21:12:27.339443"]]
+  [1m[36m (24.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "food_outlets" ("foodOutletList", "outletId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["foodOutletList", "DoughnutCentre"], ["outletId", "5"], ["created_at", "2016-05-19 21:12:27.366456"], ["updated_at", "2016-05-19 21:12:27.366456"]]
+  [1m[35m (25.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "food_outlets" ("foodOutletList", "outletId", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["foodOutletList", "GardenToss"], ["outletId", "5"], ["created_at", "2016-05-19 21:12:27.394461"], ["updated_at", "2016-05-19 21:12:27.394461"]]
+  [1m[36m (21.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "food_outlets" ("foodOutletList", "outletId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["foodOutletList", "PizzaFlavours"], ["outletId", "6"], ["created_at", "2016-05-19 21:12:27.418167"], ["updated_at", "2016-05-19 21:12:27.418167"]]
+  [1m[35m (26.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "food_outlets" ("foodOutletList", "outletId", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["foodOutletList", "RiceBowlOutlet"], ["outletId", "7"], ["created_at", "2016-05-19 21:12:27.447713"], ["updated_at", "2016-05-19 21:12:27.447713"]]
+  [1m[36m (20.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "food_outlets" ("foodOutletList", "outletId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["foodOutletList", "FriesDen"], ["outletId", "8"], ["created_at", "2016-05-19 21:12:27.474829"], ["updated_at", "2016-05-19 21:12:27.474829"]]
+  [1m[35m (24.0ms)[0m  commit transaction
+  [1m[36m (22.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (9.2ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20160329171948)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (12.9ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "name" character varying, "email" character varying, "password" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160329171948"]]
+  [1m[36m (5.5ms)[0m  [1mCOMMIT[0m
+Migrating to AddPasswordDigestToUsers (20160404130516)
+  [1m[35m (2.1ms)[0m  BEGIN
+  [1m[36m (1.4ms)[0m  [1mALTER TABLE "users" ADD "password_digest" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160404130516"]]
+  [1m[36m (5.2ms)[0m  [1mCOMMIT[0m
+Migrating to AddIndexToUsersEmail (20160404132723)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (4.4ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160404132723"]]
+  [1m[36m (5.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateReviewsAndRatings (20160409220521)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (14.5ms)[0m  [1mCREATE TABLE "reviews_and_ratings" ("id" serial primary key, "foodcourts" character varying, "foodoutlets" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160409220521"]]
+  [1m[36m (4.1ms)[0m  [1mCOMMIT[0m
+Migrating to MenuLists (20160425004520)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (9.5ms)[0m  [1mCREATE TABLE "menu_lists" ("id" serial primary key, "menu_item" character varying, "price" character varying, "outlet_id" character varying, "foodCourt" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160425004520"]]
+  [1m[36m (5.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateFoodCourts (20160504132919)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (11.4ms)[0m  [1mCREATE TABLE "food_courts" ("id" serial primary key, "foodCourt" character varying, "distance" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160504132919"]]
+  [1m[36m (3.7ms)[0m  [1mCOMMIT[0m
+Migrating to CreateFoodOutlets (20160510011614)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (10.7ms)[0m  [1mCREATE TABLE "food_outlets" ("id" serial primary key, "foodOutletList" character varying, "outletId" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160510011614"]]
+  [1m[36m (5.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.9ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'food_courts'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.0ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'food_outlets'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.5ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'menu_lists'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.1ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'reviews_and_ratings'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.7ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
